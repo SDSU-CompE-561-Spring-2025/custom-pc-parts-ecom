@@ -1,0 +1,1057 @@
+openapi: 3.0.0
+info:
+  title: PCBuilder
+  description: >-
+    A website that will have users compare and choose which computer components
+    to create their custom PC build. They will be able to sort each component by
+    categories (price, brand, performance, ratings, etc..). Users will be given
+    the ability to share their builds, save configurations, and make sure that
+    each component is compatible with each other. They will be able to see price
+    breakdowns of each component, as well as a final balance, and get the best
+    price from a certain company.
+  version: 1.0.0
+servers:
+  - url: /api/v1
+    description: Main API server
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              example: VALIDATION_ERROR
+            message:
+              type: string
+              example: Invalid input data
+            details:
+              type: object
+              example:
+                field: email
+                issue: must be a valid email address
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: techbuilder
+        email:
+          type: string
+          format: email
+          example: user@example.com
+        is_active:
+          type: boolean
+          default: true
+          example: true
+        is_admin:
+          type: boolean
+          default: false
+          example: false
+        last_login: 
+          type: string
+          format: date-time
+          nullable: true
+        email_verified:
+          type: boolean
+          default: false
+          example: false
+        created_at:
+          type: string
+          format: date-time
+        verification_token:
+          type: string
+          nullable: true
+    UserCreate:
+      type: object
+      required:
+        - username
+        - email
+        - password
+      properties:
+        username:
+          type: string
+          example: techbuilder
+        email:
+          type: string
+          example: user@example.com
+        password:
+          type: string
+          format: password
+          example: SecurePassword123
+    Component:
+      type: object
+      required:
+        - name
+        - category
+        - brand
+        - model
+        - price
+        - specs
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Intel Core i7-13700K
+        category:
+          type: string
+          enum: ["CPU", "GPU", "Motherboard", "RAM", "Storage", "PSU", "Case", "Cooler"]
+          example: CPU
+        brand:
+          type: string
+          example: "Intel"
+        model:
+          type: string
+          example: "i7-13700K"
+        price:
+          type: number
+          format: float
+          example: 389.99
+        specs:
+          type: object
+          example: {
+           "cores": 16,
+           "threads": 24,
+           "base_clock": "3.4 GHz",
+           "boost_clock": "5.4 GHz",
+           "socket": "LGA1700",
+           "tdp": 125
+          }
+        image_url:
+          type: string
+          nullable: true
+          example: url
+        in_stock: 
+          type: boolean
+          default: true
+          example: true
+        updated_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+    CompatibilityCheck:
+      type: object
+      required:
+          - category1
+          - category2
+      properties:
+        id:
+          type: integer
+          example: 1
+        category1:
+          type: string
+          description: "First component category"
+          example: "CPU"
+        category2:
+          type: string
+          description: "Second component category"
+          example: "Motherboard"
+        rule_type:
+          type: string
+          nullable: true
+          description: "Type of compatibility rule"
+          example: "socket_match"
+        rule_logic:
+          type: object
+          nullable: true
+          description: "Logic defining how compatibility is checked"
+          example: {
+          "check_type": "exact_match",
+          "source_field": "socket",
+          "target_field": "cpu_socket"
+        }
+    Build:
+      type: object
+      required:
+        - user_id
+        - name
+      properties:
+        id:
+          type: integer
+          example: 1
+        user_id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Gaming PC Build 2025
+        description:
+          type: string
+          nullable: true
+          example: High-end gaming build with RTX 5080
+        is_public:
+          type: boolean
+          default: true
+          example: true
+        total_price:
+          type: number
+          format: float
+          nullable: true
+          example: 2499.95
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+    BuildComponent:
+      type: object
+      required:
+        - build_id
+        - component_id
+        - quantity
+      properties:
+        id:
+          type: integer
+          example: 1
+        build_id:
+          type: integer
+          example: 42
+        component_id:
+          type: integer
+          description: "ID of the component"
+          example: 465
+        quantity:
+          type: integer
+          default: 1
+          description: "Number of the component in build"
+          example: 2
+    ComponentCreate:
+      type: object
+      required:
+        - name
+        - category
+        - brand
+        - model
+        - price
+        - specs
+      properties:
+        name:
+          type: string
+          example: Intel Core i7-13700K
+        category:
+          type: string
+          enum:
+            - CPU
+            - GPU
+            - Motherboard
+            - RAM
+            - Storage
+            - PSU
+            - Case
+            - Cooler
+          example: CPU
+        brand:
+          type: string
+          example: Intel
+        model:
+          type: string
+          example: i7-13700K
+        price:
+          type: number
+          format: float
+          example: 389.99
+        specs:
+          type: object
+          example:
+            cores: 16
+            threads: 24
+            base_clock: 3.4 GHz
+            boost_clock: 5.4 GHz
+            socket: LGA1700
+            tdp: 125
+        image_url:
+          type: string
+          example: https://example.com/images/i7-13700k.jpg
+        in_stock:
+          type: boolean
+          example: true
+    PriceHistory:
+      type: object
+      required:
+        - component_id
+        - price
+        - retailer
+      properties:
+        id:
+          type: integer
+          example: 1
+        component_id: 
+          type: integer
+        price: 
+          type: number
+          format: float
+          example: 389.99
+        retailer:
+          type: string
+          example: Amazon
+        url: 
+          type: string
+          nullable: true
+          example: url link
+        date:
+          type: string
+          format: date-time
+    Review:
+      type: object
+      required:
+        - user_id
+        - component_id
+        - rating
+      properties:
+        id:
+          type: integer
+          example: 1
+        user_id:
+          type: integer
+          description: "ID of the user who wrote the review"
+          example: 42
+        component_id:
+          type: integer
+          description: "ID of the component being reviewed"
+          example: 156
+        rating:
+          type: integer
+          minimum: 1
+          maximum: 5
+          description: "Rating from 1-5 stars"
+          example: 4
+        title:
+          type: string
+          nullable: true
+          description: "Review title"
+          example: "Great performance for the price"
+        content:
+          type: string
+          nullable: true
+          description: "Full review text"
+          example: "This CPU handles all my gaming needs with ease. The multi-threaded performance is excellent for streaming as well."
+        verified:
+          type: boolean
+          default: false
+        status:
+          type: string
+          enum: ["pending", "approved", "rejected"]
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+    Admin:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        username:
+          type: string
+          example: "admin_user"
+        permissions:
+          type: object
+          example: {"manage_users": true, "manage_components": true}
+        email:
+          type: string
+          format: email
+          example: "admin@example.com"
+        is_active:
+          type: boolean
+          example: true
+        role:
+          type: string
+          example: "super_admin"
+        last_login:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    BuildCreate:
+      type: object
+      required:
+        - name
+        - components
+      properties:
+        name:
+          type: string
+          example: Gaming PC Build 2025
+        description:
+          type: string
+          example: High-end gaming build with RTX 5080
+        is_public:
+          type: boolean
+          example: true
+        components:
+          type: array
+          items:
+            type: object
+            required:
+              - component_id
+            properties:
+              component_id:
+                type: integer
+                example: 1
+              quantity:
+                type: integer
+                example: 1
+                default: 1
+    AdminSetting:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        key:
+          type: string
+          example: "site_maintenance_mode"
+        value:
+          type: object
+        description:
+          type: string
+        updated_at:
+          type: string
+          format: date-time
+        updated_by:
+          type: integer
+          example: 1
+    ResetToken:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        token:
+          type: string
+        user_id:
+          type: integer
+          nullable: true
+          example: 42
+        admin_id:
+          type: integer
+          nullable: true
+          example: null
+        created_at:
+          type: string
+          format: date-time
+        is_revoked:
+          type: boolean
+          example: false
+        revoked_at:
+          type: string
+          format: date-time
+          nullable: true
+          example: null
+
+    AuditLog:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        action:
+          type: string
+          example: "component.update"
+        entity_type:
+          type: string
+          example: "Component"
+        entity_id:
+          type: integer
+          example: 156
+        user_id:
+          type: integer
+          nullable: true
+          example: null
+        admin_id:
+          type: integer
+          nullable: true
+          example: 1
+        details:
+          type: object
+          example: {"before": {"price": 399.99}, "after": {"price": 349.99}}
+        timestamp:
+          type: string
+          format: date-time
+          example: "2025-03-09T10:15:30Z"
+  
+    CompatibilityResult:
+      type: object
+      properties:
+        compatible:
+          type: boolean
+          example: true
+        issues:
+          type: array
+          items:
+            type: object
+            properties:
+              component_id:
+                type: integer
+                example: 8
+              issue_description:
+                type: string
+                example: >-
+                  CPU socket (LGA1700) is not compatible with motherboard socket
+                  (AM5)
+    LoginRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          example: user@example.com
+        password:
+          type: string
+          format: password
+          example: SecurePassword123
+    TokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+        token_type:
+          type: string
+          example: bearer
+    PaginatedResponse:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+        total:
+          type: integer
+          example: 150
+        page:
+          type: integer
+          example: 1
+        per_page:
+          type: integer
+          example: 20
+paths:
+  /components:
+    get:
+      summary: Get a list of components with optional filtering
+      parameters:
+        - in: query
+          name: category
+          schema:
+            type: string
+            enum:
+              - CPU
+              - GPU
+              - Motherboard
+              - RAM
+              - Storage
+              - PSU
+              - Case
+              - Cooler
+          description: Filter by component category
+        - in: query
+          name: brand
+          schema:
+            type: string
+          description: Filter by component brand
+        - in: query
+          name: price_min
+          schema:
+            type: number
+          description: Minimum price filter
+        - in: query
+          name: price_max
+          schema:
+            type: number
+          description: Maximum price filter
+        - in: query
+          name: in_stock
+          schema:
+            type: boolean
+          description: Filter by in-stock status
+        - in: query
+          name: page
+          schema:
+            type: integer
+            default: 1
+          description: Page number for pagination
+        - in: query
+          name: per_page
+          schema:
+            type: integer
+            default: 20
+          description: Items per page for pagination
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/PaginatedResponse'
+                  - type: object
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Component'
+    post:
+      summary: Add a new component
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComponentCreate'
+      responses:
+        '201':
+          description: Component created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  component:
+                    $ref: '#/components/schemas/Component'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - admin only
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /components/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        description: Component ID
+    get:
+      summary: Get detailed information about a specific component
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Component'
+        '404':
+          description: Component not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      summary: Update component information
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComponentCreate'
+      responses:
+        '200':
+          description: Component updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  component:
+                    $ref: '#/components/schemas/Component'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - admin only
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Component not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Delete a component
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Component deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - admin only
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Component not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /users:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+      responses:
+        '201':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  user:
+                    $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /auth/login:
+    post:
+      summary: Authenticate user and get token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Authentication successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+        '401':
+          description: Authentication failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /auth/me:
+    get:
+      summary: Get current user information
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /builds:
+    get:
+      summary: Get list of builds for current user
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: page
+          schema:
+            type: integer
+            default: 1
+          description: Page number for pagination
+        - in: query
+          name: per_page
+          schema:
+            type: integer
+            default: 20
+          description: Items per page for pagination
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/PaginatedResponse'
+                  - type: object
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Build'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      summary: Create a new build
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BuildCreate'
+      responses:
+        '201':
+          description: Build created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  build:
+                    $ref: '#/components/schemas/Build'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /builds/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        description: Build ID
+    get:
+      summary: Get detailed information about a build
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Build'
+        '404':
+          description: Build not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      summary: Update a build
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BuildCreate'
+      responses:
+        '200':
+          description: Build updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  build:
+                    $ref: '#/components/schemas/Build'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - not the owner
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Build not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Delete a build
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Build deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - not the owner
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Build not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /compatibility-check:
+    post:
+      summary: Check compatibility between components
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompatibilityCheck'
+      responses:
+        '200':
+          description: Compatibility check result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompatibilityResult'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /price-history/{component_id}:
+    parameters:
+      - in: path
+        name: component_id
+        required: true
+        schema:
+          type: integer
+        description: Component ID
+      - in: query
+        name: days
+        schema:
+          type: integer
+          default: 30
+        description: Number of days of price history
+    get:
+      summary: Get price history for a component
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceHistory'
+        '404':
+          description: Component not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

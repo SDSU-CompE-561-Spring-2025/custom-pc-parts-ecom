@@ -285,6 +285,10 @@ class TokenResponse(BaseModel):
     access_token: str
     token_type: str = "bearer"
 
+# Token Data for Part 5
+class TokenData(BaseModel):
+    username: Optional[str] = None
+
 # Login Request
 class LoginRequest(BaseModel):
     email: EmailStr

@@ -1,0 +1,72 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pcbuilder"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Tri Bui", email = "tribui1912@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "fastapi>=0.104.1",
+  "uvicorn>=0.32.2",
+  "sqlalchemy>=2.0.4",
+  "pydantic>=2.4.2",
+  "pytest"
+
+]
+
+[project.urls]
+Documentation = "https://github.com/Tri Bui/pcbuilder#readme"
+Issues = "https://github.com/Tri Bui/pcbuilder/issues"
+Source = "https://github.com/Tri Bui/pcbuilder"
+
+[tool.hatch.version]
+path = "src/pcbuilder/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/pcbuilder tests}"
+
+[tool.coverage.run]
+source_pkgs = ["pcbuilder", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/pcbuilder/__about__.py",
+]
+
+[tool.coverage.paths]
+pcbuilder = ["src/pcbuilder", "*/pcbuilder/src/pcbuilder"]
+tests = ["tests", "*/pcbuilder/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+
+[tool.hatch.scripts]
+start = "uvicorn app.main:app --reload"
+test = "pytest tests/"

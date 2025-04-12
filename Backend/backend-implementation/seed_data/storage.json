@@ -1,0 +1,66 @@
+[
+    {
+      "name": "Samsung 970 EVO Plus 1TB",
+      "category": "Storage",
+      "brand": "Samsung",
+      "model": "970 EVO Plus",
+      "price": 89.99,
+      "specs": {
+        "type": "NVMe SSD",
+        "interface": "PCIe Gen3 x4",
+        "capacity_gb": 1000,
+        "read_speed_mbps": 3500,
+        "write_speed_mbps": 3300,
+        "form_factor": "M.2 2280"
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Crucial MX500 2TB",
+      "category": "Storage",
+      "brand": "Crucial",
+      "model": "MX500",
+      "price": 104.99,
+      "specs": {
+        "type": "SATA SSD",
+        "interface": "SATA III",
+        "capacity_gb": 2000,
+        "read_speed_mbps": 560,
+        "write_speed_mbps": 510,
+        "form_factor": "2.5 inch"
+      },
+      "in_stock": true
+    },
+    {
+      "name": "WD Blue 4TB",
+      "category": "Storage",
+      "brand": "Western Digital",
+      "model": "Blue 5400 RPM",
+      "price": 79.99,
+      "specs": {
+        "type": "HDD",
+        "interface": "SATA III",
+        "capacity_gb": 4000,
+        "rpm": 5400,
+        "cache_mb": 64,
+        "form_factor": "3.5 inch"
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Seagate Barracuda 2TB",
+      "category": "Storage",
+      "brand": "Seagate",
+      "model": "Barracuda",
+      "price": 49.99,
+      "specs": {
+        "type": "HDD",
+        "interface": "SATA III",
+        "capacity_gb": 2000,
+        "rpm": 7200,
+        "cache_mb": 256,
+        "form_factor": "3.5 inch"
+      },
+      "in_stock": true
+    }
+  ]

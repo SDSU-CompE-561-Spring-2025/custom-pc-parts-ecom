@@ -1,0 +1,50 @@
+[
+    {
+      "name": "Corsair 4000D Airflow",
+      "category": "Case",
+      "brand": "Corsair",
+      "model": "4000D Airflow",
+      "price": 104.99,
+      "specs": {
+        "type": "ATX Mid Tower",
+        "color": "Black",
+        "psu": null,
+        "side_panel": "Tinted Tempered Glass",
+        "external_volume_liters": 48.6,
+        "internal_35_bays": 2
+      },
+      "in_stock": true
+    },
+    {
+      "name": "NZXT H5 Flow",
+      "category": "Case",
+      "brand": "NZXT",
+      "model": "H5 Flow",
+      "price": 94.99,
+      "specs": {
+        "type": "ATX Mid Tower",
+        "color": "Black",
+        "psu": null,
+        "side_panel": "Tempered Glass",
+        "external_volume_liters": 47.0,
+        "internal_35_bays": 1
+      },
+      "in_stock": true
+    },
+    {
+      "name": "NZXT H9 Flow",
+      "category": "Case",
+      "brand": "NZXT",
+      "model": "H9 Flow",
+      "price": 159.99,
+      "specs": {
+        "type": "ATX Mid Tower",
+        "color": "White",
+        "psu": null,
+        "side_panel": "Tempered Glass",
+        "external_volume_liters": 66.9,
+        "internal_35_bays": 2
+      },
+      "in_stock": true
+    }
+  ]

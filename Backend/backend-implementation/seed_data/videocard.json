@@ -1,0 +1,50 @@
+[
+    {
+      "name": "MSI GeForce RTX 3060 Ventus 2X 12G",
+      "category": "GPU",
+      "brand": "MSI",
+      "model": "GeForce RTX 3060 Ventus 2X",
+      "price": 288.00,
+      "specs": {
+        "chipset": "GeForce RTX 3060",
+        "memory_gb": 12,
+        "core_clock_mhz": 1320,
+        "boost_clock_mhz": 1777,
+        "color": "Black",
+        "length_mm": 235
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Gigabyte WINDFORCE OC",
+      "category": "GPU",
+      "brand": "Gigabyte",
+      "model": "WINDFORCE OC RTX 4070",
+      "price": 581.19,
+      "specs": {
+        "chipset": "GeForce RTX 4070",
+        "memory_gb": 12,
+        "core_clock_mhz": 1920,
+        "boost_clock_mhz": 2490,
+        "color": "Black",
+        "length_mm": 261
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Asus ROG STRIX GAMING OC",
+      "category": "GPU",
+      "brand": "Asus",
+      "model": "ROG STRIX RTX 4090",
+      "price": 1979.99,
+      "specs": {
+        "chipset": "GeForce RTX 4090",
+        "memory_gb": 24,
+        "core_clock_mhz": 2235,
+        "boost_clock_mhz": 2640,
+        "color": "Black",
+        "length_mm": 358
+      },
+      "in_stock": true
+    }
+  ]

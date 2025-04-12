@@ -1,0 +1,66 @@
+[
+    {
+      "name": "MSI B650 GAMING PLUS WIFI",
+      "category": "Motherboard",
+      "brand": "MSI",
+      "model": "B650 GAMING PLUS WIFI",
+      "price": 169.99,
+      "specs": {
+        "socket": "AM5",
+        "form_factor": "ATX",
+        "max_memory": 192,
+        "memory_slots": 4,
+        "color": "Black"
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Asus ROG STRIX B650-A GAMING WIFI",
+      "category": "Motherboard",
+      "brand": "Asus",
+      "model": "ROG STRIX B650-A GAMING WIFI",
+      "price": 199.99,
+      "specs": {
+        "socket": "AM5",
+        "form_factor": "ATX",
+        "max_memory": 192,
+        "memory_slots": 4,
+        "color": "Black / Silver"
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "MSI B760 GAMING PLUS WIFI",
+      "category": "Motherboard",
+      "brand": "MSI",
+      "model": "B760 GAMING PLUS WIFI",
+      "price": 159.99,
+      "specs": {
+        "socket": "LGA1700",
+        "form_factor": "ATX",
+        "max_memory": 192,
+        "memory_slots": 4,
+        "color": "Black / Silver"
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "MSI PRO Z790-A MAX WIFI",
+      "category": "Motherboard",
+      "brand": "MSI",
+      "model": "PRO Z790-A MAX WIFI",
+      "price": 239.99,
+      "specs": {
+        "socket": "LGA1700",
+        "form_factor": "ATX",
+        "max_memory": 192,
+        "memory_slots": 4,
+        "color": "Silver / Black"
+      },
+      "image_url": null,
+      "in_stock": true
+    }
+  ]

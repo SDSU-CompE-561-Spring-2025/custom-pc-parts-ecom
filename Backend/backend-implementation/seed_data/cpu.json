@@ -1,0 +1,70 @@
+[
+    {
+      "name": "AMD Ryzen 7 7800X3D",
+      "category": "CPU",
+      "brand": "AMD",
+      "model": "Ryzen 7 7800X3D",
+      "price": 339,
+      "specs": {
+        "core_count": 8,
+        "core_clock": 4.2,
+        "boost_clock": 5.0,
+        "tdp": 120,
+        "graphics": "Radeon",
+        "smt": true
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "AMD Ryzen 5 7600X",
+      "category": "CPU",
+      "brand": "AMD",
+      "model": "Ryzen 5 7600X",
+      "price": 204.99,
+      "specs": {
+        "core_count": 6,
+        "core_clock": 4.7,
+        "boost_clock": 5.3,
+        "tdp": 105,
+        "graphics": "Radeon",
+        "smt": true
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "AMD Ryzen 5 5600X",
+      "category": "CPU",
+      "brand": "AMD",
+      "model": "Ryzen 5 5600X",
+      "price": 144.31,
+      "specs": {
+        "core_count": 6,
+        "core_clock": 3.7,
+        "boost_clock": 4.6,
+        "tdp": 65,
+        "graphics": null,
+        "smt": true
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "AMD Ryzen 5 7600",
+      "category": "CPU",
+      "brand": "AMD",
+      "model": "Ryzen 5 7600",
+      "price": 185,
+      "specs": {
+        "core_count": 6,
+        "core_clock": 3.8,
+        "boost_clock": 5.1,
+        "tdp": 65,
+        "graphics": "Radeon",
+        "smt": true
+      },
+      "image_url": null,
+      "in_stock": true
+    }
+  ]

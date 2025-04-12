@@ -1,0 +1,104 @@
+[
+    {
+      "name": "Corsair Vengeance LPX 16 GB",
+      "category": "RAM",
+      "brand": "Corsair",
+      "model": "Vengeance LPX 16 GB",
+      "price": 38.99,
+      "specs": {
+        "speed": "DDR4-3200",
+        "modules": "2x8GB",
+        "price_per_gb": 2.437,
+        "color": "Black / Yellow",
+        "first_word_latency": 10,
+        "cas_latency": 16
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Corsair Vengeance 32 GB",
+      "category": "RAM",
+      "brand": "Corsair",
+      "model": "Vengeance 32 GB",
+      "price": 113.99,
+      "specs": {
+        "speed": "DDR5-5600",
+        "modules": "2x16GB",
+        "price_per_gb": 3.562,
+        "color": "Black",
+        "first_word_latency": 12.857,
+        "cas_latency": 36
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "G.Skill Trident Z5 RGB 32 GB",
+      "category": "RAM",
+      "brand": "G.Skill",
+      "model": "Trident Z5 RGB 32 GB",
+      "price": 117.99,
+      "specs": {
+        "speed": "DDR5-6000",
+        "modules": "2x16GB",
+        "price_per_gb": 3.687,
+        "color": "Black",
+        "first_word_latency": 12,
+        "cas_latency": 36
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Corsair Vengeance 32 GB",
+      "category": "RAM",
+      "brand": "Corsair",
+      "model": "Vengeance 32 GB",
+      "price": 114.99,
+      "specs": {
+        "speed": "DDR5-6000",
+        "modules": "2x16GB",
+        "price_per_gb": 3.593,
+        "color": "Black / Gray",
+        "first_word_latency": 10,
+        "cas_latency": 30
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Corsair Vengeance RGB Pro 32 GB",
+      "category": "RAM",
+      "brand": "Corsair",
+      "model": "Vengeance RGB Pro 32 GB",
+      "price": 94.99,
+      "specs": {
+        "speed": "DDR4-3600",
+        "modules": "2x16GB",
+        "price_per_gb": 2.968,
+        "color": "Black",
+        "first_word_latency": 10,
+        "cas_latency": 18
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "G.Skill Trident Z5 RGB 64 GB",
+      "category": "RAM",
+      "brand": "G.Skill",
+      "model": "Trident Z5 RGB 64 GB",
+      "price": 217.99,
+      "specs": {
+        "speed": "DDR5-6400",
+        "modules": "2x32GB",
+        "price_per_gb": 3.406,
+        "color": "Black / Silver",
+        "first_word_latency": 10,
+        "cas_latency": 32
+      },
+      "image_url": null,
+      "in_stock": true
+    }
+  ]

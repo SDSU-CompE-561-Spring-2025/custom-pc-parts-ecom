@@ -1,0 +1,75 @@
+[
+    {
+      "name": "Microsoft Windows 11 Home (64-bit)",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows 11 Home",
+      "price": 109.99,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 128
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Microsoft Windows 11 Pro (64-bit)",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows 11 Pro",
+      "price": 159.99,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Microsoft Windows 10 Home (64-bit)",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows 10 Home",
+      "price": null,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 128
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Microsoft Windows 10 Pro (64-bit)",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows 10 Pro",
+      "price": null,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Microsoft Windows 11 Home (64-bit)",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows 11 Home",
+      "price": 138.99,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 128
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Microsoft Windows 11 Pro (64-bit)",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows 11 Pro",
+      "price": 199,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    }
+  ]
+  

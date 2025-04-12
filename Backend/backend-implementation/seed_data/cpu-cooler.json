@@ -1,0 +1,62 @@
+[
+    {
+      "name": "Thermalright Peerless Assassin 120 SE",
+      "category": "Cooler",
+      "brand": "Thermalright",
+      "model": "Peerless Assassin 120 SE",
+      "price": 33.9,
+      "specs": {
+        "rpm": 1550,
+        "noise_level": 25.6,
+        "color": "Black",
+        "size": null
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "NZXT Kraken Elite 360 RGB",
+      "category": "Cooler",
+      "brand": "NZXT",
+      "model": "Kraken Elite 360 RGB",
+      "price": 273.99,
+      "specs": {
+        "rpm": [500, 1800],
+        "noise_level": [17.9, 30.6],
+        "color": "White",
+        "size": 360
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Deepcool GAMMAXX AG400 ARGB",
+      "category": "Cooler",
+      "brand": "Deepcool",
+      "model": "GAMMAXX AG400 ARGB",
+      "price": 29.99,
+      "specs": {
+        "rpm": [500, 2000],
+        "noise_level": 31.6,
+        "color": "Black",
+        "size": null
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Corsair iCUE H150i ELITE CAPELLIX XT",
+      "category": "Cooler",
+      "brand": "Corsair",
+      "model": "iCUE H150i ELITE CAPELLIX XT",
+      "price": 189.99,
+      "specs": {
+        "rpm": [550, 2100],
+        "noise_level": [5, 34.1],
+        "color": "Black",
+        "size": 360
+      },
+      "image_url": null,
+      "in_stock": true
+    }
+  ]

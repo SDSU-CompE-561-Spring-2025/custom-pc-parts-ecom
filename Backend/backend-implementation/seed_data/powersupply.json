@@ -1,0 +1,62 @@
+[
+    {
+      "name": "Corsair RM750e (2023)",
+      "category": "PSU",
+      "brand": "Corsair",
+      "model": "RM750e (2023)",
+      "price": 99.99,
+      "specs": {
+        "type": "ATX",
+        "efficiency": "gold",
+        "wattage": 750,
+        "modular": "Full",
+        "color": "Black"
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Corsair RM850e (2023)",
+      "category": "PSU",
+      "brand": "Corsair",
+      "model": "RM850e (2023)",
+      "price": 119.99,
+      "specs": {
+        "type": "ATX",
+        "efficiency": "gold",
+        "wattage": 850,
+        "modular": "Full",
+        "color": "Black"
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Corsair RM1000e (2023)",
+      "category": "PSU",
+      "brand": "Corsair",
+      "model": "RM1000e (2023)",
+      "price": 159.99,
+      "specs": {
+        "type": "ATX",
+        "efficiency": "gold",
+        "wattage": 1000,
+        "modular": "Full",
+        "color": "Black"
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Corsair RM650 (2023)",
+      "category": "PSU",
+      "brand": "Corsair",
+      "model": "RM650 (2023)",
+      "price": 89.99,
+      "specs": {
+        "type": "ATX",
+        "efficiency": "gold",
+        "wattage": 650,
+        "modular": "Full",
+        "color": "Black"
+      },
+      "in_stock": true
+    }
+  ]

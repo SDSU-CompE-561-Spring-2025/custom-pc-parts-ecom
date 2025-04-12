@@ -1,0 +1,53 @@
+[
+    {
+      "name": "Mid-Range Gaming Build",
+      "description": "Balanced performance for 1080p gaming and light streaming.",
+      "is_public": true,
+      "components": [
+        { "component_id": 1, "quantity": 1 },
+        { "component_id": 5, "quantity": 1 },
+        { "component_id": 9, "quantity": 1 },
+        { "component_id": 13, "quantity": 2 },
+        { "component_id": 19, "quantity": 1 },
+        { "component_id": 24, "quantity": 1 },
+        { "component_id": 27, "quantity": 1 },
+        { "component_id": 30, "quantity": 1 },
+        { "component_id": 36, "quantity": 1 },
+        { "component_id": 42, "quantity": 1 }
+      ]
+    },
+    {
+      "name": "High-End Creator Build",
+      "description": "Powerful PC for video editing, rendering, and high-end gaming.",
+      "is_public": true,
+      "components": [
+        { "component_id": 2, "quantity": 1 },
+        { "component_id": 6, "quantity": 1 },
+        { "component_id": 10, "quantity": 1 },
+        { "component_id": 14, "quantity": 2 },
+        { "component_id": 20, "quantity": 1 },
+        { "component_id": 25, "quantity": 1 },
+        { "component_id": 28, "quantity": 1 },
+        { "component_id": 31, "quantity": 1 },
+        { "component_id": 37, "quantity": 1 },
+        { "component_id": 43, "quantity": 1 }
+      ]
+    },
+    {
+      "name": "Budget Office Build",
+      "description": "Affordable setup for everyday productivity and office work.",
+      "is_public": true,
+      "components": [
+        { "component_id": 3, "quantity": 1 },
+        { "component_id": 7, "quantity": 1 },
+        { "component_id": 11, "quantity": 1 },
+        { "component_id": 15, "quantity": 1 },
+        { "component_id": 21, "quantity": 1 },
+        { "component_id": 26, "quantity": 1 },
+        { "component_id": 29, "quantity": 1 },
+        { "component_id": 32, "quantity": 1 },
+        { "component_id": 38, "quantity": 1 },
+        { "component_id": 44, "quantity": 1 }
+      ]
+    }
+  ]

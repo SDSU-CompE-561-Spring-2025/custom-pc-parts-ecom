@@ -6,6 +6,9 @@ services:
     container_name: pcbuilder-fastapi
     ports:
       - "8000:8000"
+    env_file: ./backend-implementation/app/.env
+    volumes:
+      - .:/app
     depends_on:
       - postgres
 

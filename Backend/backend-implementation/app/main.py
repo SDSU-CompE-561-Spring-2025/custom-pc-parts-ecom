@@ -3,6 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 import time
 import logging
 
+from app.routers import components
+
+
 # from . import models, database
 # from .routers import components, users
 
@@ -15,6 +18,12 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+from app.database import engine
+from app import models
+
+models.Base.metadata.create_all(bind=engine)
+
 
 app = FastAPI(
     title="PCBuilder",
@@ -49,6 +58,8 @@ async def log_requests(request: Request, call_next):
 
 # app.include_router(components.router, prefix = "/api/v1")
 # app.include_router(users.router, prefix="/api/v1")
+
+app.include_router(components.router, prefix="/api/v1")
 
 @app.get("/")
 def root():

@@ -14,8 +14,7 @@ import schemas
 from database import get_db
 
 # Security configs 
-# #TODO: make secret key not hard coded, generate secret key, add to env file
-SECRET_KEY = os.getenv("JWT_SECRET_KEY", "YOUR_SECRET_KEY")
+SECRET_KEY = os.getenv("JWT_SECRET_KEY")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 

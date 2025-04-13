@@ -8,10 +8,8 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 
-import crud
-import models
-import schemas
-from database import get_db
+from app import crud, models, schemas
+from app.database import get_db
 
 # Security configs 
 SECRET_KEY = os.getenv("JWT_SECRET_KEY")

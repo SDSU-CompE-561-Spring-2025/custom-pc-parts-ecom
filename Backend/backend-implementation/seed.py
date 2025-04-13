@@ -15,37 +15,37 @@ def load_json(file_name):
 def seed_database():
     db = SessionLocal()
     try:
-        # ---- Seed Users ---- #
-        users_data = load_json("users.json")
-        users = []
-        for u in users_data:
-            user = User(
-                username=u["username"],
-                email=u["email"],
-                hashed_password=get_password_hash(u["password"]),
-                is_active=u.get("is_active", True),
-                is_admin=u.get("is_admin", False),
-                email_verified=u.get("email_verified", True),
-                created_at=datetime.utcnow(),
-                updated_at=datetime.utcnow(),
-            )
-            db.add(user)
-            users.append(user)
-        db.commit()
-        for user in users:
-            db.refresh(user)
+        # # ---- Seed Users ---- #
+        # users_data = load_json("users.json")
+        # users = []
+        # for u in users_data:
+        #     user = User(
+        #         username=u["username"],
+        #         email=u["email"],
+        #         hashed_password=get_password_hash(u["password"]),
+        #         is_active=u.get("is_active", True),
+        #         is_admin=u.get("is_admin", False),
+        #         email_verified=u.get("email_verified", True),
+        #         created_at=datetime.utcnow(),
+        #         updated_at=datetime.utcnow(),
+        #     )
+        #     db.add(user)
+        #     users.append(user)
+        # db.commit()
+        # for user in users:
+        #     db.refresh(user)
 
         # ---- Seed Components ---- #
         component_files = [
             ("cpu.json", "CPU"),
-            ("cpu_cooler.json", "Cooler"),
+            ("cpu-cooler.json", "Cooler"),
             ("motherboard.json", "Motherboard"),
             ("memory.json", "RAM"),
             ("storage.json", "Storage"),
-            ("video_card.json", "GPU"),
+            ("videocard.json", "GPU"),
             ("case.json", "Case"),
-            ("power_supply.json", "PSU"),
-            ("operating_system.json", "OS"),
+            ("powersupply.json", "PSU"),
+            ("operatingsystem.json", "OS"),
             ("monitor.json", "Monitor"),
         ]
 

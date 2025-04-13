@@ -1,5 +1,6 @@
 [
     {
+      "user_id": 1,
       "name": "Mid-Range Gaming Build",
       "description": "Balanced performance for 1080p gaming and light streaming.",
       "is_public": true,
@@ -17,6 +18,7 @@
       ]
     },
     {
+      "user_id": 2,
       "name": "High-End Creator Build",
       "description": "Powerful PC for video editing, rendering, and high-end gaming.",
       "is_public": true,
@@ -34,6 +36,7 @@
       ]
     },
     {
+      "user_id": 1,
       "name": "Budget Office Build",
       "description": "Affordable setup for everyday productivity and office work.",
       "is_public": true,

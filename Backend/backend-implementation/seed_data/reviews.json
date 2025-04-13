@@ -1,6 +1,6 @@
 [
     {
-      "user_id": 3,
+      "user_id": 1,
       "component_id": 1,
       "rating": 4,
       "title": "Not what I expected",
@@ -11,7 +11,7 @@
       "updated_at": "2025-04-12T20:32:30.973460"
     },
     {
-      "user_id": 5,
+      "user_id": 1,
       "component_id": 3,
       "rating": 4,
       "title": "Decent for the price",
@@ -33,7 +33,7 @@
       "updated_at": "2025-04-12T20:32:30.973490"
     },
     {
-      "user_id": 4,
+      "user_id": 2,
       "component_id": 9,
       "rating": 5,
       "title": "Decent for the price",
@@ -44,7 +44,7 @@
       "updated_at": "2025-04-12T20:32:30.973507"
     },
     {
-      "user_id": 1,
+      "user_id": 2,
       "component_id": 6,
       "rating": 3,
       "title": "Great performance!",

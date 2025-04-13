@@ -3,8 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import time
 import logging
 
-from . import models, database
-from .routers import components, users
+# from . import models, database
+# from .routers import components, users
 
 # Configure logging
 logging.basicConfig(
@@ -47,8 +47,8 @@ async def log_requests(request: Request, call_next):
 
     return response
 
-app.include_router(components.router, prefix = "/api/v1")
-app.include_router(users.router, prefix="/api/v1")
+# app.include_router(components.router, prefix = "/api/v1")
+# app.include_router(users.router, prefix="/api/v1")
 
 @app.get("/")
 def root():

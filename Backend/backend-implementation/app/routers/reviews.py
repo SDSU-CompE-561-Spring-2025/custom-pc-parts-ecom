@@ -19,11 +19,11 @@ def create_review(
 ):
     return crud.create_review(db=db, review=review, user_id=user.id)
 
-# Get all reviews (optionally: add filters/pagination later)
+# Get reviews 
 @router.get("/", response_model=list[schemas.Review])
 def read_reviews(db: Session = Depends(get_db)):
     return crud.get_reviews(db)
-
+#delete review
 @router.delete("/{review_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_review(review_id: int, db: Session = Depends(get_db), user: models.User = Depends(get_current_active_user)):
     crud.delete_review(db=db, review_id=review_id, user_id=user.id)

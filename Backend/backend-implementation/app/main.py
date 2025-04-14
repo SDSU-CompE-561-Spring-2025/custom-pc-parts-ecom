@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import time
 import logging
 
-from app.routers import components, users  # <- include users here
+from app.routers import components, users, builds
 
 from app.database import engine
 from app import models
@@ -34,9 +34,11 @@ async def log_requests(request: Request, call_next):
     logger.info(f"Request end: {request.method} {request.url.path} - {response.status_code} - {duration:.4f}s")
     return response
 
-# 👇 Include routers
+# Include routers
 app.include_router(components.router, prefix="/api/v1")
 app.include_router(users.router, prefix="/api/v1")
+app.include_router(builds.router, prefix="/api/v1")
+
 
 @app.get("/")
 def root():

@@ -4,7 +4,7 @@ from sqlalchemy import desc, and_, or_, func
 from fastapi import HTTPException, status
 from typing import List, Optional, Dict, Any, Tuple
 from datetime import datetime, timedelta
-
+from auth import get_password_hash # Required since Authentication is completed
 from . import models, schemas
 
 # Component CRUD operations
@@ -43,7 +43,22 @@ def get_components(
     if in_stock is not None:
         query = query.filter(models.Component.in_stock == in_stock)
     
-    return query.offset(skip).limit(limit).all()
+    # Implementing suggestions from Tri
+    # Get total count for pagination
+    total = query.count()
+    
+    # Apply pagination
+    items = query.offset(skip).limit(limit).all()
+    
+    # Calculate current page
+    page = skip // limit + 1 if limit > 0 else 1
+    
+    return {
+        "items": items,
+        "total": total,
+        "page": page,
+        "per_page": limit
+    }
 
 def create_component(db: Session, component: schemas.ComponentCreate) -> models.Component:
     """Create a new component."""
@@ -155,16 +170,13 @@ def create_user(db: Session, user: schemas.UserCreate) -> models.User:
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Username already taken"
         )
-    
-    # Create hashed password in a real application
-    # For demo purposes, we'll just use the plain password
-    # In production, use: hashed_password = pwd_context.hash(user.password)
-    
+    # Connecting Su's hashed_password
+    # Essential to linking the files together
     try:
         db_user = models.User(
             username=user.username,
             email=user.email,
-            hashed_password=user.password,  # Replace with hashed_password in production
+            hashed_password=hashed_password
             is_active=True,
             is_admin=False,
             email_verified=False
@@ -210,8 +222,8 @@ def update_user(db: Session, user_id: int, user_update: Dict[str, Any]) -> model
     
     # Handle password update if provided
     if "password" in user_update:
-        # In production: db_user.hashed_password = pwd_context.hash(user_update["password"])
-        db_user.hashed_password = user_update["password"]
+        # Changing db.user.hashed_password to be similar with Su's files
+        db_user.hashed_password = get_password_hash(user_update["password"])
     
     # Update the updated_at timestamp
     db_user.updated_at = datetime.now()
@@ -880,11 +892,11 @@ def filter_components_by_specs(
             )
     
     return query.offset(skip).limit(limit).all()
+# Implementing changes to check_compatibility suggested by Tri
+# Will further change once all of the backend is completed
 # Compatibility check functions
 def check_compatibility(db: Session, component_ids: List[int]) -> Dict[str, Any]:
     """
-    Check if a set of components are compatible with each other.
-    
     Args:
         db: Database session
         component_ids: List of component IDs to check
@@ -892,6 +904,8 @@ def check_compatibility(db: Session, component_ids: List[int]) -> Dict[str, Any]
     Returns:
         Dictionary with compatibility results
     """
+    if len(components) < 2:
+        return {"compatible": True, "issues": []}
     # Get all components by IDs
     components = []
     for component_id in component_ids:
@@ -1287,15 +1301,12 @@ def create_admin(db: Session, admin_data: Dict[str, Any]) -> models.Admin:
             detail="Email already registered"
         )
     
-    # Create hashed password in a real application
-    # For demo purposes, we'll just use the plain password
-    # In production, use: hashed_password = pwd_context.hash(admin_data["password"])
-    
+    # Changing db_user.hashed_password to be similar with Su's password
     try:
         db_admin = models.Admin(
             username=admin_data["username"],
             email=admin_data["email"],
-            hashed_password=admin_data["password"],  # Replace with hashed_password in production
+            db_user.hashed_password = get_password_hash(user_update["password"])
             permissions=admin_data["permissions"],
             role=admin_data["role"],
             is_active=admin_data.get("is_active", True)
@@ -1331,8 +1342,8 @@ def update_admin(db: Session, admin_id: int, admin_update: Dict[str, Any]) -> mo
     
     # Handle password update if provided
     if "password" in admin_update:
-        # In production: db_admin.hashed_password = pwd_context.hash(admin_update["password"])
-        db_admin.hashed_password = admin_update["password"]
+        # Again, implementing changes that correlate with Su's files
+        db_user.hashed_password = get_password_hash(user_update["password"])
     
     # Update the updated_at timestamp
     db_admin.updated_at = datetime.now()

@@ -5,6 +5,7 @@ from fastapi import HTTPException, status
 from typing import List, Optional, Dict, Any, Tuple
 from datetime import datetime, timedelta
 
+from app.password_utils import get_password_hash
 from . import models, schemas
 
 # Component CRUD operations
@@ -99,6 +100,7 @@ def delete_component(db: Session, component_id: int) -> dict:
         )
 
 # User CRUD operations
+
 def get_user(db: Session, user_id: int) -> models.User:
     """Get a user by ID."""
     user = db.query(models.User).filter(models.User.id == user_id).first()
@@ -121,33 +123,114 @@ def get_users(db: Session, skip: int = 0, limit: int = 100) -> List[models.User]
     """Get a list of users with pagination."""
     return db.query(models.User).offset(skip).limit(limit).all()
 
+# def create_user(db: Session, user: schemas.UserCreate) -> models.User:
+#     """Create a new user."""
+#     # Check if email already exists
+#     db_user = get_user_by_email(db, email=user.email)
+#     if db_user:
+#         raise HTTPException(
+#             status_code=status.HTTP_400_BAD_REQUEST,
+#             detail="Email already registered"
+#         )
+    
+#     # Check if username already exists
+#     db_user = get_user_by_username(db, username=user.username)
+#     if db_user:
+#         raise HTTPException(
+#             status_code=status.HTTP_400_BAD_REQUEST,
+#             detail="Username already taken"
+#         )
+    
+#     # Create hashed password in a real application
+#     # For demo purposes, we'll just use the plain password
+#     # In production, use: hashed_password = pwd_context.hash(user.password)
+    
+#     try:
+#         db_user = models.User(
+#             username=user.username,
+#             email=user.email,
+#             hashed_password=user.password,  # Replace with hashed_password in production
+#             is_active=True,
+#             is_admin=False,
+#             email_verified=False
+#         )
+#         db.add(db_user)
+#         db.commit()
+#         db.refresh(db_user)
+#         return db_user
+#     except IntegrityError:
+#         db.rollback()
+#         raise HTTPException(
+#             status_code=status.HTTP_400_BAD_REQUEST,
+#             detail="Error creating user"
+#         )
+
+# def update_user(db: Session, user_id: int, user_update: Dict[str, Any]) -> models.User:
+#     """Update an existing user."""
+#     db_user = get_user(db, user_id)
+    
+#     # If email is being updated, check it's not already taken
+#     if "email" in user_update and user_update["email"] != db_user.email:
+#         existing_user = get_user_by_email(db, email=user_update["email"])
+#         if existing_user:
+#             raise HTTPException(
+#                 status_code=status.HTTP_400_BAD_REQUEST,
+#                 detail="Email already registered"
+#             )
+    
+#     # If username is being updated, check it's not already taken
+#     if "username" in user_update and user_update["username"] != db_user.username:
+#         existing_user = get_user_by_username(db, username=user_update["username"])
+#         if existing_user:
+#             raise HTTPException(
+#                 status_code=status.HTTP_400_BAD_REQUEST,
+#                 detail="Username already taken"
+#             )
+    
+#     # Update user fields
+#     for key, value in user_update.items():
+#         # Skip password as it needs special handling
+#         if key != "password":
+#             setattr(db_user, key, value)
+    
+#     # Handle password update if provided
+#     if "password" in user_update:
+#         # In production: db_user.hashed_password = pwd_context.hash(user_update["password"])
+#         db_user.hashed_password = user_update["password"]
+    
+#     # Update the updated_at timestamp
+#     db_user.updated_at = datetime.now()
+    
+#     try:
+#         db.add(db_user)
+#         db.commit()
+#         db.refresh(db_user)
+#         return db_user
+#     except IntegrityError:
+#         db.rollback()
+#         raise HTTPException(
+#             status_code=status.HTTP_400_BAD_REQUEST,
+#             detail="Error updating user"
+#         )
 def create_user(db: Session, user: schemas.UserCreate) -> models.User:
     """Create a new user."""
-    # Check if email already exists
-    db_user = get_user_by_email(db, email=user.email)
-    if db_user:
+    if get_user_by_email(db, email=user.email):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Email already registered"
         )
     
-    # Check if username already exists
-    db_user = get_user_by_username(db, username=user.username)
-    if db_user:
+    if get_user_by_username(db, username=user.username):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Username already taken"
         )
-    
-    # Create hashed password in a real application
-    # For demo purposes, we'll just use the plain password
-    # In production, use: hashed_password = pwd_context.hash(user.password)
-    
+
     try:
         db_user = models.User(
             username=user.username,
             email=user.email,
-            hashed_password=user.password,  # Replace with hashed_password in production
+            hashed_password=get_password_hash(user.password),  # ✅ Hash the password
             is_active=True,
             is_admin=False,
             email_verified=False
@@ -166,39 +249,30 @@ def create_user(db: Session, user: schemas.UserCreate) -> models.User:
 def update_user(db: Session, user_id: int, user_update: Dict[str, Any]) -> models.User:
     """Update an existing user."""
     db_user = get_user(db, user_id)
-    
-    # If email is being updated, check it's not already taken
+
     if "email" in user_update and user_update["email"] != db_user.email:
-        existing_user = get_user_by_email(db, email=user_update["email"])
-        if existing_user:
+        if get_user_by_email(db, email=user_update["email"]):
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="Email already registered"
             )
-    
-    # If username is being updated, check it's not already taken
+
     if "username" in user_update and user_update["username"] != db_user.username:
-        existing_user = get_user_by_username(db, username=user_update["username"])
-        if existing_user:
+        if get_user_by_username(db, username=user_update["username"]):
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="Username already taken"
             )
-    
-    # Update user fields
+
     for key, value in user_update.items():
-        # Skip password as it needs special handling
         if key != "password":
             setattr(db_user, key, value)
-    
-    # Handle password update if provided
+
     if "password" in user_update:
-        # In production: db_user.hashed_password = pwd_context.hash(user_update["password"])
-        db_user.hashed_password = user_update["password"]
-    
-    # Update the updated_at timestamp
+        db_user.hashed_password = get_password_hash(user_update["password"])  # ✅ Hash password on update
+
     db_user.updated_at = datetime.now()
-    
+
     try:
         db.add(db_user)
         db.commit()
@@ -210,7 +284,6 @@ def update_user(db: Session, user_id: int, user_update: Dict[str, Any]) -> model
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Error updating user"
         )
-
 def delete_user(db: Session, user_id: int) -> dict:
     """Delete a user."""
     db_user = get_user(db, user_id)

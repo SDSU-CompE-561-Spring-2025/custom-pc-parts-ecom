@@ -7,15 +7,20 @@
 
 ## Table of Contents
 
-- [Installation](#installation)
+- [](#Instructions)
 - [License](#license)
 
-## Installation
 
-```console
-pip install pcbuilder
+## Instructions
+
+```
+1. Docker Desktop needs to be runnning
+2. Run "docker docker-compose up --build" to start the docker
+3. http://0.0.0.0:8000 to view the app root 
+4. http://0.0.0.0:8000/docs to view the Swagger UI to test endpoints 
 ```
 
 ## License
 
 `pcbuilder` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+

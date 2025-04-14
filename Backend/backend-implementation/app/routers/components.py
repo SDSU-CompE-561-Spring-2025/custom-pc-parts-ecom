@@ -1,20 +1,3 @@
-# from fastapi import APIRouter, Depends, status
-# from sqlalchemy.orm import Session
-
-# from .. import crud, models, schemas
-
-# router = APIRouter(
-#     prefix="/components",
-#     tags=["components"]
-# )
-
-# @router.post("/", response_model=schemas.ComponentResponse, status_code=status.HTTP_201_CREATED)
-
-# def create_component(component: schemas.ComponentCreate, db: Session = Depends(crud.get_db)):
-#     db_component = crud.create_component(db = db, component = component)
-#     return {"success": True, "component": db_component}
-
-
 from fastapi import APIRouter, Depends, HTTPException, status, Query
 from sqlalchemy.orm import Session
 from typing import Optional
@@ -62,3 +45,26 @@ def create_component(
     new_component = crud.create_component(db, component)
     return {"success": True, "component": new_component}
 
+
+@router.get("/{component_id}", response_model=schemas.Component)
+def get_component_by_id(
+    component_id: int,
+    db: Session = Depends(get_db),
+):
+    return crud.get_component(db, component_id)
+
+
+
+@router.put("/{component_id}", response_model=schemas.ComponentResponse)
+def update_component(
+    component_id: int,
+    component: schemas.ComponentCreate,
+    db: Session = Depends(get_db),
+):
+    updated_component = crud.update_component(db, component_id, component)
+    return {"success": True, "component": updated_component}
+
+
+# @router.delete("/{component_id}", status_code=200)
+# def delete_component(component_id: int, db: Session = Depends(get_db)):
+#     return crud.delete_component(db, component_id)

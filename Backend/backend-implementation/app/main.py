@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import time
 import logging
 
-from app.routers import components, users, builds
+from app.routers import components, users, builds, reviews
 
 #imports the database engine and models to initialize the tables
 from app.database import engine
@@ -42,7 +42,7 @@ async def log_requests(request: Request, call_next):
 app.include_router(components.router, prefix="/api/v1")
 app.include_router(users.router, prefix="/api/v1")
 app.include_router(builds.router, prefix="/api/v1")
-
+app.include_router(reviews.router, prefix="/api/v1")
 
 @app.get("/")
 def root():

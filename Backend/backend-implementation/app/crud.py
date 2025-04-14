@@ -98,6 +98,23 @@ def delete_component(db: Session, component_id: int) -> dict:
             detail=f"Error deleting component: {str(e)}"
         )
 
+# def delete_component(db: Session, component_id: int):
+#     from app.models import Component, BuildComponent
+
+#     # First, delete dependent rows in build_components
+#     db.query(BuildComponent).filter(BuildComponent.component_id == component_id).delete()
+
+#     # Then delete the component itself
+#     component = db.query(Component).filter(Component.id == component_id).first()
+#     if not component:
+#         raise HTTPException(status_code=404, detail="Component not found")
+    
+#     db.delete(component)
+#     db.commit()
+#     return {"success": True}
+
+
+
 # User CRUD operations
 def get_user(db: Session, user_id: int) -> models.User:
     """Get a user by ID."""

@@ -4,6 +4,7 @@ from sqlalchemy import desc, and_, or_, func
 from fastapi import HTTPException, status
 from typing import List, Optional, Dict, Any, Tuple
 from datetime import datetime, timedelta
+from app.password_utils import get_password_hash
 
 from . import models, schemas
 
@@ -138,6 +139,48 @@ def get_users(db: Session, skip: int = 0, limit: int = 100) -> List[models.User]
     """Get a list of users with pagination."""
     return db.query(models.User).offset(skip).limit(limit).all()
 
+# def create_user(db: Session, user: schemas.UserCreate) -> models.User:
+#     """Create a new user."""
+#     # Check if email already exists
+#     db_user = get_user_by_email(db, email=user.email)
+#     if db_user:
+#         raise HTTPException(
+#             status_code=status.HTTP_400_BAD_REQUEST,
+#             detail="Email already registered"
+#         )
+    
+#     # Check if username already exists
+#     db_user = get_user_by_username(db, username=user.username)
+#     if db_user:
+#         raise HTTPException(
+#             status_code=status.HTTP_400_BAD_REQUEST,
+#             detail="Username already taken"
+#         )
+    
+#     # Create hashed password in a real application
+#     # For demo purposes, we'll just use the plain password
+#     # In production, use: hashed_password = pwd_context.hash(user.password)
+    
+#     try:
+#         db_user = models.User(
+#             username=user.username,
+#             email=user.email,
+#             hashed_password=user.password,  # Replace with hashed_password in production
+#             is_active=True,
+#             is_admin=False,
+#             email_verified=False
+#         )
+#         db.add(db_user)
+#         db.commit()
+#         db.refresh(db_user)
+#         return db_user
+#     except IntegrityError:
+#         db.rollback()
+#         raise HTTPException(
+#             status_code=status.HTTP_400_BAD_REQUEST,
+#             detail="Error creating user"
+#         )
+
 def create_user(db: Session, user: schemas.UserCreate) -> models.User:
     """Create a new user."""
     # Check if email already exists
@@ -156,15 +199,14 @@ def create_user(db: Session, user: schemas.UserCreate) -> models.User:
             detail="Username already taken"
         )
     
-    # Create hashed password in a real application
-    # For demo purposes, we'll just use the plain password
-    # In production, use: hashed_password = pwd_context.hash(user.password)
-    
+    # Secure password hashing
+    hashed_password = get_password_hash(user.password)
+
     try:
         db_user = models.User(
             username=user.username,
             email=user.email,
-            hashed_password=user.password,  # Replace with hashed_password in production
+            hashed_password=hashed_password,
             is_active=True,
             is_admin=False,
             email_verified=False

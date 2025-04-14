@@ -17,7 +17,8 @@
 1. Docker Desktop needs to be runnning
 2. Run "docker docker-compose up --build" to start the docker
 3. http://0.0.0.0:8000 to view the app root 
-4. http://0.0.0.0:8000/docs to view the Swagger UI to test endpoints 
+4. http://0.0.0.0:8000/docs to view the Swagger UI to test endpoints
+5. For testing, split terminal and run "docker exec -it pcbuilder-fastapi hatch run pytest"
 ```
 
 ## License

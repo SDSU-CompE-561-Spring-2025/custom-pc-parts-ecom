@@ -11,6 +11,9 @@ from sqlalchemy.orm import Session
 from app import crud, models, schemas
 from app.database import get_db
 from app.password_utils import get_password_hash, verify_password
+from dotenv import load_dotenv
+load_dotenv()
+
 # Security configs 
 SECRET_KEY = os.getenv("JWT_SECRET_KEY")
 ALGORITHM = "HS256"
@@ -32,6 +35,15 @@ def authenticate_user(db: Session, username: str, password: str):
     if not verify_password(password, user.hashed_password):
         return False
     return user
+
+
+# def authenticate_user(db: Session, email: str, password: str):
+#     user = crud.get_user_by_email(db, email)
+#     if not user:
+#         return False
+#     if not verify_password(password, user.hashed_password):
+#         return False
+#     return user
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     to_encode = data.copy()

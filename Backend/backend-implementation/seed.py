@@ -5,7 +5,7 @@ from app.database import SessionLocal, Base, engine
 from app.models import User, Component, Build, BuildComponent, Review
 from app.auth import get_password_hash
 
-# Initialize DB
+# Initialize database
 Base.metadata.create_all(bind=engine)
 
 def load_json(file_name):
@@ -15,27 +15,27 @@ def load_json(file_name):
 def seed_database():
     db = SessionLocal()
     try:
-        # # ---- Seed Users ---- #
-        # users_data = load_json("users.json")
-        # users = []
-        # for u in users_data:
-        #     user = User(
-        #         username=u["username"],
-        #         email=u["email"],
-        #         hashed_password=get_password_hash(u["password"]),
-        #         is_active=u.get("is_active", True),
-        #         is_admin=u.get("is_admin", False),
-        #         email_verified=u.get("email_verified", True),
-        #         created_at=datetime.utcnow(),
-        #         updated_at=datetime.utcnow(),
-        #     )
-        #     db.add(user)
-        #     users.append(user)
-        # db.commit()
-        # for user in users:
-        #     db.refresh(user)
+        #Seed Users 
+        users_data = load_json("users.json")
+        users = []
+        for u in users_data:
+            user = User(
+                username=u["username"],
+                email=u["email"],
+                hashed_password=get_password_hash(u["password"]),
+                is_active=u.get("is_active", True),
+                is_admin=u.get("is_admin", False),
+                email_verified=u.get("email_verified", True),
+                created_at=datetime.utcnow(),
+                updated_at=datetime.utcnow(),
+            )
+            db.add(user)
+            users.append(user)
+        db.commit()
+        for user in users:
+            db.refresh(user)
 
-        # ---- Seed Components ---- #
+        #Seed Components
         component_files = [
             ("cpu.json", "CPU"),
             ("cpu-cooler.json", "Cooler"),
@@ -70,7 +70,7 @@ def seed_database():
         for component in components:
             db.refresh(component)
 
-        # ---- Seed Builds ---- #
+        # Seed Builds 
         builds_data = load_json("builds.json")
         for b in builds_data:
             build = Build(
@@ -96,7 +96,7 @@ def seed_database():
                 db.add(bc)
             db.commit()
 
-        # ---- Seed Reviews ---- #
+        # Seed Reviews 
         reviews_data = load_json("reviews.json")
         for r in reviews_data:
             review = Review(

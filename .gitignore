@@ -85,3 +85,5 @@ coverage.xml
 
 # FastAPI specific
 .pytest_cache/
+/Frontend/Frontend Implementation/node_modules
+/Frontend/Frontend Implementation/node_modules

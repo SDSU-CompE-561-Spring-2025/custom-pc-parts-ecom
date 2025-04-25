@@ -4,12 +4,12 @@ import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 
 const sidebarItems = [
-  { name: "Components", href: "/components" },
-  { name: "Products", href: "/products" },
-  { name: "Account", href: "/account" },
-  { name: "Your Builds", href: "/your-builds" },
-  { name: "About Us", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: "Components", href: "/pages/components" },
+  { name: "Products", href: "/pages/products" },
+  { name: "Account", href: "/pages/account" },
+  { name: "Your Builds", href: "/pages/your-builds" },
+  { name: "About Us", href: "/pages/about" },
+  { name: "Contact", href: "/pages/contact" },
 ]
 
 export default function Sidebar() {

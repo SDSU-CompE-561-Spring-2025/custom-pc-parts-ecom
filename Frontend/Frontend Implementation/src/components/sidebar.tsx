@@ -7,7 +7,7 @@ const sidebarItems = [
   { name: "Components", href: "/pages/components" },
   { name: "Products", href: "/pages/products" },
   { name: "Account", href: "/pages/account" },
-  { name: "Your Builds", href: "/pages/your-builds" },
+  { name: "Your Builds", href: "/pages/user-builds" },
   { name: "About Us", href: "/pages/about" },
   { name: "Contact", href: "/pages/contact" },
 ]

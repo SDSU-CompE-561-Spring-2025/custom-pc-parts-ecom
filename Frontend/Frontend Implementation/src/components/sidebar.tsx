@@ -4,7 +4,7 @@ import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 
 const sidebarItems = [
-  { name: "Components", href: "/pages/components" },
+  { name: "Components", href: "/pages/browse-components" },
   { name: "Products", href: "/pages/products" },
   { name: "Account", href: "/pages/account" },
   { name: "Your Builds", href: "/pages/user-builds" },

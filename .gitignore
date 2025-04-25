@@ -86,4 +86,26 @@ coverage.xml
 # FastAPI specific
 .pytest_cache/
 /Frontend/Frontend Implementation/node_modules
-/Frontend/Frontend Implementation/node_modules
+
+# Frontend/Node specific
+node_modules/
+.pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js specific
+.next/
+/Frontend/Frontend Implementation/.next/
+out/
+
+# Dependencies
+.pnp.*
+.yarn/*
+
+# Testing
+/coverage
+
+# Temporary files
+*.tmp
+*.temp

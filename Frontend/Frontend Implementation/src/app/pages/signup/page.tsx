@@ -6,7 +6,9 @@ import PCBuilderImage from '@/components/images/PCBuilder.jpg'
 
 export default function SignUpPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="flex flex-col min-h-screen">
+    {/* Main content - container constrained */}
+    <div className="container mx-auto px-4 py-8 flex-grow">
       <div className="flex flex-col md:flex-row gap-8 items-center justify-center max-w-4xl mx-auto">
         {/* PC Image */}
         <div className="aspect-square relative overflow-hidden rounded-lg">
@@ -83,16 +85,17 @@ export default function SignUpPage() {
           </form>
 
           <p className="text-center mt-6">
-            Already have an account?{" "}
-            <Link href="/pages/login" className="text-red-500 hover:underline">
-              Log in
-            </Link>
-          </p>
+              Already have an account?{" "}
+              <Link href="/pages/login" className="text-red-500 hover:underline">
+                Log in
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
-      <main className="flex-1">
-              <Footer />
-            </main>
+      
+      {/* Footer outside of container */}
+      <Footer />
     </div>
   )
 }

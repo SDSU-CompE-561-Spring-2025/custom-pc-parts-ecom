@@ -6,7 +6,9 @@ import Footer from "@/components/Footers"
 
 export default function LoginPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="flex flex-col min-h-screen">
+    {/* Main content - container constrained */}
+    <div className="container mx-auto px-4 py-8 flex-grow">
       <div className="flex flex-col md:flex-row gap-8 items-center justify-center max-w-4xl mx-auto">
         {/* PC Image */}
         <div className="aspect-square relative overflow-hidden rounded-lg">
@@ -46,15 +48,16 @@ export default function LoginPage() {
               </Button>
 
               <Link href="/pages/forgot-password" className="text-red-500 hover:underline flex items-center">
-                Forgot Password?
-              </Link>
-            </div>
-          </form>
+                  Forgot Password?
+                </Link>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-      <main className="flex-1">
-          <Footer />
-      </main>
+      
+      {/* Footer outside of container */}
+      <Footer />
     </div>
   )
 }

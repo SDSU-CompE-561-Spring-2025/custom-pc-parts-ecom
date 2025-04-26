@@ -4,6 +4,7 @@ import { useState } from "react"
 import { CategoryPage } from "@/components/category"
 import { monitorProducts } from "@/data/sample-products"
 import { monitorFilters } from "@/data/filter-configs"
+import Footer from "@/components/Footers"
 
 export default function MonitorPage() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -15,7 +16,7 @@ export default function MonitorPage() {
   }
 
   return (
-    <CategoryPage
+    <><CategoryPage
       title="Monitors"
       products={monitorProducts}
       filters={monitorFilters}
@@ -26,7 +27,6 @@ export default function MonitorPage() {
       }}
       currentPage={currentPage}
       totalPages={10}
-      onPageChange={handlePageChange}
-    />
+      onPageChange={handlePageChange} /><Footer /></>
   )
 }

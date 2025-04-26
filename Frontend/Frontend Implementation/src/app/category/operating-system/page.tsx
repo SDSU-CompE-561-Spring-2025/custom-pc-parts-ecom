@@ -4,6 +4,7 @@ import { useState } from "react"
 import { CategoryPage } from "@/components/category"
 import { osProducts } from "@/data/sample-products"
 import { osFilters } from "@/data/filter-configs"
+import Footer from "@/components/Footers"
 
 export default function OperatingSystemPage() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -15,7 +16,7 @@ export default function OperatingSystemPage() {
   }
 
   return (
-    <CategoryPage
+    <><CategoryPage
       title="Operating Systems"
       products={osProducts}
       filters={osFilters}
@@ -26,7 +27,6 @@ export default function OperatingSystemPage() {
       }}
       currentPage={currentPage}
       totalPages={10}
-      onPageChange={handlePageChange}
-    />
+      onPageChange={handlePageChange} /><Footer /></>
   )
 }

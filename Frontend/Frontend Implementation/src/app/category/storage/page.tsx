@@ -4,6 +4,7 @@ import { useState } from "react"
 import { CategoryPage } from "@/components/category"
 import { storageProducts } from "@/data/sample-products"
 import { storageFilters } from "@/data/filter-configs"
+import Footer from "@/components/Footers"
 
 export default function StoragePage() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -15,7 +16,7 @@ export default function StoragePage() {
   }
 
   return (
-    <CategoryPage
+    <><CategoryPage
       title="Storage"
       products={storageProducts}
       filters={storageFilters}
@@ -26,7 +27,6 @@ export default function StoragePage() {
       }}
       currentPage={currentPage}
       totalPages={10}
-      onPageChange={handlePageChange}
-    />
+      onPageChange={handlePageChange} /><Footer /></>
   )
 }

@@ -4,6 +4,8 @@ import { useState } from "react"
 import { CategoryPage } from "@/components/category"
 import { caseProducts } from "@/data/sample-products"
 import { caseFilters } from "@/data/filter-configs"
+import Footers from "@/components/Footers"
+import Footer from "@/components/Footers"
 
 export default function CasePage() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -15,7 +17,7 @@ export default function CasePage() {
   }
 
   return (
-    <CategoryPage
+    <><CategoryPage
       title="Cases"
       products={caseProducts}
       filters={caseFilters}
@@ -26,7 +28,6 @@ export default function CasePage() {
       }}
       currentPage={currentPage}
       totalPages={10}
-      onPageChange={handlePageChange}
-    />
+      onPageChange={handlePageChange} /><Footer /></>
   )
 }

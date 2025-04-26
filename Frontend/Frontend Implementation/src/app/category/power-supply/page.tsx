@@ -4,6 +4,7 @@ import { useState } from "react"
 import { CategoryPage } from "@/components/category"
 import { powerSupplyProducts } from "@/data/sample-products"
 import { powerSupplyFilters } from "@/data/filter-configs"
+import Footer from "@/components/Footers"
 
 export default function PowerSupplyPage() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -15,7 +16,7 @@ export default function PowerSupplyPage() {
   }
 
   return (
-    <CategoryPage
+    <><CategoryPage
       title="Power Supplies"
       products={powerSupplyProducts}
       filters={powerSupplyFilters}
@@ -26,7 +27,6 @@ export default function PowerSupplyPage() {
       }}
       currentPage={currentPage}
       totalPages={10}
-      onPageChange={handlePageChange}
-    />
+      onPageChange={handlePageChange} /><Footer /></>
   )
 }

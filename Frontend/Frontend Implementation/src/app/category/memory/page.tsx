@@ -4,6 +4,7 @@ import { useState } from "react"
 import { CategoryPage } from "@/components/category"
 import { memoryProducts } from "@/data/sample-products"
 import { memoryFilters } from "@/data/filter-configs"
+import Footer from "@/components/Footers"
 
 export default function MemoryPage() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -15,7 +16,7 @@ export default function MemoryPage() {
   }
 
   return (
-    <CategoryPage
+    <><CategoryPage
       title="Memory (RAM)"
       products={memoryProducts}
       filters={memoryFilters}
@@ -26,7 +27,6 @@ export default function MemoryPage() {
       }}
       currentPage={currentPage}
       totalPages={10}
-      onPageChange={handlePageChange}
-    />
+      onPageChange={handlePageChange} /><Footer /></>
   )
 }

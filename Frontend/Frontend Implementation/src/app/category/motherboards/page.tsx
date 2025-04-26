@@ -4,6 +4,7 @@ import { useState } from "react"
 import { CategoryPage } from "@/components/category"
 import { motherboardProducts } from "@/data/sample-products"
 import { motherboardFilters } from "@/data/filter-configs"
+import Footer from "@/components/Footers"
 
 export default function MotherboardPage() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -15,7 +16,7 @@ export default function MotherboardPage() {
   }
 
   return (
-    <CategoryPage
+    <><CategoryPage
       title="Motherboards"
       products={motherboardProducts}
       filters={motherboardFilters}
@@ -26,7 +27,6 @@ export default function MotherboardPage() {
       }}
       currentPage={currentPage}
       totalPages={10}
-      onPageChange={handlePageChange}
-    />
+      onPageChange={handlePageChange} /><Footer /></>
   )
 }

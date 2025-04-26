@@ -4,6 +4,7 @@ import { useState } from "react"
 import { CategoryPage } from "@/components/category"
 import { videoCardProducts } from "@/data/sample-products"
 import { videoCardFilters } from "@/data/filter-configs"
+import Footer from "@/components/Footers"
 
 export default function VideoCardPage() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -15,7 +16,7 @@ export default function VideoCardPage() {
   }
 
   return (
-    <CategoryPage
+    <><CategoryPage
       title="Video Cards"
       products={videoCardProducts}
       filters={videoCardFilters}
@@ -26,7 +27,6 @@ export default function VideoCardPage() {
       }}
       currentPage={currentPage}
       totalPages={10}
-      onPageChange={handlePageChange}
-    />
+      onPageChange={handlePageChange} /><Footer /></>
   )
 }

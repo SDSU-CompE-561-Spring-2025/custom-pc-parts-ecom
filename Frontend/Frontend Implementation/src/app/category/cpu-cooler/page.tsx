@@ -4,6 +4,7 @@ import { useState } from "react"
 import { CategoryPage } from "@/components/category"
 import { cpuCoolerProducts } from "@/data/sample-products"
 import { cpuCoolerFilters } from "@/data/filter-configs"
+import Footer from "@/components/Footers"
 
 export default function CPUCoolerPage() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -15,7 +16,7 @@ export default function CPUCoolerPage() {
   }
 
   return (
-    <CategoryPage
+    <><CategoryPage
       title="CPU Coolers"
       products={cpuCoolerProducts}
       filters={cpuCoolerFilters}
@@ -26,7 +27,6 @@ export default function CPUCoolerPage() {
       }}
       currentPage={currentPage}
       totalPages={10}
-      onPageChange={handlePageChange}
-    />
+      onPageChange={handlePageChange} /><Footer /></>
   )
 }

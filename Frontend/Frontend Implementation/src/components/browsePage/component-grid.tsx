@@ -90,7 +90,7 @@ export default function ComponentGrid() {
             />
           </div>
           <Link
-            href={`/browse/${component.id}`}
+            href={`/category/${component.id}`}
             className="bg-black text-white w-full py-2 px-4 flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors"
           >
             <Search className="h-4 w-4" />

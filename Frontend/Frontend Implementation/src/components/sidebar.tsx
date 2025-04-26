@@ -14,7 +14,7 @@ const sidebarItems = [
 
 export default function Sidebar() {
   return (
-    <aside className="hidden md:block w-64 border-r min-h-[calc(100vh-64px)]">
+    <aside className="hidden md:block w-64 border-r h-fit">
       <nav className="p-4">
         <ul className="space-y-1">
           {sidebarItems.map((item) => (

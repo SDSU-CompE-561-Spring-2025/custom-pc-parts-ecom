@@ -87,7 +87,7 @@ export default function Footer() {
       {/* Copyright section with full width border */}
       <div className="w-full border-t border-gray-800 mt-8">
         <div className="container mx-auto px-4 pt-8 text-center text-sm text-gray-500">
-          <p>© Copyright Rimel 2022. All right reserved</p>
+          <p>© Copyright PC-Builder 2025. All right reserved</p>
         </div>
       </div>
     </footer>

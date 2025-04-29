@@ -34,9 +34,9 @@ const Navbar = () => {
               <SheetContent side="left" className="w-64">
                 <nav className="flex flex-col gap-3 mt-8 pl-6">
                   <Link href="/" className="text-lg font-medium">Home</Link>
-                  <Link href="/pages/contact" className="text-lg font-medium">Contact</Link>
-                  <Link href="/pages/about" className="text-lg font-medium">About</Link>
-                  <Link href="/pages/signup" className="text-lg font-medium">Sign Up</Link>
+                  <Link href="/contact" className="text-lg font-medium">Contact</Link>
+                  <Link href="/about" className="text-lg font-medium">About</Link>
+                  <Link href="/signup" className="text-lg font-medium">Sign Up</Link>
                 </nav>
               </SheetContent>
             </Sheet>
@@ -51,13 +51,13 @@ const Navbar = () => {
               <Link href="/" className="hover:text-gray-600">
                 Home
               </Link>
-              <Link href="/pages/contact" className="hover:text-gray-600">
+              <Link href="/contact" className="hover:text-gray-600">
                 Contact
               </Link>
-              <Link href="/pages/about" className="hover:text-gray-600">
+              <Link href="/about" className="hover:text-gray-600">
                 About
               </Link>
-              <Link href="/pages/signup" className="hover:text-gray-600">
+              <Link href="/signup" className="hover:text-gray-600">
                 Sign Up
               </Link>
             </nav>

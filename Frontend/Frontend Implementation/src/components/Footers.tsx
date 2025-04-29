@@ -19,8 +19,8 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Support</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="hover:text-green-500">
-                  Contact Us
+                <Link href="mailto:pcbuilder@gmail.com?subject=PC Builder Inquiry" className="hover:text-green-500">
+                  Email Us
                 </Link>
               </li>
               <li>
@@ -35,17 +35,22 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Account</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="hover:text-green-500">
+                <Link href="/account" className="hover:text-green-500">
                   My Account
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-green-500">
-                  Login / Sign Up
+                <Link href="/signup" className="hover:text-green-500">
+                  Sign Up
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-green-500">
+                <Link href="/login" className="hover:text-green-500">
+                  Log In
+                </Link>
+              </li>
+              <li>
+                <Link href="/user-builds" className="hover:text-green-500">
                   Your Builds
                 </Link>
               </li>
@@ -61,12 +66,12 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="hover:text-green-500">
+                <Link href="/about" className="hover:text-green-500">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-green-500">
+                <Link href="/contact" className="hover:text-green-500">
                   Contact
                 </Link>
               </li>
@@ -84,7 +89,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Copyright section with full width border */}
+      {/* Copyright section */}
       <div className="w-full border-t border-gray-800 mt-8">
         <div className="container mx-auto px-4 pt-8 text-center text-sm text-gray-500">
           <p>© Copyright PC-Builder 2025. All right reserved</p>

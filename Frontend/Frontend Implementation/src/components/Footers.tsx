@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">PC Builder</h3>
             <p className="text-red-500 text-sm">Build Better. Build Smart</p>
-            <p className="mt-4 text-sm">pcbuilder@gmail.com</p>
+            <p className="mt-4 text-sm">pcbuildersdsu@gmail.com</p>
             <p className="text-sm">(619)999-9999</p>
           </div>
 
@@ -19,13 +19,8 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Support</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="mailto:pcbuilder@gmail.com?subject=PC Builder Inquiry" className="hover:text-green-500">
+                <Link href="mailto:pcbuildersdsu@gmail.com?subject=PC Builder Inquiry" className="hover:text-green-500">
                   Email Us
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-green-500">
-                  FAQs
                 </Link>
               </li>
             </ul>

@@ -47,7 +47,7 @@ export default function LoginPage() {
                 Log in
               </Button>
 
-              <Link href="/pages/forgot-password" className="text-red-500 hover:underline flex items-center">
+              <Link href="/forgot-password" className="text-red-500 hover:underline flex items-center">
                   Forgot Password?
                 </Link>
               </div>

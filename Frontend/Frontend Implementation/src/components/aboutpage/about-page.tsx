@@ -47,7 +47,7 @@ export default function AboutPage() {
           <h1 className="text-4xl font-bold mb-6">Our Story</h1>
           <div className="space-y-4">
             <p>
-              PC Build Expert started as a class project in 2023 when our team recognized how difficult it was to build
+              PC Builder started as a class project in 2025 when our team recognized how difficult it was to build
               custom computers. As students interested in technology, we wanted to create a solution that would help
               others like us.
             </p>
@@ -71,7 +71,7 @@ export default function AboutPage() {
               design. We hope to continue improving the site based on user feedback and expanding its features
               throughout the semester.
             </p>
-            <p>Thank you for visiting PC Build Expert, where building your dream PC becomes simple and affordable.</p>
+            <p>Thank you for visiting PC Builder, where building your dream PC becomes simple and affordable.</p>
           </div>
         </div>
         <div className="flex items-center justify-center">

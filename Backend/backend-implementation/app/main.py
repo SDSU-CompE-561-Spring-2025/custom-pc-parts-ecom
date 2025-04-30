@@ -3,22 +3,22 @@ from fastapi.middleware.cors import CORSMiddleware
 import time
 import logging
 
-from app.routers import components, users, builds, reviews
+# ✅ Use relative imports
+from .routers import components, users, builds, reviews
+from .database import engine
+from . import models
 
-#imports the database engine and models to initialize the tables
-from app.database import engine
-from app import models
-
-#creates the database tables
+# Create tables
 models.Base.metadata.create_all(bind=engine)
 
-#initializes FastAPI
+# Initialize FastAPI app
 app = FastAPI(
     title="PCBuilder",
-    description="api for pcbuilder",
+    description="API for PCBuilder",
     version="1.0.0"
 )
 
+# Add middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -26,14 +26,13 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-#middleware
+
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
     start_time = time.time()
     logger = logging.getLogger("uvicorn.access")
     logger.info(f"Request start: {request.method} {request.url.path}")
     response = await call_next(request)
-    #tracks response time
     duration = time.time() - start_time
     logger.info(f"Request end: {request.method} {request.url.path} - {response.status_code} - {duration:.4f}s")
     return response

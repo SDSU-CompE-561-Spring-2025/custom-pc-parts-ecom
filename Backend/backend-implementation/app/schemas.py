@@ -155,7 +155,6 @@ class PriceHistoryResponse(BaseModel):
 
 # Review
 class ReviewBase(BaseModel):
-    user_id: int
     component_id: int
     rating: int
     title: Optional[str] = None
@@ -168,11 +167,13 @@ class ReviewCreate(ReviewBase):
 
 class Review(ReviewBase):
     id: int
+    user_id: int
     created_at: datetime
     updated_at: datetime
 
     class Config:
         from_attributes = True
+
 
 class ReviewResponse(BaseModel):
     success: bool = True

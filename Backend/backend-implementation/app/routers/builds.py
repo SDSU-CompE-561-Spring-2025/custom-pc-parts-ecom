@@ -50,3 +50,35 @@ def create_new_build(
     current_user: models.User = Depends(get_current_active_user),
 ):
     return crud.create_build(db, build, user_id=current_user.id)
+
+@router.delete("/{build_id}", status_code=200)
+def delete_build(
+    build_id: int,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_active_user),
+):
+    build = crud.get_build(db, build_id)
+
+    if build.user_id != current_user.id and not current_user.is_admin:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You do not have permission to delete this build"
+        )
+
+    return crud.delete_build(db, build_id)
+
+@router.get("/{build_id}", response_model=schemas.Build)
+def get_user_build_by_id(
+    build_id: int,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_active_user)
+):
+    build = crud.get_build(db, build_id)
+
+    if build.user_id != current_user.id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Not authorized to access this build"
+        )
+
+    return build

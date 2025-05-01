@@ -580,28 +580,24 @@ def get_reviews(
     
     return query.order_by(desc(models.Review.created_at)).offset(skip).limit(limit).all()
 
-def create_review(db: Session, review: schemas.ReviewCreate) -> models.Review:
-    """Create a new review."""
-    # Verify component exists
+def create_review(db: Session, review: schemas.ReviewCreate, user_id: int) -> models.Review:
+    # Confirm the component exists
     get_component(db, review.component_id)
-    
-    # Verify user exists
-    get_user(db, review.user_id)
-    
-    # Check if user already reviewed this component
-    existing_review = db.query(models.Review).filter(
-        models.Review.user_id == review.user_id,
+
+    # Check if this user already left a review
+    existing = db.query(models.Review).filter(
+        models.Review.user_id == user_id,
         models.Review.component_id == review.component_id
     ).first()
-    
-    if existing_review:
+
+    if existing:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="User already reviewed this component"
         )
-    
+
     try:
-        db_review = models.Review(**review.dict())
+        db_review = models.Review(**review.dict(), user_id=user_id)
         db.add(db_review)
         db.commit()
         db.refresh(db_review)
@@ -612,7 +608,7 @@ def create_review(db: Session, review: schemas.ReviewCreate) -> models.Review:
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Error creating review"
         )
-
+        
 def update_review(db: Session, review_id: int, review_update: Dict[str, Any]) -> models.Review:
     """Update an existing review."""
     db_review = get_review(db, review_id)
@@ -636,9 +632,16 @@ def update_review(db: Session, review_id: int, review_update: Dict[str, Any]) ->
             detail="Error updating review"
         )
 
-def delete_review(db: Session, review_id: int) -> dict:
-    """Delete a review."""
+def delete_review(db: Session, review_id: int, user_id: int) -> dict:
+    """Delete a review if the user is the owner."""
     db_review = get_review(db, review_id)
+    
+    if db_review.user_id != user_id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You are not authorized to delete this review."
+        )
+
     try:
         db.delete(db_review)
         db.commit()

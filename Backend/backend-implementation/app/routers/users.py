@@ -57,3 +57,18 @@ async def login_for_access_token(
         expires_delta=access_token_expires,
     )
     return {"access_token": access_token, "token_type": "bearer"}
+
+@router.delete("/{user_id}", status_code=200)
+def delete_user_by_id(
+    user_id: int,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_active_user)
+):
+    if current_user.id != user_id and not current_user.is_admin:
+        raise HTTPException(status_code=403, detail="Not authorized to delete this user")
+
+    return crud.delete_user(db=db, user_id=user_id)
+
+
+
+

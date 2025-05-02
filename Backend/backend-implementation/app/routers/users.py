@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Body
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from datetime import timedelta
@@ -72,3 +72,17 @@ def delete_user_by_id(
 
 
 
+# add user management endpoints
+
+@router.put("/me", response_model=schemas.UserResponse)
+def update_user_profile(
+    user_update: dict = Body(...),
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_active_user)
+):
+    # If user is trying to change password, hash it securely
+    if "password" in user_update:
+        user_update["password"] = get_password_hash(user_update["password"])
+
+    updated_user = crud.update_user(db, current_user.id, user_update)
+    return {"success": True, "user": updated_user}

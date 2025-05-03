@@ -1,56 +1,92 @@
 [
-    {
-      "user_id": 1,
-      "name": "Mid-Range Gaming Build",
-      "description": "Balanced performance for 1080p gaming and light streaming.",
-      "is_public": true,
-      "components": [
-        { "component_id": 1, "quantity": 1 },
-        { "component_id": 5, "quantity": 1 },
-        { "component_id": 9, "quantity": 1 },
-        { "component_id": 13, "quantity": 2 },
-        { "component_id": 19, "quantity": 1 },
-        { "component_id": 24, "quantity": 1 },
-        { "component_id": 27, "quantity": 1 },
-        { "component_id": 30, "quantity": 1 },
-        { "component_id": 36, "quantity": 1 },
-        { "component_id": 42, "quantity": 1 }
-      ]
-    },
-    {
-      "user_id": 2,
-      "name": "High-End Creator Build",
-      "description": "Powerful PC for video editing, rendering, and high-end gaming.",
-      "is_public": true,
-      "components": [
-        { "component_id": 2, "quantity": 1 },
-        { "component_id": 6, "quantity": 1 },
-        { "component_id": 10, "quantity": 1 },
-        { "component_id": 14, "quantity": 2 },
-        { "component_id": 20, "quantity": 1 },
-        { "component_id": 25, "quantity": 1 },
-        { "component_id": 28, "quantity": 1 },
-        { "component_id": 31, "quantity": 1 },
-        { "component_id": 37, "quantity": 1 },
-        { "component_id": 43, "quantity": 1 }
-      ]
-    },
-    {
-      "user_id": 10,
-      "name": "Budget Office Build",
-      "description": "Affordable setup for everyday productivity and office work.",
-      "is_public": true,
-      "components": [
-        { "component_id": 3, "quantity": 1 },
-        { "component_id": 7, "quantity": 1 },
-        { "component_id": 11, "quantity": 1 },
-        { "component_id": 15, "quantity": 1 },
-        { "component_id": 21, "quantity": 1 },
-        { "component_id": 26, "quantity": 1 },
-        { "component_id": 29, "quantity": 1 },
-        { "component_id": 32, "quantity": 1 },
-        { "component_id": 38, "quantity": 1 },
-        { "component_id": 44, "quantity": 1 }
-      ]
-    }
-  ]
+  {
+    "user_id": 1,
+    "name": "Mid-Range Gaming Build",
+    "description": "Balanced performance for 1080p gaming and streaming.",
+    "is_public": true,
+    "components": [
+      { "component_id": 1, "quantity": 1 },
+      { "component_id": 5, "quantity": 1 },
+      { "component_id": 9, "quantity": 1 },
+      { "component_id": 13, "quantity": 2 },
+      { "component_id": 19, "quantity": 1 },
+      { "component_id": 23, "quantity": 1 },
+      { "component_id": 26, "quantity": 1 },
+      { "component_id": 29, "quantity": 1 },
+      { "component_id": 33, "quantity": 1 },
+      { "component_id": 39, "quantity": 1 }
+    ]
+  },
+  {
+    "user_id": 2,
+    "name": "High-End Content Creation Build",
+    "description": "Powerful PC for rendering and high-end gaming.",
+    "is_public": true,
+    "components": [
+      { "component_id": 2, "quantity": 1 },
+      { "component_id": 6, "quantity": 1 },
+      { "component_id": 10, "quantity": 1 },
+      { "component_id": 14, "quantity": 2 },
+      { "component_id": 20, "quantity": 1 },
+      { "component_id": 25, "quantity": 1 },
+      { "component_id": 28, "quantity": 1 },
+      { "component_id": 30, "quantity": 1 },
+      { "component_id": 34, "quantity": 1 },
+      { "component_id": 40, "quantity": 1 }
+    ]
+  },
+  {
+    "user_id": 3,
+    "name": "Budget Office Build",
+    "description": "Affordable setup for productivity and everyday work.",
+    "is_public": true,
+    "components": [
+      { "component_id": 3, "quantity": 1 },
+      { "component_id": 7, "quantity": 1 },
+      { "component_id": 11, "quantity": 1 },
+      { "component_id": 15, "quantity": 1 },
+      { "component_id": 21, "quantity": 1 },
+      { "component_id": 24, "quantity": 1 },
+      { "component_id": 27, "quantity": 1 },
+      { "component_id": 32, "quantity": 1 },
+      { "component_id": 35, "quantity": 1 },
+      { "component_id": 41, "quantity": 1 }
+    ]
+  },
+  {
+    "user_id": 4,
+    "name": "Streaming & Editing Build",
+    "description": "Optimized for live streaming and multitasking.",
+    "is_public": true,
+    "components": [
+      { "component_id": 4, "quantity": 1 },
+      { "component_id": 8, "quantity": 1 },
+      { "component_id": 12, "quantity": 1 },
+      { "component_id": 16, "quantity": 2 },
+      { "component_id": 22, "quantity": 1 },
+      { "component_id": 24, "quantity": 1 },
+      { "component_id": 28, "quantity": 1 },
+      { "component_id": 31, "quantity": 1 },
+      { "component_id": 36, "quantity": 1 },
+      { "component_id": 42, "quantity": 1 }
+    ]
+  },
+  {
+    "user_id": 5,
+    "name": "4K Gaming Beast",
+    "description": "Top-tier build focused on smooth 4K gaming.",
+    "is_public": true,
+    "components": [
+      { "component_id": 1, "quantity": 1 },
+      { "component_id": 8, "quantity": 1 },
+      { "component_id": 12, "quantity": 1 },
+      { "component_id": 18, "quantity": 2 },
+      { "component_id": 20, "quantity": 1 },
+      { "component_id": 25, "quantity": 1 },
+      { "component_id": 27, "quantity": 1 },
+      { "component_id": 31, "quantity": 1 },
+      { "component_id": 38, "quantity": 1 },
+      { "component_id": 44, "quantity": 1 }
+    ]
+  }
+]

@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Eye, Trash2 } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import axios from "axios"
+import { api, isAuthenticated } from "@/lib/auth"
+import Link from "next/link"
 
 interface Build {
   id: number
@@ -17,23 +18,30 @@ interface Build {
 export default function YourBuildsSection() {
   const [builds, setBuilds] = useState<Build[]>([])
   const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [currentIndex, setCurrentIndex] = useState(0)
   const itemsPerPage = 4
 
   useEffect(() => {
     async function fetchBuilds() {
+      if (!isAuthenticated()) {
+        setError(true)
+        setLoading(false)
+        return
+      }
+
       try {
-        const response = await axios.get<Build[]>("http://localhost:8000/api/v1/builds/", {
-          withCredentials: true,
-        })
+        const response = await api.get<Build[]>("/builds/")
         if (response.data && response.data.length > 0) {
           setBuilds(response.data)
         } else {
           setError(true)
         }
       } catch (error) {
-        console.warn("Backend not available or no builds found.")
+        console.warn("Backend not available or no builds found.", error)
         setError(true)
+      } finally {
+        setLoading(false)
       }
     }
 
@@ -50,7 +58,30 @@ export default function YourBuildsSection() {
     )
   }
 
+  const handleDeleteBuild = async (buildId: number) => {
+    try {
+      await api.delete(`/builds/${buildId}`)
+      setBuilds(builds.filter(build => build.id !== buildId))
+    } catch (error) {
+      console.error("Failed to delete build", error)
+    }
+  }
+
   const visibleBuilds = builds.slice(currentIndex, currentIndex + itemsPerPage)
+
+  if (loading) {
+    return (
+      <section className="p-4 mt-8">
+        <div className="border-l-4 border-red-500 pl-2 mb-4">
+          <h3 className="text-sm text-red-500 font-medium">Keep Building</h3>
+        </div>
+        <h2 className="text-2xl font-bold mb-4">Your Builds</h2>
+        <div className="text-center text-gray-500 py-12 text-lg font-semibold">
+          Loading your builds...
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section className="p-4 mt-8">
@@ -72,7 +103,13 @@ export default function YourBuildsSection() {
       {/* Display either builds or error message */}
       {error || builds.length === 0 ? (
         <div className="text-center text-gray-500 py-12 text-lg font-semibold">
-          No builds found.
+          {!isAuthenticated() ? (
+            <>
+              Please <Link href="/login" className="text-red-500 underline">log in</Link> to view your builds.
+            </>
+          ) : (
+            "No builds found."
+          )}
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
@@ -91,6 +128,7 @@ export default function YourBuildsSection() {
                     variant="ghost"
                     size="icon"
                     className="absolute top-2 right-2 bg-white/80 hover:bg-white/90 rounded-full"
+                    onClick={() => handleDeleteBuild(build.id)}
                   >
                     <Trash2 className="h-4 w-4" />
                   </Button>
@@ -111,7 +149,7 @@ export default function YourBuildsSection() {
 
       <div className="flex justify-center mt-6">
         <Button variant="destructive" className="bg-red-500 hover:bg-red-600">
-          View All Builds
+          <Link href="/builder" className="text-white">Build New PC</Link>
         </Button>
       </div>
     </section>

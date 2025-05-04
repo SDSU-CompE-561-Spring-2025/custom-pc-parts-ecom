@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import axios from "axios"
+import { api } from "@/lib/auth"
 
 interface ComponentItem {
   id: number
@@ -14,29 +14,51 @@ interface ComponentItem {
   image_url?: string
 }
 
+interface ComponentResponse {
+  items: ComponentItem[]
+  total: number
+  page: number
+  per_page: number
+}
+
 export default function NewArrivalsSection() {
   const [components, setComponents] = useState<ComponentItem[]>([])
   const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function fetchComponents() {
       try {
-        const response = await axios.get<{ items: ComponentItem[] }>("http://localhost:8000/api/v1/components?page=1&per_page=4", {
-          withCredentials: false,
-        })
+        const response = await api.get<ComponentResponse>("/components?page=1&per_page=4")
         if (response.data.items.length > 0) {
           setComponents(response.data.items)
         } else {
           setError(true)
         }
       } catch (error) {
-        console.warn("Backend not available or no components found.")
+        console.warn("Backend not available or no components found.", error)
         setError(true)
+      } finally {
+        setLoading(false)
       }
     }
 
     fetchComponents()
   }, [])
+
+  if (loading) {
+    return (
+      <section className="p-4 mt-8">
+        <div className="border-l-4 border-red-500 pl-2 mb-4">
+          <h3 className="text-sm text-red-500 font-medium">Featured</h3>
+        </div>
+        <h2 className="text-2xl font-bold mb-4">New Arrivals</h2>
+        <div className="text-center text-gray-500 py-12 text-lg font-semibold">
+          Loading components...
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section className="p-4 mt-8">
@@ -45,7 +67,7 @@ export default function NewArrivalsSection() {
       </div>
       <h2 className="text-2xl font-bold mb-4">New Arrivals</h2>
 
-      {error ? (
+      {error || components.length === 0 ? (
         <div className="text-center text-gray-500 py-12 text-lg font-semibold">
           No components found.
         </div>

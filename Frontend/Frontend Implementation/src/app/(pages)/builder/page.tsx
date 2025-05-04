@@ -1,6 +1,8 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
+import { api, isAuthenticated } from "@/lib/auth"
+import { useRouter } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -11,21 +13,22 @@ interface Component {
   id: number
   name: string
   category: string
-  image_url: string
   price: number
+  brand?: string
+  image_url?: string
 }
 
 export default function BuildYourPC() {
   const [components, setComponents] = useState<Component[]>([])
   const [selectedComponents, setSelectedComponents] = useState<{ [category: string]: Component | null }>({})
   const [loading, setLoading] = useState(true)
+  const router = useRouter()
 
   useEffect(() => {
     async function fetchComponents() {
       try {
-        const response = await fetch("http://localhost:8000/components?page=1&per_page=50")
-        const data = await response.json()
-        setComponents(data.items)
+        const response = await api.get("/components?page=1&per_page=50")
+        setComponents(response.data.items)
         setLoading(false)
       } catch (error) {
         console.error("Failed to fetch components", error)
@@ -47,26 +50,26 @@ export default function BuildYourPC() {
   const total = subtotal
 
   async function handleSubmitBuild() {
+    if (!isAuthenticated()) {
+      router.push("/login")
+      return
+    }
+
     const selectedIds = Object.values(selectedComponents)
       .filter(item => item !== null)
       .map(item => item!.id)
 
     const payload = {
-      component_ids: selectedIds
+      component_ids: selectedIds,
+      name: "Custom Build " + new Date().toLocaleDateString()
     }
 
     try {
-      const response = await fetch("http://localhost:8000/builds/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer YOUR_AUTH_TOKEN_HERE`,
-        },
-        body: JSON.stringify(payload)
-      })
+      const response = await api.post("/builds/", payload)
 
-      if (response.ok) {
+      if (response.status === 200 || response.status === 201) {
         alert("Build submitted successfully!")
+        router.push("/")
       } else {
         console.error("Failed to submit build")
       }
@@ -134,7 +137,7 @@ export default function BuildYourPC() {
             </div>
           </div>
           <Button onClick={handleSubmitBuild} className="w-full mt-4 bg-red-500 hover:bg-red-600 text-white">
-            Submit Build
+            Save Build
           </Button>
         </div>
       </main>

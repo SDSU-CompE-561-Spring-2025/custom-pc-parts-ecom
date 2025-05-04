@@ -23,7 +23,7 @@ export default function YourBuildsSection() {
   useEffect(() => {
     async function fetchBuilds() {
       try {
-        const response = await axios.get<Build[]>("http://localhost:8000/builds/", {
+        const response = await axios.get<Build[]>("http://localhost:8000/api/v1/builds/", {
           withCredentials: true,
         })
         if (response.data && response.data.length > 0) {

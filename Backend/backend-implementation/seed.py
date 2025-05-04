@@ -12,10 +12,13 @@ def load_json(file_name):
     with open(f"seed_data/{file_name}", "r") as f:
         return json.load(f)
 
+
+
 def seed_database():
     db = SessionLocal()
+
     try:
-        #Seed Users 
+        # #Seed Users 
         users_data = load_json("users.json")
         users = []
         for u in users_data:

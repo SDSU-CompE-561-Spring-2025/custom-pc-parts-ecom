@@ -2,6 +2,7 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
+COPY seed_data /app/seed_data
 COPY . /app
 
 RUN pip install hatch uv

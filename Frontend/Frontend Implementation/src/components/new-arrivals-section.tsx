@@ -21,8 +21,8 @@ export default function NewArrivalsSection() {
   useEffect(() => {
     async function fetchComponents() {
       try {
-        const response = await axios.get<{ items: ComponentItem[] }>("http://localhost:8000/components?page=1&per_page=8", {
-          withCredentials: true,
+        const response = await axios.get<{ items: ComponentItem[] }>("http://localhost:8000/api/v1/components?page=1&per_page=4", {
+          withCredentials: false,
         })
         if (response.data.items.length > 0) {
           setComponents(response.data.items)

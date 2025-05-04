@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import PCBuilderImage from '@/components/images/PCBuilder.jpg'
 import Footer from "@/components/Footers"
+import { useState } from "react"
+import axios from "axios"
 
 export default function LoginPage() {
   const router = useRouter()

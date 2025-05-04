@@ -8,17 +8,21 @@ import Sidebar from "@/components/sidebar"
 export default function Home() {
   return (
     <>
-      <main className="flex min-h-screen flex-col px-8">
-        <div className="flex flex-1 justify-center py-8">
-          <div className="flex w-full max-w-7xl gap-8">
-            <div className="w-64 flex flex-col">
+      <main className="flex min-h-screen flex-col">
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex flex-col md:flex-row gap-8">
+            {/* Sidebar - hidden on mobile, shown on md screens and up */}
+            <div className="hidden md:block md:w-64">
               <Sidebar />
             </div>
-            <div className="flex-1 flex">
+            
+            {/* Main content area */}
+            <div className="flex-1">
               <HeroSection />
             </div>
           </div>
         </div>
+        
         <YourBuildsSection />
         <SearchHistorySection />
         <NewArrivalsSection />

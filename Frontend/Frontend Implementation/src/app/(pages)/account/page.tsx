@@ -7,19 +7,119 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Footer from "@/components/Footers"
+import { api, isAuthenticated, logout } from "@/lib/auth"
+import { useRouter } from "next/navigation"
+
+interface UserProfile {
+  id: number
+  username: string
+  email: string
+  first_name?: string
+  last_name?: string
+  is_active: boolean
+}
 
 export default function AccountPage() {
-  const [firstName, setFirstName] = useState("Htet Hnin Su")
-  const [lastName, setLastName] = useState("Wai")
-  const [email, setEmail] = useState("hwai6540@sdsu.com")
+  const router = useRouter()
+  const [loading, setLoading] = useState(true)
+  const [saving, setSaving] = useState(false)
+  const [user, setUser] = useState<UserProfile | null>(null)
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [email, setEmail] = useState("")
+  const [username, setUsername] = useState("")
   const [currentPassword, setCurrentPassword] = useState("")
   const [newPassword, setNewPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
   const [activeSection, setActiveSection] = useState("profile")
+  const [message, setMessage] = useState({ type: "", text: "" })
 
-  const handleSaveChanges = (e: React.FormEvent) => {
+  useEffect(() => {
+    async function fetchUserData() {
+      if (!isAuthenticated()) {
+        router.push("/login")
+        return
+      }
+
+      try {
+        setLoading(true)
+        const response = await api.get<UserProfile>("/users/me")
+        setUser(response.data)
+        
+        // Set form data
+        setFirstName(response.data.first_name || "")
+        setLastName(response.data.last_name || "")
+        setEmail(response.data.email || "")
+        setUsername(response.data.username || "")
+      } catch (error) {
+        console.error("Failed to fetch user data:", error)
+        setMessage({
+          type: "error",
+          text: "Failed to load your profile. Please try again later."
+        })
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchUserData()
+  }, [router])
+
+  const handleSaveChanges = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Profile updated")
+    setMessage({ type: "", text: "" })
+    
+    if (newPassword && newPassword !== confirmPassword) {
+      setMessage({
+        type: "error",
+        text: "New passwords don't match"
+      })
+      return
+    }
+
+    try {
+      setSaving(true)
+      
+      // Update profile information
+      const profileData = {
+        first_name: firstName,
+        last_name: lastName,
+        email: email
+      }
+      
+      await api.patch(`/users/${user?.id}`, profileData)
+      
+      // If password change is requested
+      if (currentPassword && newPassword) {
+        await api.post("/users/change-password", {
+          current_password: currentPassword,
+          new_password: newPassword
+        })
+        
+        // Clear password fields after successful update
+        setCurrentPassword("")
+        setNewPassword("")
+        setConfirmPassword("")
+      }
+      
+      setMessage({
+        type: "success",
+        text: "Your profile has been updated successfully"
+      })
+    } catch (error) {
+      console.error("Failed to update profile:", error)
+      setMessage({
+        type: "error",
+        text: "Failed to update your profile. Please try again."
+      })
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  const handleLogout = () => {
+    logout()
+    router.push("/login")
   }
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
@@ -51,6 +151,16 @@ export default function AccountPage() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-center py-12">
+          <p className="text-lg">Loading your profile...</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <>
       <div className="container mx-auto px-4 py-8">
@@ -65,7 +175,14 @@ export default function AccountPage() {
 
         {/* Welcome Banner */}
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-2xl font-bold">Welcome! Username</h1>
+          <h1 className="text-2xl font-bold">Welcome! {username}</h1>
+          <Button 
+            variant="outline" 
+            onClick={handleLogout}
+            className="text-red-500 border-red-500 hover:bg-red-50"
+          >
+            Logout
+          </Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -121,6 +238,13 @@ export default function AccountPage() {
 
           {/* Main Content */}
           <div className="md:col-span-3">
+            {/* Status Message */}
+            {message.text && (
+              <div className={`mb-6 p-4 rounded ${message.type === "error" ? "bg-red-100 text-red-700" : "bg-green-100 text-green-700"}`}>
+                {message.text}
+              </div>
+            )}
+            
             {/* Edit Profile Section */}
             <section id="profile" className="mb-12 scroll-mt-8">
               <h2 className="text-xl font-bold mb-6">Edit Your Profile</h2>
@@ -207,8 +331,12 @@ export default function AccountPage() {
                 </div>
 
                 <div className="flex justify-end">
-                  <Button type="submit" className="bg-red-500 hover:bg-red-600 text-white">
-                    Save Changes
+                  <Button 
+                    type="submit" 
+                    className="bg-red-500 hover:bg-red-600 text-white"
+                    disabled={saving}
+                  >
+                    {saving ? "Saving..." : "Save Changes"}
                   </Button>
                 </div>
               </form>
@@ -218,17 +346,14 @@ export default function AccountPage() {
             <section id="addresses" className="mb-12 scroll-mt-8">
               <h2 className="text-xl font-bold mb-6">My Addresses</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* This section would be populated from backend data in a future update */}
                 <div className="border p-4 rounded-md">
-                  <h3 className="font-medium mb-2">Address 1</h3>
-                  <p className="text-gray-600">Kingston, 5236, United States</p>
-                </div>
-                <div className="border p-4 rounded-md">
-                  <h3 className="font-medium mb-2">Address 2</h3>
-                  <p className="text-gray-600">Queenston, 5723, United States</p>
+                  <h3 className="font-medium mb-2">Default Address</h3>
+                  <p className="text-gray-600">No addresses saved yet.</p>
                 </div>
               </div>
               <div className="flex justify-end mt-4">
-                <Button className="bg-red-500 hover:bg-red-600 text-white">Edit</Button>
+                <Button className="bg-red-500 hover:bg-red-600 text-white">Add New Address</Button>
               </div>
             </section>
 
@@ -236,89 +361,23 @@ export default function AccountPage() {
             <section id="payment" className="mb-12 scroll-mt-8">
               <h2 className="text-xl font-bold mb-6">My Payment Options</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* This section would be populated from backend data in a future update */}
                 <div className="border p-4 rounded-md">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-8 bg-blue-900 rounded-md flex items-center justify-center text-white text-xs">
-                      VISA
-                    </div>
-                    <div>
-                      <p className="font-medium">Chase Sapphire Preferred</p>
-                      <p className="text-sm text-gray-500">Credit Card Ending in •••• 3654</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="border p-4 rounded-md">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-8 bg-blue-500 rounded-md flex items-center justify-center text-white text-xs">
-                      CITI
-                    </div>
-                    <div>
-                      <p className="font-medium">Citi® Double Cash</p>
-                      <p className="text-sm text-gray-500">Credit Card Ending in •••• 9810</p>
-                    </div>
-                  </div>
+                  <p className="text-gray-600">No payment methods saved yet.</p>
                 </div>
               </div>
               <div className="flex justify-end mt-4">
-                <Button className="bg-red-500 hover:bg-red-600 text-white">Edit</Button>
+                <Button className="bg-red-500 hover:bg-red-600 text-white">Add Payment Method</Button>
               </div>
             </section>
 
             {/* Orders Section */}
-            <section id="orders" className="mb-16 scroll-mt-8">
+            <section id="orders" className="scroll-mt-8">
               <h2 className="text-xl font-bold mb-6">My Orders</h2>
-              <div className="space-y-6">
-                <div className="border rounded-md p-4">
-                  <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-                    <div className="w-16 h-16 bg-gray-100 rounded-md flex-shrink-0">
-                      <Image
-                        src="/placeholder.svg?height=64&width=64"
-                        alt="Thermaltake TH120 V2 ARGB Liquid Cooler"
-                        width={64}
-                        height={64}
-                        className="rounded-md"
-                      />
-                    </div>
-                    <div className="flex-grow">
-                      <p className="font-medium">Thermaltake TH120 V2 ARGB Liquid Cooler CL-W</p>
-                      <p className="text-sm text-gray-500">Qty: 1 | $69.99</p>
-                    </div>
-                    <div className="md:text-right">
-                      <p className="text-green-600 font-medium">Delivered on March 11, 2025</p>
-                      <Link href="#" className="text-blue-500 text-sm">
-                        Details
-                      </Link>
-                    </div>
-                  </div>
+              <div className="border rounded-md overflow-hidden">
+                <div className="p-4">
+                  <p className="text-gray-600">No orders found.</p>
                 </div>
-
-                <div className="border rounded-md p-4">
-                  <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-                    <div className="w-16 h-16 bg-gray-100 rounded-md flex-shrink-0">
-                      <Image
-                        src="/placeholder.svg?height=64&width=64"
-                        alt="SANSUI Monitor"
-                        width={64}
-                        height={64}
-                        className="rounded-md"
-                      />
-                    </div>
-                    <div className="flex-grow">
-                      <p className="font-medium">SANSUI Monitor 22 inch 1080p HD 75Hz Computer Monitor with HDMI VGA</p>
-                      <p className="text-sm text-gray-500">Qty: 1 | $79.99</p>
-                    </div>
-                    <div className="md:text-right">
-                      <p className="text-blue-600 font-medium">Shipped on March 3, 2025</p>
-                      <Link href="#" className="text-blue-500 text-sm">
-                        Details
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex justify-center mt-6">
-                <Button className="bg-red-500 hover:bg-red-600 text-white">View More</Button>
               </div>
             </section>
           </div>

@@ -33,25 +33,41 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="p-4">
-      <div className="relative bg-black text-white rounded-lg overflow-hidden w-full max-w-7xl mx-auto">
-        <div className="p-8 flex flex-col md:flex-row items-center justify-between h-full w-full">
-          <div className="md:w-1/2 space-y-4 z-10">
-            <h2 className="text-3xl font-bold">{images[currentImage].title}</h2>
+    <section className="w-full">
+      <div className="relative bg-black text-white rounded-lg overflow-hidden h-[400px]">
+        {/* Background image with overlay */}
+        <div className="absolute inset-0">
+          <Image
+            src={images[currentImage].src}
+            alt="background"
+            fill
+            className="object-cover opacity-30"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent"></div>
+        </div>
+        
+        {/* Content container with fixed dimensions */}
+        <div className="relative h-full z-10 p-8 flex flex-col md:flex-row items-center">
+          {/* Text content */}
+          <div className="md:w-1/2 space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold">{images[currentImage].title}</h2>
             <p className="text-xl">{images[currentImage].description}</p>
-            <Button className="bg-green-500 hover:bg-green-600 text-white">
+            <Button className="bg-red-500 hover:bg-red-600 text-white mt-4">
               Learn More
             </Button>
           </div>
-          <div className="md:w-1/2 flex justify-center items-center">
-            <div className="relative w-[600px] h-[315px]">
+          
+          {/* Image container with aspect ratio */}
+          <div className="md:w-1/2 flex justify-center items-center p-4">
+            <div className="relative w-full max-w-[400px] aspect-[16/9]">
               <Image
                 src={images[currentImage].src}
                 alt={images[currentImage].title}
                 fill
                 className="object-contain rounded-lg"
                 priority
-                sizes="600px"
+                sizes="(max-width: 768px) 100vw, 400px"
               />
             </div>
           </div>

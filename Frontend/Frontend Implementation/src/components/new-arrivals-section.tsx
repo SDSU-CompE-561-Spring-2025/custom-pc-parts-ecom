@@ -89,7 +89,7 @@ export default function NewArrivalsSection() {
                   Browse Now
                 </Button>
               </div>
-              <div className="mt-8">
+              <div className="mt-8 h-[200px]">
                 <Image
                   src={item.image_url || "/placeholder.svg"}
                   alt={item.name}

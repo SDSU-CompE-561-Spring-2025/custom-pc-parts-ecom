@@ -13,7 +13,7 @@
         "graphics": "Radeon",
         "smt": true
       },
-      "image_url": null,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_icVkBIOI_lCUVOcdPgbh8sOK86IN4iaOhQ&s",
       "in_stock": true
     },
     {
@@ -30,7 +30,7 @@
         "graphics": "Radeon",
         "smt": true
       },
-      "image_url": null,
+      "image_url": "https://m.media-amazon.com/images/I/51UWjMwlNmL._AC_UF894,1000_QL80_.jpg",
       "in_stock": true
     },
     {
@@ -47,7 +47,7 @@
         "graphics": null,
         "smt": true
       },
-      "image_url": null,
+      "image_url": "https://m.media-amazon.com/images/I/51ld6RR8IrL.jpg",
       "in_stock": true
     },
     {
@@ -64,7 +64,7 @@
         "graphics": "Radeon",
         "smt": true
       },
-      "image_url": null,
+      "image_url": "https://m.media-amazon.com/images/I/61h39mKsSBL.jpg",
       "in_stock": true
     }
   ]

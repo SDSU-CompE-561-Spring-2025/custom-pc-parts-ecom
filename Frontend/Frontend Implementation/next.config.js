@@ -8,6 +8,10 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    domains: [
+      'encrypted-tbn0.gstatic.com',
+      'm.media-amazon.com'
+    ],
     remotePatterns: [
       {
         protocol: "https",

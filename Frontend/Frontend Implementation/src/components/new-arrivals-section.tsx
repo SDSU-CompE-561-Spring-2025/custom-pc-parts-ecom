@@ -89,14 +89,23 @@ export default function NewArrivalsSection() {
                   Browse Now
                 </Button>
               </div>
-              <div className="mt-8 h-[200px]">
-                <Image
-                  src={item.image_url || "/placeholder.svg"}
-                  alt={item.name}
-                  width={400}
-                  height={200}
-                  className="w-full object-contain"
-                />
+
+              <div className="mt-8 h-[200px] w-full relative">
+                {item.image_url ? (
+                  <Image
+                    src={item.image_url}
+                    alt={item.name}
+                    fill
+                    className="object-contain mx-auto"
+                  />
+                ) : (
+                  <Image
+                    src="/placeholder.svg"
+                    alt="No Image"
+                    fill
+                    className="object-contain mx-auto"
+                  />
+                )}
               </div>
             </div>
           ))}

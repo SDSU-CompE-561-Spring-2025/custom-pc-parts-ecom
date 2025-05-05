@@ -5,7 +5,7 @@ import { useParams } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import Footer from "@/components/Footers"
-import { cpuCoolerProducts } from "@/data/sample-products"
+import { cpuProducts } from "@/data/sample-products"
 import { StarRating } from "@/components/star-rating"
 
 // Mock reviews data
@@ -63,7 +63,7 @@ export default function ProductDetailPage() {
   
   useEffect(() => {
     // Find the product by ID from the caseProducts array
-    const foundProduct = cpuCoolerProducts.find(p => p.id.toString() === productId)
+    const foundProduct = cpuProducts.find(p => p.id.toString() === productId)
     
     if (foundProduct) {
       setProduct(foundProduct)
@@ -143,7 +143,7 @@ export default function ProductDetailPage() {
         <div className="flex text-sm text-gray-500 mb-6">
           <Link href="/browse-components" className="hover:underline">Components</Link>
           <span className="mx-2">&gt;</span>
-          <Link href="/category/cpu-cooler" className="hover:underline">CPU Cooler</Link>
+          <Link href="/category/cpu" className="hover:underline">CPU</Link>
           <span className="mx-2">&gt;</span>
           <span>{product.title}</span>
         </div>
@@ -180,7 +180,7 @@ export default function ProductDetailPage() {
             
             <div className="text-2xl font-bold text-gray-900 mb-6">${product.price.toFixed(2)}</div>
             
-            <p className="text-gray-700 mb-6">{product.description || "A high-quality CPU Cooler designed for optimal airflow and component compatibility."}</p>
+            <p className="text-gray-700 mb-6">{product.description || "A high-quality CPU designed for optimal airflow and component compatibility."}</p>
             
             {/* Quantity and Add to Build */}
             <div className="flex items-center space-x-4 mb-6">
@@ -197,11 +197,11 @@ export default function ProductDetailPage() {
             <div className="grid grid-cols-2 gap-2">
               <div className="flex justify-between p-2 border-b">
                 <span className="font-medium">Brand:</span>
-                <span>{product.category === "cpu-cooler" ? product.title.split(" ")[0] : "Generic"}</span>
+                <span>{product.category === "cpu" ? product.title.split(" ")[0] : "Generic"}</span>
               </div>
               <div className="flex justify-between p-2 border-b">
                 <span className="font-medium">Category:</span>
-                <span>CPU Cooler</span>
+                <span>CPU</span>
               </div>
               <div className="flex justify-between p-2 border-b">
                 <span className="font-medium">Rating:</span>

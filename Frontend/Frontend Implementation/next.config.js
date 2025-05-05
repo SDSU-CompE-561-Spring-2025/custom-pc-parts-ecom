@@ -8,10 +8,6 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
-    domains: [
-      'encrypted-tbn0.gstatic.com',
-      'm.media-amazon.com'
-    ],
     remotePatterns: [
       {
         protocol: "https",
@@ -32,6 +28,14 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "placehold.co",
+      },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com",
+      },
+      {
+        protocol: "https",
+        hostname: "m.media-amazon.com",
       },
     ],
   },

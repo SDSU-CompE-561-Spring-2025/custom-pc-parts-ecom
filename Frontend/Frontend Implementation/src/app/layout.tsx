@@ -8,9 +8,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "PC Builder",
   description: "Custom PC Builder",
+  icons: {
+    icon: '/images/PCBuilder.jpg',
+  },
 };
-
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>

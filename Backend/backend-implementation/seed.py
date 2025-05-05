@@ -12,8 +12,6 @@ def load_json(file_name):
     with open(f"seed_data/{file_name}", "r") as f:
         return json.load(f)
 
-
-
 def seed_database():
     db = SessionLocal()
 
@@ -56,17 +54,25 @@ def seed_database():
         for filename, category in component_files:
             comp_data = load_json(filename)
             for item in comp_data:
-                component = Component(
-                    name=item["name"],
-                    category=category,
-                    brand=item.get("brand", "Generic"),
-                    model=item.get("model", item["name"][:15]),
-                    price=item["price"] if item["price"] is not None else 0,
-                    specs={k: v for k, v in item.items() if k not in ["name", "price"]},
-                    in_stock=True,
-                    created_at=datetime.utcnow(),
-                    updated_at=datetime.utcnow(),
-                )
+                # Create a dictionary of all properties to be passed to Component
+                component_data = {
+                    "name": item["name"],
+                    "category": category,
+                    "brand": item.get("brand", "Generic"),
+                    "model": item.get("model", item["name"][:15]),
+                    "price": item["price"] if item["price"] is not None else 0,
+                    "specs": {k: v for k, v in item.items() if k not in ["name", "price", "image_url", "brand", "model", "in_stock"]},
+                    "image_url": item.get("image_url"),
+                    "in_stock": item.get("in_stock", True),
+                    "created_at": datetime.utcnow(),
+                    "updated_at": datetime.utcnow(),
+                }
+                
+                # Add image_url if it exists in the JSON
+                if "image_url" in item:
+                    component_data["image_url"] = item["image_url"]
+                
+                component = Component(**component_data)
                 db.add(component)
                 components.append(component)
         db.commit()

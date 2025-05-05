@@ -90,7 +90,7 @@ export const cpuCoolerProducts: Product[] = [
   {
     id: 1,
     title: "NZXT Kraken X73",
-    image: "https://nzxt.com/assets/cms/34299/1615585055-kraken-x73frontbnwith-fanpurple.png?auto=format&fit=crop&h=200&w=2000",
+    image: "https://www.datocms-assets.com/34299/1631748141-kraken-x73-rgb-black-keyshot.png",
     price: 179.99,
     rating: 4.7,
     reviews: 112,
@@ -502,7 +502,7 @@ export const videoCardProducts: Product[] = [
   {
     id: 9,
     title: "Intel Arc A770",
-    image: "https://cdn.wccftech.com/wp-content/uploads/2022/09/Intel-Arc-A770-gpu-1-copy-scaled.jpgf",
+    image: "https://cdn.wccftech.com/wp-content/uploads/2022/09/Intel-Arc-A770-gpu-1-copy-scaled.jpg",
     price: 329.99,
     rating: 4.3,
     reviews: 56,

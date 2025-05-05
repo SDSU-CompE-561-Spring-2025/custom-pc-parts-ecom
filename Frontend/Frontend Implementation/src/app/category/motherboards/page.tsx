@@ -17,16 +17,18 @@ export default function MotherboardPage() {
 
   return (
     <><CategoryPage
-      title="Motherboards"
-      products={motherboardProducts}
-      filters={motherboardFilters}
-      announcement={{
-        text: "Build better, Build Smarter | Our New RTX 9090 Just Dropped!",
-        actionText: "Build Now",
-        actionUrl: "#",
-      }}
-      currentPage={currentPage}
-      totalPages={10}
-      onPageChange={handlePageChange} /><Footer /></>
+    title="Motherboards"
+    products={motherboardProducts}
+    filters={motherboardFilters}
+    categorySlug="motherboards" // Add this line to specify the correct URL path
+    announcement={{
+      text: "Build better, Build Smarter | Our New RTX 9090 Just Dropped!",
+      actionText: "Build Now",
+      actionUrl: "#",
+    }}
+    currentPage={currentPage}
+    totalPages={10}
+    onPageChange={handlePageChange}
+  /><Footer /></>
   )
 }

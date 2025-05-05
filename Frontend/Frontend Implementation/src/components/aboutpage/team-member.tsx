@@ -5,14 +5,15 @@ interface TeamMemberProps {
   name: string
   role: string
   socials: string[]
+  imageUrl: string 
 }
 
-export default function TeamMember({ name, role, socials }: TeamMemberProps) {
+export default function TeamMember({ name, role, socials, imageUrl }: TeamMemberProps) {
   return (
     <div className="flex flex-col items-center">
       <div className="bg-gray-200 rounded-lg overflow-hidden mb-4 w-full aspect-square max-w-[250px]">
         <Image
-          src="/placeholder.svg?height=250&width=250"
+          src={imageUrl || "/placeholder.svg?height=250&width=250"}
           alt={name}
           width={250}
           height={250}

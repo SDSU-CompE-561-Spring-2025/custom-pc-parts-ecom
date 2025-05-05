@@ -5,7 +5,6 @@ import { ChevronRight } from "lucide-react"
 
 const sidebarItems = [
   { name: "Components", href: "/browse-components" },
-  { name: "Products", href: "/category" },
   { name: "Account", href: "/account" },
   { name: "Your Builds", href: "/user-builds" },
   { name: "About Us", href: "/about" },

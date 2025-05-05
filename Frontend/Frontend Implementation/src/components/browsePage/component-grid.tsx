@@ -26,7 +26,7 @@ const components = [
     browseText: "Browse for CPU Coolers",
   },
   {
-    id: "motherboards",
+    id: "motherboard",
     title: "Motherboards",
     image: MotherBoardImage,
     browseText: "Browse for Motherboards",

@@ -26,6 +26,7 @@ interface CategoryPageProps {
   totalPages?: number
   onPageChange?: (page: number) => void
   children?: ReactNode
+  categorySlug?: string
 }
 
 export function CategoryPage({
@@ -37,6 +38,7 @@ export function CategoryPage({
   totalPages = 10,
   onPageChange,
   children,
+  categorySlug,
 }: CategoryPageProps) {
   return (
     <div className="bg-white">

@@ -27,6 +27,8 @@ export default function CPUCoolerPage() {
       }}
       currentPage={currentPage}
       totalPages={10}
-      onPageChange={handlePageChange} /><Footer /></>
+      onPageChange={handlePageChange} 
+      categorySlug="cpu-cooler"
+    /><Footer /></>
   )
 }

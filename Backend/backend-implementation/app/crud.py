@@ -251,9 +251,13 @@ def update_user(db: Session, user_id: int, user_update: Dict[str, Any]) -> model
             setattr(db_user, key, value)
     
     # Handle password update if provided
+    
+    # if "password" in user_update:
+    #     # In production: db_user.hashed_password = pwd_context.hash(user_update["password"])
+    #     db_user.hashed_password = user_update["password"]
+
     if "password" in user_update:
-        # In production: db_user.hashed_password = pwd_context.hash(user_update["password"])
-        db_user.hashed_password = user_update["password"]
+        db_user.hashed_password = get_password_hash(user_update["password"])
     
     # Update the updated_at timestamp
     db_user.updated_at = datetime.now()

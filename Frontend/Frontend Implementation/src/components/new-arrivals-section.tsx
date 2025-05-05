@@ -85,8 +85,8 @@ export default function NewArrivalsSection() {
                   <span className="text-xs bg-gray-800 px-2 py-1 rounded">${item.price}</span>
                 </div>
                 <p className="text-sm mb-4">Discover new {item.category} from top brands.</p>
-                <Button variant="outline" className="text-white border-white hover:bg-gray-800">
-                  Browse Now
+                <Button variant="outline" className="text-red-500 border-white hover:bg-gray-800 hover:text-white">
+                   Browse Now
                 </Button>
               </div>
 

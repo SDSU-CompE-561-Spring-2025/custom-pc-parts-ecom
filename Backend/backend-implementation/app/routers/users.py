@@ -1,11 +1,12 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
-from datetime import timedelta
+from datetime import timedelta, datetime
+from typing import Dict
 
 from .. import crud, models, schemas
 from ..database import get_db
-from ..auth import authenticate_user, create_access_token, ACCESS_TOKEN_EXPIRE_MINUTES, get_current_active_user
+from ..auth import authenticate_user, create_access_token, ACCESS_TOKEN_EXPIRE_MINUTES, get_current_active_user, verify_password, get_password_hash
 
 router = APIRouter(
     prefix="/users",
@@ -24,20 +25,6 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
 async def read_users_me(current_user: models.User = Depends(get_current_active_user)):
     return {"success": True, "user": current_user}
 
-# @router.post("/token", response_model=schemas.TokenResponse)
-# async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
-#     user = authenticate_user(db, form_data.username, form_data.password)
-#     if not user:
-#         raise HTTPException(
-#             status_code=status.HTTP_401_UNAUTHORIZED,
-#             detail="Incorrect username or password",
-#             headers={"WWW-Authenticate": "Bearer"},
-#         )
-#     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
-#     access_token = create_access_token(
-#         data={"sub": user.email}, expires_delta=access_token_expires
-#     )
-#     return {"access_token": access_token, "token_type": "bearer"}
 
 @router.post("/token", response_model=schemas.TokenResponse)
 async def login_for_access_token(
@@ -53,7 +40,8 @@ async def login_for_access_token(
         )
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
-        data={"sub": user.username},  # Good: subject is email
+        #data={"sub": user.username},  # Good: subject is email
+        data={"sub": str(user.id)},
         expires_delta=access_token_expires,
     )
     return {"access_token": access_token, "token_type": "bearer"}
@@ -70,5 +58,47 @@ def delete_user_by_id(
     return crud.delete_user(db=db, user_id=user_id)
 
 
+@router.put("/me", response_model=schemas.UserResponse)
+def update_own_user(
+    user_update: Dict[str, str],
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_active_user)
+):
+    return {
+        "success": True,
+        "user": crud.update_user(db, user_id=current_user.id, user_update=user_update)
+    }
 
 
+# @router.put("/me/password", status_code=200)
+# def change_password(
+#     passwords: schemas.ChangePasswordRequest,
+#     db: Session = Depends(get_db),
+#     current_user: models.User = Depends(get_current_active_user)
+# ):
+#     if not verify_password(passwords.current_password, current_user.hashed_password):
+#         raise HTTPException(status_code=400, detail="Incorrect current password")
+    
+#     current_user.hashed_password = get_password_hash(passwords.new_password)
+#     current_user.updated_at = datetime.now()
+#     db.add(current_user)
+#     db.commit()
+#     return {"success": True, "message": "Password updated successfully"}
+
+@router.put("/me/password", response_model=schemas.UserResponse)
+def change_password(
+    passwords: schemas.ChangePasswordRequest,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_active_user)
+):
+    if not verify_password(passwords.current_password, current_user.hashed_password):
+        raise HTTPException(status_code=400, detail="Incorrect current password")
+    
+    current_user.hashed_password = get_password_hash(passwords.new_password)
+    current_user.updated_at = datetime.now()
+
+    db.add(current_user)
+    db.commit()
+    db.refresh(current_user)
+
+    return {"success": True, "user": current_user}

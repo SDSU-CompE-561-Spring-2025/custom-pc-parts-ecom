@@ -287,8 +287,12 @@ class TokenResponse(BaseModel):
     token_type: str = "bearer"
 
 # Token Data for Part 5
+# class TokenData(BaseModel):
+#     username: Optional[str] = None
+
 class TokenData(BaseModel):
-    username: Optional[str] = None
+    user_id: Optional[str] = None
+
 
 # Login Request
 class LoginRequest(BaseModel):
@@ -303,3 +307,9 @@ class PaginatedResponse(GenericModel, Generic[ItemType]):
     total: int
     page: int
     per_page: int
+
+
+class ChangePasswordRequest(BaseModel):
+    current_password: str
+    new_password: str
+

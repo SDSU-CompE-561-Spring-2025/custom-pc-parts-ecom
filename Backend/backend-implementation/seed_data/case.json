@@ -13,6 +13,7 @@
         "external_volume_liters": 48.6,
         "internal_35_bays": 2
       },
+      "image_url": "https://assets.corsair.com/image/upload/c_pad,q_auto,h_1024,w_1024,f_auto/products/Cases/base-4000d-airflow-config/Gallery/4000D_AF_BLACK_01.webp",
       "in_stock": true
     },
     {
@@ -29,6 +30,7 @@
         "external_volume_liters": 47.0,
         "internal_35_bays": 1
       },
+      "image_url":"https://www.datocms-assets.com/34299/1666138830-h5-flow-hero-white.png",
       "in_stock": true
     },
     {
@@ -45,6 +47,7 @@
         "external_volume_liters": 66.9,
         "internal_35_bays": 2
       },
+      "image_url": "https://c1.neweggimages.com/productimage/nb640/11-146-347-10.png",
       "in_stock": true
     }
   ]

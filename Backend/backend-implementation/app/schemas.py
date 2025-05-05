@@ -118,8 +118,12 @@ class BuildComponentBase(BaseModel):
     component_id: int
     quantity: int = 1
 
-class BuildComponentCreate(BuildComponentBase):
-    pass
+# class BuildComponentCreate(BuildComponentBase):
+#     pass
+
+class BuildComponentCreate(BaseModel):
+    component_id: int
+    quantity: int = 1
 
 class BuildComponent(BuildComponentBase):
     id: int

@@ -82,3 +82,69 @@ def get_user_build_by_id(
         )
 
     return build
+
+
+# read all components inside of a specific build
+@router.get("/{build_id}/components", response_model=List[schemas.BuildComponent])
+def get_components_in_build(
+    build_id: int,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_active_user),
+):
+    build = crud.get_build(db, build_id)
+
+    if build.user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Not authorized to view this build")
+
+    return crud.get_build_components(db, build_id)
+
+
+# add a component to a build
+@router.post("/{build_id}/components", response_model=schemas.BuildComponentResponse)
+def add_component_to_build(
+    build_id: int,
+    component_data: schemas.BuildComponentCreate,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_active_user),
+):
+    # Make sure user owns the build
+    build = crud.get_build(db, build_id)
+    if build.user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Not authorized to modify this build")
+
+    build_component = crud.add_component_to_build(
+        db,
+        build_id=build_id,
+        component_id=component_data.component_id,
+        quantity=component_data.quantity
+    )
+    return {"success": True, "build_component": build_component}
+
+
+
+# delete a component inside a build
+@router.delete("/{build_id}/components/by-component-id/{component_id}")
+def remove_component_by_component_id(
+    build_id: int,
+    component_id: int,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_active_user),
+):
+    # Make sure user owns the build
+    build = crud.get_build(db, build_id)
+    if build.user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Not authorized to modify this build")
+
+    # Find the build_component ID
+    build_component = db.query(models.BuildComponent).filter_by(
+        build_id=build_id,
+        component_id=component_id
+    ).first()
+
+    if not build_component:
+        raise HTTPException(status_code=404, detail="Component not found in this build")
+
+    return crud.remove_component_from_build(db, build_component.id)
+
+
+

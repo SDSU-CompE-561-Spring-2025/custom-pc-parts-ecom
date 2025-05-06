@@ -5,6 +5,7 @@ import NewArrivalsSection from "@/components/new-arrivals-section"
 import Footer from "@/components/Footers"
 import Sidebar from "@/components/sidebar"
 
+
 export default function Home() {
   return (
     <>

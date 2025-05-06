@@ -5,13 +5,14 @@ import NewArrivalsSection from "@/components/new-arrivals-section"
 import Footer from "@/components/Footers"
 import Sidebar from "@/components/sidebar"
 
-
 export default function Home() {
   return (
     <>
-      <main className="flex min-h-screen flex-col">
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex min-h-screen flex-col">
+        {/* Main layout container with consistent max-width */}
+        <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Hero section with sidebar */}
+          <div className="flex flex-col md:flex-row gap-8 py-8">
             {/* Sidebar - hidden on mobile, shown on md screens and up */}
             <div className="hidden md:block md:w-64">
               <Sidebar />
@@ -22,13 +23,20 @@ export default function Home() {
               <HeroSection />
             </div>
           </div>
-        </div>
+          
+          {/* Other sections with consistent width */}
+          <YourBuildsSection />
+          <SearchHistorySection />
+          <NewArrivalsSection />
+        </main>
         
-        <YourBuildsSection />
-        <SearchHistorySection />
-        <NewArrivalsSection />
-      </main>
-      <Footer />
+        {/* Footer with same max-width constraint */}
+        <div className="w-full bg-black">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <Footer />
+          </div>
+        </div>
+      </div>
     </>
   )
 }

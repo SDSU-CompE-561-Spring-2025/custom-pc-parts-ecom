@@ -86,7 +86,7 @@ export default function UserBuildsPage() {
               <Button
                 variant="default"
                 className="w-full rounded-t-none flex items-center justify-center gap-2 bg-black hover:bg-gray-800"
-                onClick={() => router.push(`/builds/${build.id}`)}
+                onClick={() => router.push(`/user-builds/${build.id}`)}
               >
                 <Eye className="h-5 w-5" />
                 <span>Details</span>

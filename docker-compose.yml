@@ -21,9 +21,9 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: pcbuilder 
     volumes:
-     - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
     networks:
-     - app_network
+      - app_network
   
   frontend:
     build: "./Frontend/Frontend Implementation"
@@ -33,7 +33,7 @@ services:
     networks:
       - app_network
     environment:
-      - NEXT_PUBLIC_API_URL=http://fastapi:8000
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
 
 volumes:
   postgres_data:

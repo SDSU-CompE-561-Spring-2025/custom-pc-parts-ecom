@@ -47,6 +47,18 @@ export default function SignUpPage() {
       return
     }
 
+    const meetsAllRequirements =
+  /.{8,}/.test(password) &&
+  /[A-Z]/.test(password) &&
+  /[a-z]/.test(password) &&
+  /[0-9]/.test(password) &&
+  /[^A-Za-z0-9]/.test(password);
+
+if (!meetsAllRequirements) {
+  setError("Password does not meet all requirements.");
+  return;
+}
+  
     try {
       const res = await fetch("http://localhost:8000/api/v1/users/", {
         method: "POST",

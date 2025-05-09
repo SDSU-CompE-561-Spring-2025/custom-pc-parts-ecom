@@ -3,7 +3,6 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Eye, Trash2 } from "lucide-react"
-import Image from "next/image"
 import { useState, useEffect } from "react"
 import { api, isAuthenticated } from "@/lib/auth"
 import Link from "next/link"
@@ -11,8 +10,6 @@ import Link from "next/link"
 interface Build {
   id: number
   name: string
-  price: string
-  image: string
 }
 
 export default function YourBuildsSection() {
@@ -32,13 +29,9 @@ export default function YourBuildsSection() {
 
       try {
         const response = await api.get<Build[]>("/builds/")
-        if (response.data && response.data.length > 0) {
-          setBuilds(response.data)
-        } else {
-          setError(true)
-        }
+        setBuilds(response.data)
       } catch (error) {
-        console.warn("Backend not available or no builds found.", error)
+        console.warn("Failed to fetch builds.", error)
         setError(true)
       } finally {
         setLoading(false)
@@ -49,12 +42,14 @@ export default function YourBuildsSection() {
   }, [])
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + itemsPerPage >= builds.length ? 0 : prevIndex + itemsPerPage))
+    setCurrentIndex((prev) =>
+      prev + itemsPerPage >= builds.length ? 0 : prev + itemsPerPage
+    )
   }
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex - itemsPerPage < 0 ? Math.max(0, builds.length - itemsPerPage) : prevIndex - itemsPerPage
+    setCurrentIndex((prev) =>
+      prev - itemsPerPage < 0 ? Math.max(0, builds.length - itemsPerPage) : prev - itemsPerPage
     )
   }
 
@@ -76,9 +71,7 @@ export default function YourBuildsSection() {
           <h3 className="text-sm text-red-500 font-medium">Keep Building</h3>
         </div>
         <h2 className="text-2xl font-bold mb-4">Your Builds</h2>
-        <div className="text-center text-gray-500 py-12 text-lg font-semibold">
-          Loading your builds...
-        </div>
+        <p className="text-center text-gray-500 py-12 text-lg font-semibold">Loading your builds...</p>
       </section>
     )
   }
@@ -88,6 +81,7 @@ export default function YourBuildsSection() {
       <div className="border-l-4 border-red-500 pl-2 mb-4">
         <h3 className="text-sm text-red-500 font-medium">Keep Building</h3>
       </div>
+
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-2xl font-bold">Your Builds</h2>
         <div className="flex gap-2">
@@ -100,9 +94,8 @@ export default function YourBuildsSection() {
         </div>
       </div>
 
-      {/* Display either builds or error message */}
       {error || builds.length === 0 ? (
-        <div className="text-center text-gray-500 py-12 text-lg font-semibold">
+        <p className="text-center text-gray-500 py-12 text-lg font-semibold">
           {!isAuthenticated() ? (
             <>
               Please <Link href="/login" className="text-red-500 underline">log in</Link> to view your builds.
@@ -110,37 +103,34 @@ export default function YourBuildsSection() {
           ) : (
             "No builds found."
           )}
-        </div>
+        </p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {visibleBuilds.map((build) => (
-            <Card key={build.id} className="overflow-hidden">
-              <CardContent className="p-0">
-                <div className="relative">
-                  <Image
-                    src={build.image || "/placeholder.svg"}
-                    alt={build.name}
-                    width={200}
-                    height={200}
-                    className="w-full h-auto"
-                  />
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="absolute top-2 right-2 bg-white/80 hover:bg-white/90 rounded-full"
-                    onClick={() => handleDeleteBuild(build.id)}
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
-                </div>
+            <Card key={build.id}>
+              <CardContent className="p-4 pb-0 relative">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute top-2 right-2 text-gray-500 hover:text-red-600"
+                  onClick={() => handleDeleteBuild(build.id)}
+                >
+                  <Trash2 className="h-4 w-4" />
+                </Button>
+                <h3 className="text-base font-semibold">{build.name}</h3>
               </CardContent>
-              <CardFooter className="flex flex-col items-start p-4 bg-gray-100">
-                <div className="flex items-center gap-2 mb-2">
-                  <Eye className="h-4 w-4" />
-                  <span className="text-xs">Details</span>
-                </div>
-                <h3 className="text-sm font-medium">{build.name}</h3>
-                <p className="text-sm font-bold">{build.price}</p>
+              <CardFooter className="p-4">
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  className="w-full justify-center"
+                  asChild
+                >
+                  <Link href={`/user-builds/${build.id}`}>
+                    <Eye className="mr-2 h-4 w-4" />
+                    Details
+                  </Link>
+                </Button>
               </CardFooter>
             </Card>
           ))}

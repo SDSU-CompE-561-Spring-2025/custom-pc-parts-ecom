@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/Footers"; 
 import { api } from "@/lib/auth";
 
 interface Component {
@@ -27,7 +28,6 @@ export default function BuildDetailsPage({ params }: { params: { id: string } })
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Display label and backend key
   const categories = [
     { label: "CPU", key: "CPU" },
     { label: "Graphics Card", key: "GPU" },
@@ -100,80 +100,88 @@ export default function BuildDetailsPage({ params }: { params: { id: string } })
   }
 
   return (
-    <div className="max-w-5xl mx-auto py-12 px-4">
-      <h1 className="text-3xl font-bold mb-6">
-        {build.name ? `Build: ${build.name}` : `Build #${build.id}`}
-      </h1>
+    <>
+      <div className="max-w-5xl mx-auto py-12 px-4">
+        <h1 className="text-3xl font-bold mb-6">
+          {build.name ? `Build: ${build.name}` : `Build #${build.id}`}
+        </h1>
 
-      <table className="w-full text-left border">
-        <thead>
-          <tr className="border-b">
-            <th className="p-3">Component</th>
-            <th className="p-3">Product</th>
-            <th className="p-3">Price</th>
-            <th className="p-3">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {categories.map(({ label, key }) => {
-            const component = build.components.find((c) => c.category === key);
-            return (
-              <tr key={key} className="border-b">
-                <td className="p-3">{label}</td>
-                <td className="p-3 flex items-center gap-4">
-                  {component ? (
-                    <>
-                      {component.image_url && (
-                        <img
-                          src={component.image_url}
-                          alt={component.name}
-                          className="w-12 h-12 object-contain"
-                        />
-                      )}
-                      {component.name}
-                    </>
-                  ) : (
-                    <span className="text-gray-400 italic">No component</span>
-                  )}
-                </td>
-                <td className="p-3">
-                  {component ? `$${component.price.toFixed(2)}` : "-"}
-                </td>
-                <td className="p-3">
-                  {component ? (
-                    <Button
-                      variant="destructive"
-                      size="sm"
-                      onClick={() => handleRemoveComponent(component.id)}
-                    >
-                      Remove
-                    </Button>
-                  ) : (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() =>
-                        router.push(
-                          `/browse-components?category=${label
-                            .toLowerCase()
-                            .replace(/\s+/g, "-")}&buildId=${build.id}`
-                        )
-                      }
-                    >
-                      Add
-                    </Button>
-                  )}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+        <table className="w-full text-left border">
+          <thead>
+            <tr className="border-b">
+              <th className="p-3">Component</th>
+              <th className="p-3">Product</th>
+              <th className="p-3">Price</th>
+              <th className="p-3">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {categories.map(({ label, key }) => {
+              const component = build.components.find((c) => c.category === key);
+              return (
+                <tr key={key} className="border-b">
+                  <td className="p-3">{label}</td>
+                  <td className="p-3 flex items-center gap-4">
+                    {component ? (
+                      <>
+                        {component.image_url && (
+                          <img
+                            src={component.image_url}
+                            alt={component.name}
+                            className="w-12 h-12 object-contain"
+                          />
+                        )}
+                        {component.name}
+                      </>
+                    ) : (
+                      <span className="text-gray-400 italic">No component</span>
+                    )}
+                  </td>
+                  <td className="p-3">
+                    {component ? `$${component.price.toFixed(2)}` : "-"}
+                  </td>
+                  <td className="p-3">
+                    {component ? (
+                      <Button
+                        variant="destructive"
+                        size="sm"
+                        onClick={() => handleRemoveComponent(component.id)}
+                      >
+                        Remove
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() =>
+                          router.push(
+                            `/browse-components?category=${label
+                              .toLowerCase()
+                              .replace(/\s+/g, "-")}&buildId=${build.id}`
+                          )
+                        }
+                      >
+                        Add
+                      </Button>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
 
-      <div className="mt-6 flex justify-between">
-        <Button variant="outline" onClick={() => router.push("/browse-components")}>Return to Browse</Button>
-        <Button onClick={() => alert("Update cart clicked!")}>Update Build</Button>
+        <div className="mt-6 flex justify-start">
+          <Button variant="outline" onClick={() => router.push("/browse-components")}>
+            ← Return to Browse
+          </Button>
+        </div>
       </div>
-    </div>
+
+      {/* Footer */}
+      <div className="mt-12 border-t pt-8">
+        <Footer />
+      </div>
+    </>
   );
 }

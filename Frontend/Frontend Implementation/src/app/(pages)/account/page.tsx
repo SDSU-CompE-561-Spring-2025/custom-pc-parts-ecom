@@ -12,8 +12,6 @@ interface UserProfile {
   id: number
   username: string
   email: string
-  first_name?: string
-  last_name?: string
   is_active: boolean
 }
 
@@ -22,8 +20,6 @@ export default function AccountPage() {
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [user, setUser] = useState<UserProfile | null>(null)
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
   const [email, setEmail] = useState("")
   const [username, setUsername] = useState("")
   const [currentPassword, setCurrentPassword] = useState("")
@@ -42,8 +38,6 @@ export default function AccountPage() {
         const res = await api.get("/users/me")
         const u = res.data.user
         setUser(u)
-        setFirstName(u.first_name || "")
-        setLastName(u.last_name || "")
         setEmail(u.email || "")
         setUsername(u.username || "")
       } catch (err) {
@@ -68,15 +62,11 @@ export default function AccountPage() {
     try {
       setSaving(true)
 
-      // Update profile
       await api.put("/users/me", {
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        username: username,
+        email,
+        username,
       })
 
-      // Update password if requested
       if (currentPassword && newPassword) {
         await api.put("/users/me/password", {
           current_password: currentPassword,
@@ -104,8 +94,8 @@ export default function AccountPage() {
   if (loading) return <p className="p-6 text-center">Loading...</p>
 
   return (
-    <>
-      <div className="container mx-auto px-4 py-8">
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-grow container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-bold">Welcome! {username}</h1>
           <Button onClick={handleLogout} variant="outline" className="text-red-500 border-red-500">
@@ -120,17 +110,6 @@ export default function AccountPage() {
         )}
 
         <form onSubmit={handleSaveChanges}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label className="block mb-2">First Name</label>
-              <Input value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-            </div>
-            <div>
-              <label className="block mb-2">Last Name</label>
-              <Input value={lastName} onChange={(e) => setLastName(e.target.value)} />
-            </div>
-          </div>
-
           <div className="mb-6">
             <label className="block mb-2">Email</label>
             <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -167,9 +146,11 @@ export default function AccountPage() {
             {saving ? "Saving..." : "Save Changes"}
           </Button>
         </form>
-      </div>
-      <Footer />
-    </>
+      </main>
+
+      <footer className="bg-black">
+        <Footer />
+      </footer>
+    </div>
   )
 }
-

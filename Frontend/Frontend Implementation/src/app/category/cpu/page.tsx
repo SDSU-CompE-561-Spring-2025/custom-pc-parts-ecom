@@ -1,29 +1,41 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
+import { CategoryPage, type Product } from "@/components/category"
+import { cpuProducts } from "@/data/sample-products"
+import { cpuFilters } from "@/data/filter-configs"
+import Footer from "@/components/Footers"
 import { api } from "@/lib/auth"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-
-interface Component {
-  id: number
-  name: string
-  brand: string
-  price: number
-  image_url?: string
-}
 
 export default function CpuCategoryPage() {
-  const [components, setComponents] = useState<Component[]>([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const [paginatedProducts, setPaginatedProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
-
+  const [apiProducts, setApiProducts] = useState<Product[]>([])
+  
+  // Define how many products to show per page
+  const productsPerPage = 9
+  
+  // Fetch products from API
   useEffect(() => {
     const fetchComponents = async () => {
       try {
         const response = await api.get("/components?category=CPU")
-        setComponents(response.data.items)
+        // Convert API response to Product format
+        const formattedProducts: Product[] = response.data.items.map((cpu: any) => ({
+          id: cpu.id,
+          title: cpu.name,
+          image: cpu.image_url || "https://placehold.co/200x200?text=CPU",
+          price: cpu.price,
+          rating: cpu.rating || 4.5,
+          reviews: cpu.reviews || 10,
+          category: "cpu"
+        }));
+        setApiProducts(formattedProducts);
       } catch (error) {
         console.error("Failed to fetch components:", error)
+        // Fall back to sample data if API fails
+        setApiProducts(cpuProducts);
       } finally {
         setLoading(false)
       }
@@ -31,34 +43,54 @@ export default function CpuCategoryPage() {
 
     fetchComponents()
   }, [])
+  
+  // Calculate total pages dynamically based on data length
+  const totalPages = Math.ceil((apiProducts.length || cpuProducts.length) / productsPerPage)
+  
+  // Update displayed products when page changes or when products are loaded
+  useEffect(() => {
+    if (apiProducts.length > 0 || cpuProducts) {
+      const products = apiProducts.length > 0 ? apiProducts : cpuProducts;
+      const startIndex = (currentPage - 1) * productsPerPage;
+      const endIndex = startIndex + productsPerPage;
+      setPaginatedProducts(products.slice(startIndex, endIndex));
+    }
+  }, [currentPage, apiProducts]);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+    // Scroll to top when changing pages for better UX
+    window.scrollTo(0, 0)
+  }
 
   if (loading) {
-    return <div className="p-4 text-center">Loading...</div>
+    return (
+      <div className="flex flex-col min-h-screen">
+        <div className="flex-grow p-4 text-center">Loading...</div>
+        <Footer />
+      </div>
+    )
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-6">Available CPUs</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {components.map((cpu) => (
-          <div
-            key={cpu.id}
-            className="border rounded-lg p-4 shadow-sm flex flex-col items-center"
-          >
-            <img
-              src={cpu.image_url}
-              alt={cpu.name}
-              className="w-40 h-40 object-contain mb-4"
-            />
-            <h2 className="text-lg font-semibold text-center">{cpu.name}</h2>
-            <p className="text-sm text-gray-500">{cpu.brand}</p>
-            <p className="mt-1 font-medium">${cpu.price.toFixed(2)}</p>
-            <Link href={`/category/cpu/${cpu.id}`}>
-              <Button className="mt-4 w-full">View Details</Button>
-            </Link>
-          </div>
-        ))}
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-grow">
+        <CategoryPage
+          title="CPUs"
+          products={paginatedProducts}
+          filters={cpuFilters}
+          announcement={{
+            text: "Build better, Build Smarter | Our New CPUs Just Arrived!",
+            actionText: "Build Now",
+            actionUrl: "#",
+          }}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+          categorySlug="cpu"
+        />
       </div>
+      <Footer />
     </div>
   )
 }

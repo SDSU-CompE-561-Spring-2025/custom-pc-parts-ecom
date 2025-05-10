@@ -1,16 +1,4 @@
-version: '3.8'
-
 services:
-  fastapi:
-    build: ./Backend/backend-implementation
-    container_name: pcbuilder-fastapi
-    ports:
-      - "8000:8000"
-    depends_on:
-      - postgres
-    networks:
-      - app_network
-
   postgres:
     image: postgres:15
     container_name: pcbuilder-postgres
@@ -21,23 +9,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: pcbuilder 
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - app_network
-  
-  frontend:
-    build: "./Frontend/Frontend Implementation"
-    container_name: pcbuilder-frontend
-    ports:
-      - "3000:3000"
-    networks:
-      - app_network
-    environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:8000
-
+     - postgres_data:/var/lib/postgresql/data
+     
 volumes:
   postgres_data:
-
-networks:
-  app_network:
-    driver: bridge

@@ -29,14 +29,22 @@ export default function NewArrivalsSection() {
   useEffect(() => {
     async function fetchComponents() {
       try {
+        console.log('Fetching components from:', api.defaults.baseURL + '/components?page=1&per_page=4')
         const response = await api.get<ComponentResponse>("/components?page=1&per_page=4")
+        console.log('Response received:', response.data)
         if (response.data.items.length > 0) {
           setComponents(response.data.items)
         } else {
+          console.warn('No components found in response')
           setError(true)
         }
-      } catch (error) {
-        console.warn("Backend not available or no components found.", error)
+      } catch (error: any) {
+        console.error("Error fetching components:", {
+          message: error.message,
+          response: error.response?.data,
+          status: error.response?.status,
+          headers: error.response?.headers
+        })
         setError(true)
       } finally {
         setLoading(false)

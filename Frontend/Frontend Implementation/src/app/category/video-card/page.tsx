@@ -30,21 +30,23 @@ export default function VideoCardPage() {
   }
 
   return (
-    <>
-      <CategoryPage
-        title="Video Cards"
-        products={paginatedProducts} // Pass only the paginated products
-        filters={videoCardFilters}
-        announcement={{
-          text: "Build better, Build Smarter | Our New RTX 9090 Just Dropped!",
-          actionText: "Build Now",
-          actionUrl: "#",
-        }}
-        currentPage={currentPage}
-        totalPages={totalPages} // Dynamic total pages
-        onPageChange={handlePageChange}
-      />
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-grow">
+        <CategoryPage
+          title="Video Cards"
+          products={paginatedProducts} // Pass only the paginated products
+          filters={videoCardFilters}
+          announcement={{
+            text: "Build better, Build Smarter | Our New RTX 9090 Just Dropped!",
+            actionText: "Build Now",
+            actionUrl: "#",
+          }}
+          currentPage={currentPage}
+          totalPages={totalPages} // Dynamic total pages
+          onPageChange={handlePageChange}
+        />
+      </div>
       <Footer />
-    </>
+    </div>
   )
 }

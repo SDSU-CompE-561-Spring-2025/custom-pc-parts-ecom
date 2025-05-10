@@ -4,7 +4,7 @@ import PCBuilderImage from '@/components/images/PCBuilder.jpg'
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-black text-white py-12">
+    <footer className="w-full bg-black text-white py-12 mt-auto">
       {/* Main content section */}
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

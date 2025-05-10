@@ -148,9 +148,7 @@ export default function AccountPage() {
         </form>
       </main>
 
-      <footer className="bg-black">
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   )
 }

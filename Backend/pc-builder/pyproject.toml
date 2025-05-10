@@ -1,0 +1,61 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pc-builder"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Yousif287", email = "yfaraj0454@sdsu.edu" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/Yousif287/pc-builder#readme"
+Issues = "https://github.com/Yousif287/pc-builder/issues"
+Source = "https://github.com/Yousif287/pc-builder"
+
+[tool.hatch.version]
+path = "src/pc_builder/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/pc_builder tests}"
+
+[tool.coverage.run]
+source_pkgs = ["pc_builder", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/pc_builder/__about__.py",
+]
+
+[tool.coverage.paths]
+pc_builder = ["src/pc_builder", "*/pc-builder/src/pc_builder"]
+tests = ["tests", "*/pc-builder/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]

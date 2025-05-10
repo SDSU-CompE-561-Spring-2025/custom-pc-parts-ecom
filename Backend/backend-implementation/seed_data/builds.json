@@ -5,34 +5,41 @@
     "description": "Balanced performance for 1080p gaming and streaming.",
     "is_public": true,
     "components": [
-      { "component_id": 1, "quantity": 1 },
       { "component_id": 5, "quantity": 1 },
-      { "component_id": 9, "quantity": 1 },
-      { "component_id": 13, "quantity": 2 },
-      { "component_id": 19, "quantity": 1 },
-      { "component_id": 23, "quantity": 1 },
-      { "component_id": 26, "quantity": 1 },
-      { "component_id": 29, "quantity": 1 },
-      { "component_id": 33, "quantity": 1 },
-      { "component_id": 39, "quantity": 1 }
+      { "component_id": 61, "quantity": 1 },
+      { "component_id": 83, "quantity": 1 },
+      { "component_id": 126, "quantity": 1 },
+      { "component_id": 150, "quantity": 1 },
+      { "component_id": 178, "quantity": 1 },
+      { "component_id": 208, "quantity": 1 },
+      { "component_id": 252, "quantity": 1 },
+      { "component_id": 268, "quantity": 1 },
+      { "component_id": 312, "quantity": 1 }
+    ]
+  },
+  {
+    "user_id": 1,
+    "name": "Starter Build (WIP)",
+    "description": "Basic setup in progress for first-time builder.",
+    "is_public": false,
+    "components": [
+      { "component_id": 5, "quantity": 1 },
+      { "component_id": 126, "quantity": 1 },
+      { "component_id": 208, "quantity": 1 }
     ]
   },
   {
     "user_id": 2,
-    "name": "High-End Content Creation Build",
-    "description": "Powerful PC for rendering and high-end gaming.",
+    "name": "Compact Build",
+    "description": "Mini-ITX form factor with big potential.",
     "is_public": true,
     "components": [
-      { "component_id": 2, "quantity": 1 },
-      { "component_id": 6, "quantity": 1 },
-      { "component_id": 10, "quantity": 1 },
-      { "component_id": 14, "quantity": 2 },
-      { "component_id": 20, "quantity": 1 },
-      { "component_id": 25, "quantity": 1 },
-      { "component_id": 28, "quantity": 1 },
-      { "component_id": 30, "quantity": 1 },
-      { "component_id": 34, "quantity": 1 },
-      { "component_id": 40, "quantity": 1 }
+      { "component_id": 14, "quantity": 1 },
+      { "component_id": 60, "quantity": 1 },
+      { "component_id": 90, "quantity": 1 },
+      { "component_id": 136, "quantity": 1 },
+      { "component_id": 166, "quantity": 1 },
+      { "component_id": 193, "quantity": 1 }
     ]
   },
   {
@@ -41,16 +48,26 @@
     "description": "Affordable setup for productivity and everyday work.",
     "is_public": true,
     "components": [
-      { "component_id": 3, "quantity": 1 },
-      { "component_id": 7, "quantity": 1 },
-      { "component_id": 11, "quantity": 1 },
-      { "component_id": 15, "quantity": 1 },
-      { "component_id": 21, "quantity": 1 },
-      { "component_id": 24, "quantity": 1 },
-      { "component_id": 27, "quantity": 1 },
-      { "component_id": 32, "quantity": 1 },
-      { "component_id": 35, "quantity": 1 },
-      { "component_id": 41, "quantity": 1 }
+      { "component_id": 41, "quantity": 1 },
+      { "component_id": 70, "quantity": 1 },
+      { "component_id": 104, "quantity": 1 },
+      { "component_id": 124, "quantity": 1 },
+      { "component_id": 158, "quantity": 1 },
+      { "component_id": 172, "quantity": 1 },
+      { "component_id": 220, "quantity": 1 },
+      { "component_id": 255, "quantity": 1 },
+      { "component_id": 278, "quantity": 1 },
+      { "component_id": 304, "quantity": 1 }
+    ]
+  },
+  {
+    "user_id": 3,
+    "name": "Upgrade Plan",
+    "description": "Planning out a future upgrade from budget parts.",
+    "is_public": false,
+    "components": [
+      { "component_id": 70, "quantity": 1 },
+      { "component_id": 124, "quantity": 1 }
     ]
   },
   {
@@ -59,16 +76,16 @@
     "description": "Optimized for live streaming and multitasking.",
     "is_public": true,
     "components": [
-      { "component_id": 4, "quantity": 1 },
-      { "component_id": 8, "quantity": 1 },
-      { "component_id": 12, "quantity": 1 },
-      { "component_id": 16, "quantity": 2 },
-      { "component_id": 22, "quantity": 1 },
-      { "component_id": 24, "quantity": 1 },
-      { "component_id": 28, "quantity": 1 },
-      { "component_id": 31, "quantity": 1 },
-      { "component_id": 36, "quantity": 1 },
-      { "component_id": 42, "quantity": 1 }
+      { "component_id": 40, "quantity": 1 },
+      { "component_id": 63, "quantity": 1 },
+      { "component_id": 93, "quantity": 1 },
+      { "component_id": 118, "quantity": 1 },
+      { "component_id": 147, "quantity": 1 },
+      { "component_id": 177, "quantity": 1 },
+      { "component_id": 226, "quantity": 1 },
+      { "component_id": 249, "quantity": 1 },
+      { "component_id": 274, "quantity": 1 },
+      { "component_id": 317, "quantity": 1 }
     ]
   },
   {
@@ -77,16 +94,45 @@
     "description": "Top-tier build focused on smooth 4K gaming.",
     "is_public": true,
     "components": [
-      { "component_id": 1, "quantity": 1 },
-      { "component_id": 8, "quantity": 1 },
-      { "component_id": 12, "quantity": 1 },
-      { "component_id": 18, "quantity": 2 },
-      { "component_id": 20, "quantity": 1 },
-      { "component_id": 25, "quantity": 1 },
-      { "component_id": 27, "quantity": 1 },
-      { "component_id": 31, "quantity": 1 },
-      { "component_id": 38, "quantity": 1 },
-      { "component_id": 44, "quantity": 1 }
+      { "component_id": 13, "quantity": 1 },
+      { "component_id": 72, "quantity": 1 },
+      { "component_id": 99, "quantity": 1 },
+      { "component_id": 129, "quantity": 1 },
+      { "component_id": 162, "quantity": 1 },
+      { "component_id": 193, "quantity": 1 },
+      { "component_id": 222, "quantity": 1 },
+      { "component_id": 239, "quantity": 1 },
+      { "component_id": 289, "quantity": 1 },
+      { "component_id": 309, "quantity": 1 }
+    ]
+  },
+  {
+    "user_id": 5,
+    "name": "NAS Storage Setup",
+    "description": "Home server build for file backups and media.",
+    "is_public": false,
+    "components": [
+      { "component_id": 193, "quantity": 1 },
+      { "component_id": 239, "quantity": 1 },
+      { "component_id": 289, "quantity": 1 }
+    ]
+  },
+  {
+    "user_id": 6,
+    "name": "Quiet Productivity Build",
+    "description": "Whisper-quiet workstation for focus and efficiency.",
+    "is_public": true,
+    "components": [
+      { "component_id": 18, "quantity": 1 },
+      { "component_id": 60, "quantity": 1 },
+      { "component_id": 88, "quantity": 1 },
+      { "component_id": 120, "quantity": 1 },
+      { "component_id": 136, "quantity": 1 },
+      { "component_id": 166, "quantity": 1 },
+      { "component_id": 200, "quantity": 1 },
+      { "component_id": 233, "quantity": 1 },
+      { "component_id": 267, "quantity": 1 },
+      { "component_id": 301, "quantity": 1 }
     ]
   }
 ]

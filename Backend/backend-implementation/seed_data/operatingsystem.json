@@ -70,6 +70,414 @@
         "max_memory": 2048
       },
       "in_stock": true
+    },
+    {
+      "name": "Ubuntu 22.04 LTS",
+      "category": "Operating System",
+      "brand": "Canonical",
+      "model": "Ubuntu 22.04 LTS",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Fedora 39 Workstation",
+      "category": "Operating System",
+      "brand": "Fedora Project",
+      "model": "Fedora 39",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Debian 12 Bookworm",
+      "category": "Operating System",
+      "brand": "Debian",
+      "model": "Debian 12",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Linux Mint 21.3 Cinnamon",
+      "category": "Operating System",
+      "brand": "Linux Mint",
+      "model": "Mint 21.3 Cinnamon",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Arch Linux (Rolling Release)",
+      "category": "Operating System",
+      "brand": "Arch Linux",
+      "model": "Arch Rolling",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Microsoft Windows Server 2022 Standard",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows Server 2022 Standard",
+      "price": 1049.99,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 4096
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Microsoft Windows Server 2019 Essentials",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows Server 2019 Essentials",
+      "price": 501.99,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 64
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Microsoft Windows 10 Pro N (64-bit)",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows 10 Pro N",
+      "price": 159.99,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Kali Linux 2024.1",
+      "category": "Operating System",
+      "brand": "Offensive Security",
+      "model": "Kali Linux 2024.1",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Zorin OS 17 Core",
+      "category": "Operating System",
+      "brand": "Zorin",
+      "model": "Zorin OS 17 Core",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Pop!_OS 22.04",
+      "category": "Operating System",
+      "brand": "System76",
+      "model": "Pop!_OS 22.04",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Microsoft Windows 11 Pro for Workstations",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows 11 Pro for Workstations",
+      "price": 309.99,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 6144
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Microsoft Windows 8.1 Pro (64-bit)",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows 8.1 Pro",
+      "price": 139.99,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 512
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Microsoft Windows 7 Ultimate (64-bit)",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows 7 Ultimate",
+      "price": 179.99,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 192
+      },
+      "in_stock": false
+    },
+    {
+      "name": "FreeBSD 14.0-RELEASE",
+      "category": "Operating System",
+      "brand": "FreeBSD",
+      "model": "FreeBSD 14.0",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Red Hat Enterprise Linux 9 (Workstation)",
+      "category": "Operating System",
+      "brand": "Red Hat",
+      "model": "RHEL 9 Workstation",
+      "price": 179.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 4096
+      },
+      "in_stock": true
+    },
+    {
+      "name": "AlmaLinux 9",
+      "category": "Operating System",
+      "brand": "AlmaLinux",
+      "model": "AlmaLinux 9",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "openSUSE Leap 15.6",
+      "category": "Operating System",
+      "brand": "openSUSE",
+      "model": "Leap 15.6",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Slackware 15.0",
+      "category": "Operating System",
+      "brand": "Slackware",
+      "model": "Slackware 15.0",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Windows Server 2016 Standard",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows Server 2016 Standard",
+      "price": 799.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 4096
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Oracle Linux 9",
+      "category": "Operating System",
+      "brand": "Oracle",
+      "model": "Oracle Linux 9",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Microsoft Windows 10 S",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows 10 S",
+      "price": 79.99,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 128
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Tiny Core Linux",
+      "category": "Operating System",
+      "brand": "Tiny Core",
+      "model": "Tiny Core 14.0",
+      "price": 0.00,
+      "specs": {
+        "architecture": "32-bit",
+        "max_memory": 64
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Chrome OS Flex",
+      "category": "Operating System",
+      "brand": "Google",
+      "model": "Chrome OS Flex",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 128
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Microsoft Windows 11 Enterprise (64-bit)",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows 11 Enterprise",
+      "price": 199.99,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 6144
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Microsoft Windows 10 Enterprise (64-bit)",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows 10 Enterprise",
+      "price": 189.99,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 6144
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Windows Server 2022 Datacenter",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows Server 2022 Datacenter",
+      "price": 6155.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 12288
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Rocky Linux 9.3",
+      "category": "Operating System",
+      "brand": "Rocky Linux",
+      "model": "Rocky Linux 9.3",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "elementary OS 7.1 Horus",
+      "category": "Operating System",
+      "brand": "elementary",
+      "model": "OS 7.1",
+      "price": 20.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 128
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Manjaro Linux 23.1",
+      "category": "Operating System",
+      "brand": "Manjaro",
+      "model": "Manjaro 23.1",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Tails 5.20",
+      "category": "Operating System",
+      "brand": "Tails",
+      "model": "Tails 5.20",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 128
+      },
+      "in_stock": true
+    },
+    {
+      "name": "Windows Server 2012 R2 Standard",
+      "category": "Operating System",
+      "brand": "Microsoft",
+      "model": "Windows Server 2012 R2",
+      "price": 449.99,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 4096
+      },
+      "in_stock": false
+    },
+    {
+      "name": "Qubes OS 4.2",
+      "category": "Operating System",
+      "brand": "Qubes OS",
+      "model": "Qubes OS 4.2",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 1024
+      },
+      "in_stock": true
+    },
+    {
+      "name": "SteamOS 3 (Holo)",
+      "category": "Operating System",
+      "brand": "Valve",
+      "model": "SteamOS 3",
+      "price": 0.00,
+      "specs": {
+        "architecture": "64-bit",
+        "max_memory": 2048
+      },
+      "in_stock": true
     }
   ]
   

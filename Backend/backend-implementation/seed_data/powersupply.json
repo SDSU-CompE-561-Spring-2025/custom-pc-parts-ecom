@@ -1,62 +1,450 @@
 [
-    {
-      "name": "Corsair RM750e (2023)",
-      "category": "PSU",
-      "brand": "Corsair",
-      "model": "RM750e (2023)",
-      "price": 99.99,
-      "specs": {
-        "type": "ATX",
-        "efficiency": "gold",
-        "wattage": 750,
-        "modular": "Full",
-        "color": "Black"
-      },
-      "in_stock": true
+  {
+    "name": "Corsair RM750e (2023)",
+    "category": "PSU",
+    "brand": "Corsair",
+    "model": "RM750e (2023)",
+    "price": 99.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 750,
+      "modular": "Full",
+      "color": "Black"
     },
-    {
-      "name": "Corsair RM850e (2023)",
-      "category": "PSU",
-      "brand": "Corsair",
-      "model": "RM850e (2023)",
-      "price": 119.99,
-      "specs": {
-        "type": "ATX",
-        "efficiency": "gold",
-        "wattage": 850,
-        "modular": "Full",
-        "color": "Black"
-      },
-      "in_stock": true
+    "image_url": "https://www.corsair.com/medias/sys_master/images/images/h23/hb7/9642739474462/-CP-9020262-NA-Gallery-RM750e-01.png",
+    "in_stock": true
+  },
+  {
+    "name": "Corsair RM850e (2023)",
+    "category": "PSU",
+    "brand": "Corsair",
+    "model": "RM850e (2023)",
+    "price": 119.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 850,
+      "modular": "Full",
+      "color": "Black"
     },
-    {
-      "name": "Corsair RM1000e (2023)",
-      "category": "PSU",
-      "brand": "Corsair",
-      "model": "RM1000e (2023)",
-      "price": 159.99,
-      "specs": {
-        "type": "ATX",
-        "efficiency": "gold",
-        "wattage": 1000,
-        "modular": "Full",
-        "color": "Black"
-      },
-      "in_stock": true
+    "image_url": "https://www.corsair.com/medias/sys_master/images/images/h1e/h0b/9642740002334/-CP-9020263-NA-Gallery-RM850e-01.png",
+    "in_stock": true
+  },
+  {
+    "name": "Corsair RM1000e (2023)",
+    "category": "PSU",
+    "brand": "Corsair",
+    "model": "RM1000e (2023)",
+    "price": 159.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 1000,
+      "modular": "Full",
+      "color": "Black"
     },
-    {
-      "name": "Corsair RM650 (2023)",
-      "category": "PSU",
-      "brand": "Corsair",
-      "model": "RM650 (2023)",
-      "price": 89.99,
-      "specs": {
-        "type": "ATX",
-        "efficiency": "gold",
-        "wattage": 650,
-        "modular": "Full",
-        "color": "Black"
-      },
-      "in_stock": true
-    }
-  ]
+    "image_url": "https://www.corsair.com/medias/sys_master/images/images/hc1/hb5/9642740530206/-CP-9020264-NA-Gallery-RM1000e-01.png",
+    "in_stock": true
+  },
+  {
+    "name": "Corsair RM650 (2023)",
+    "category": "PSU",
+    "brand": "Corsair",
+    "model": "RM650 (2023)",
+    "price": 89.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 650,
+      "modular": "Full",
+      "color": "Black"
+    },
+    "image_url": "https://www.corsair.com/medias/sys_master/images/images/h4d/hf0/9642738946590/-CP-9020261-NA-Gallery-RM650e-01.png",
+    "in_stock": true
+  },
+  {
+    "name": "EVGA SuperNOVA 750 G6",
+    "category": "PSU",
+    "brand": "EVGA",
+    "model": "SuperNOVA 750 G6",
+    "price": 129.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 750,
+      "modular": "Full",
+      "color": "Black"
+    },
+    "image_url": "https://www.evga.com/products/images/gallery/220-G6-0750-X1_XL_1.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Seasonic FOCUS GX-850",
+    "category": "PSU",
+    "brand": "Seasonic",
+    "model": "FOCUS GX-850",
+    "price": 139.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 850,
+      "modular": "Full",
+      "color": "Black"
+    },
+    "image_url": "https://seasonic.com/pub/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/f/o/focus-gx-850-1.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Thermaltake Toughpower GF1 750W",
+    "category": "PSU",
+    "brand": "Thermaltake",
+    "model": "Toughpower GF1 750W",
+    "price": 119.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 750,
+      "modular": "Full",
+      "color": "Black"
+    },
+    "image_url": "https://www.thermaltake.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/p/s/ps-tpd-0750f3fage-1.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "NZXT C850",
+    "category": "PSU",
+    "brand": "NZXT",
+    "model": "C850",
+    "price": 129.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 850,
+      "modular": "Full",
+      "color": "Black"
+    },
+    "image_url": "https://nzxt.com/assets/cms/34299/1603995446-c850-psu-hero-1.png",
+    "in_stock": true
+  },
+  {
+    "name": "Cooler Master MWE Gold 650 V2",
+    "category": "PSU",
+    "brand": "Cooler Master",
+    "model": "MWE Gold 650 V2",
+    "price": 94.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 650,
+      "modular": "Full",
+      "color": "Black"
+    },
+    "image_url": "https://www.coolermaster.com/media/assets/1008/mwe-gold-650-v2-1.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Corsair SF750",
+    "category": "PSU",
+    "brand": "Corsair",
+    "model": "SF750",
+    "price": 139.99,
+    "specs": {
+      "type": "SFX",
+      "efficiency": "platinum",
+      "wattage": 750,
+      "modular": "Full",
+      "color": "Black"
+    },
+    "image_url": "https://www.corsair.com/medias/sys_master/images/images/hf3/h7e/9642738418718/-CP-9020186-NA-Gallery-SF750-01.png",
+    "in_stock": true
+  },
+  {
+    "name": "Be Quiet! Pure Power 12 M 850W",
+    "category": "PSU",
+    "brand": "Be Quiet!",
+    "model": "Pure Power 12 M 850W",
+    "price": 124.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 850,
+      "modular": "Full",
+      "color": "Black"
+    },
+    "image_url": "https://www.bequiet.com/medias/sys_master/images/images/hf3/h7e/9642738418718/pure-power-12-m-850w-1.png",
+    "in_stock": true
+  },
+  {
+    "name": "Thermaltake Smart BX1 550W",
+    "category": "PSU",
+    "brand": "Thermaltake",
+    "model": "Smart BX1 550W",
+    "price": 54.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "bronze",
+      "wattage": 550,
+      "modular": "Non-Modular",
+      "color": "Black"
+    },
+    "image_url": "https://www.thermaltake.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/p/s/ps-spd-0550nnfabu-1.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "EVGA 600 BR",
+    "category": "PSU",
+    "brand": "EVGA",
+    "model": "600 BR",
+    "price": 49.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "bronze",
+      "wattage": 600,
+      "modular": "Non-Modular",
+      "color": "Black"
+    },
+    "image_url": "https://www.evga.com/products/images/gallery/100-BR-0600-K1_XL_1.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Seasonic PRIME TX-1000",
+    "category": "PSU",
+    "brand": "Seasonic",
+    "model": "PRIME TX-1000",
+    "price": 259.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "titanium",
+      "wattage": 1000,
+      "modular": "Full",
+      "color": "Black"
+    },
+    "image_url": "https://seasonic.com/pub/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/p/r/prime_tx-1000-1.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Corsair CX750M",
+    "category": "PSU",
+    "brand": "Corsair",
+    "model": "CX750M",
+    "price": 84.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "bronze",
+      "wattage": 750,
+      "modular": "Semi",
+      "color": "Black"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "EVGA SuperNOVA 850 P5",
+    "category": "PSU",
+    "brand": "EVGA",
+    "model": "SuperNOVA 850 P5",
+    "price": 149.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "platinum",
+      "wattage": 850,
+      "modular": "Full",
+      "color": "Black"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Thermaltake Smart RGB 700W",
+    "category": "PSU",
+    "brand": "Thermaltake",
+    "model": "Smart RGB 700W",
+    "price": 59.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "white",
+      "wattage": 700,
+      "modular": "Non-Modular",
+      "color": "Black / RGB"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Seasonic B12 BC 550W",
+    "category": "PSU",
+    "brand": "Seasonic",
+    "model": "B12 BC 550W",
+    "price": 49.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "bronze",
+      "wattage": 550,
+      "modular": "Non-Modular",
+      "color": "Black"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Cooler Master MWE Bronze 650",
+    "category": "PSU",
+    "brand": "Cooler Master",
+    "model": "MWE Bronze 650",
+    "price": 69.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "bronze",
+      "wattage": 650,
+      "modular": "Semi",
+      "color": "Black"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Fractal Design Ion+ 860W Platinum",
+    "category": "PSU",
+    "brand": "Fractal Design",
+    "model": "Ion+ 860P",
+    "price": 149.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "platinum",
+      "wattage": 860,
+      "modular": "Full",
+      "color": "Black"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Be Quiet! SFX Power 3 450W",
+    "category": "PSU",
+    "brand": "Be Quiet!",
+    "model": "SFX Power 3 450W",
+    "price": 69.99,
+    "specs": {
+      "type": "SFX",
+      "efficiency": "bronze",
+      "wattage": 450,
+      "modular": "Non-Modular",
+      "color": "Black"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Gigabyte P750GM",
+    "category": "PSU",
+    "brand": "Gigabyte",
+    "model": "P750GM",
+    "price": 89.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 750,
+      "modular": "Full",
+      "color": "Black"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "ADATA XPG Pylon 650W",
+    "category": "PSU",
+    "brand": "ADATA",
+    "model": "XPG Pylon 650W",
+    "price": 74.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "bronze",
+      "wattage": 650,
+      "modular": "Non-Modular",
+      "color": "Black"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "SilverStone ET650-G",
+    "category": "PSU",
+    "brand": "SilverStone",
+    "model": "ET650-G",
+    "price": 84.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 650,
+      "modular": "Semi",
+      "color": "Black"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "ASUS ROG STRIX 750W Gold",
+    "category": "PSU",
+    "brand": "ASUS",
+    "model": "ROG STRIX 750W",
+    "price": 139.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 750,
+      "modular": "Full",
+      "color": "Black / Red"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Thermaltake Toughpower GX1 600W",
+    "category": "PSU",
+    "brand": "Thermaltake",
+    "model": "Toughpower GX1 600W",
+    "price": 64.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 600,
+      "modular": "Non-Modular",
+      "color": "Black"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Super Flower Leadex III 850W",
+    "category": "PSU",
+    "brand": "Super Flower",
+    "model": "Leadex III 850W",
+    "price": 129.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 850,
+      "modular": "Full",
+      "color": "White"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "MSI MPG A750GF",
+    "category": "PSU",
+    "brand": "MSI",
+    "model": "MPG A750GF",
+    "price": 114.99,
+    "specs": {
+      "type": "ATX",
+      "efficiency": "gold",
+      "wattage": 750,
+      "modular": "Full",
+      "color": "Black"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  }
+]

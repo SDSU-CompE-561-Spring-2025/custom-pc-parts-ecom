@@ -1,50 +1,495 @@
 [
-    {
-      "name": "MSI GeForce RTX 3060 Ventus 2X 12G",
-      "category": "GPU",
-      "brand": "MSI",
-      "model": "GeForce RTX 3060 Ventus 2X",
-      "price": 288.00,
-      "specs": {
-        "chipset": "GeForce RTX 3060",
-        "memory_gb": 12,
-        "core_clock_mhz": 1320,
-        "boost_clock_mhz": 1777,
-        "color": "Black",
-        "length_mm": 235
-      },
-      "in_stock": true
+  {
+    "name": "MSI GeForce RTX 3060 Ventus 2X 12G",
+    "category": "GPU",
+    "brand": "MSI",
+    "model": "GeForce RTX 3060 Ventus 2X",
+    "price": 288.00,
+    "specs": {
+      "chipset": "GeForce RTX 3060",
+      "memory_gb": 12,
+      "core_clock_mhz": 1320,
+      "boost_clock_mhz": 1777,
+      "color": "Black",
+      "length_mm": 235
     },
-    {
-      "name": "Gigabyte WINDFORCE OC",
-      "category": "GPU",
-      "brand": "Gigabyte",
-      "model": "WINDFORCE OC RTX 4070",
-      "price": 581.19,
-      "specs": {
-        "chipset": "GeForce RTX 4070",
-        "memory_gb": 12,
-        "core_clock_mhz": 1920,
-        "boost_clock_mhz": 2490,
-        "color": "Black",
-        "length_mm": 261
-      },
-      "in_stock": true
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Gigabyte WINDFORCE OC",
+    "category": "GPU",
+    "brand": "Gigabyte",
+    "model": "WINDFORCE OC RTX 4070",
+    "price": 581.19,
+    "specs": {
+      "chipset": "GeForce RTX 4070",
+      "memory_gb": 12,
+      "core_clock_mhz": 1920,
+      "boost_clock_mhz": 2490,
+      "color": "Black",
+      "length_mm": 261
     },
-    {
-      "name": "Asus ROG STRIX GAMING OC",
-      "category": "GPU",
-      "brand": "Asus",
-      "model": "ROG STRIX RTX 4090",
-      "price": 1979.99,
-      "specs": {
-        "chipset": "GeForce RTX 4090",
-        "memory_gb": 24,
-        "core_clock_mhz": 2235,
-        "boost_clock_mhz": 2640,
-        "color": "Black",
-        "length_mm": 358
-      },
-      "in_stock": true
-    }
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Asus ROG STRIX GAMING OC",
+    "category": "GPU",
+    "brand": "Asus",
+    "model": "ROG STRIX RTX 4090",
+    "price": 1979.99,
+    "specs": {
+      "chipset": "GeForce RTX 4090",
+      "memory_gb": 24,
+      "core_clock_mhz": 2235,
+      "boost_clock_mhz": 2640,
+      "color": "Black",
+      "length_mm": 358
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Zotac Gaming RTX 3060 Twin Edge",
+    "category": "GPU",
+    "brand": "Zotac",
+    "model": "RTX 3060 Twin Edge",
+    "price": 279.99,
+    "specs": {
+      "chipset": "GeForce RTX 3060",
+      "memory_gb": 12,
+      "core_clock_mhz": 1320,
+      "boost_clock_mhz": 1807,
+      "color": "Black",
+      "length_mm": 224
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "ASRock Phantom Gaming D RX 6700 XT",
+    "category": "GPU",
+    "brand": "ASRock",
+    "model": "Phantom Gaming D",
+    "price": 349.99,
+    "specs": {
+      "chipset": "Radeon RX 6700 XT",
+      "memory_gb": 12,
+      "core_clock_mhz": 2321,
+      "boost_clock_mhz": 2581,
+      "color": "Black/Red",
+      "length_mm": 305
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "MSI Radeon RX 7900 XTX GAMING TRIO",
+    "category": "GPU",
+    "brand": "MSI",
+    "model": "RX 7900 XTX GAMING TRIO",
+    "price": 999.99,
+    "specs": {
+      "chipset": "Radeon RX 7900 XTX",
+      "memory_gb": 24,
+      "core_clock_mhz": 1855,
+      "boost_clock_mhz": 2500,
+      "color": "Black",
+      "length_mm": 337
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "PNY GeForce RTX 4080 XLR8 Gaming",
+    "category": "GPU",
+    "brand": "PNY",
+    "model": "RTX 4080 XLR8",
+    "price": 1199.00,
+    "specs": {
+      "chipset": "GeForce RTX 4080",
+      "memory_gb": 16,
+      "core_clock_mhz": 2205,
+      "boost_clock_mhz": 2505,
+      "color": "Black",
+      "length_mm": 331
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "PowerColor Red Devil RX 6800 XT",
+    "category": "GPU",
+    "brand": "PowerColor",
+    "model": "Red Devil RX 6800 XT",
+    "price": 599.99,
+    "specs": {
+      "chipset": "Radeon RX 6800 XT",
+      "memory_gb": 16,
+      "core_clock_mhz": 1825,
+      "boost_clock_mhz": 2310,
+      "color": "Black/Red",
+      "length_mm": 320
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "ASUS Dual GeForce RTX 4060 Ti OC",
+    "category": "GPU",
+    "brand": "ASUS",
+    "model": "Dual RTX 4060 Ti OC",
+    "price": 399.99,
+    "specs": {
+      "chipset": "GeForce RTX 4060 Ti",
+      "memory_gb": 8,
+      "core_clock_mhz": 2310,
+      "boost_clock_mhz": 2595,
+      "color": "White",
+      "length_mm": 227
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Sapphire Pulse RX 6600",
+    "category": "GPU",
+    "brand": "Sapphire",
+    "model": "Pulse RX 6600",
+    "price": 199.99,
+    "specs": {
+      "chipset": "Radeon RX 6600",
+      "memory_gb": 8,
+      "core_clock_mhz": 1626,
+      "boost_clock_mhz": 2491,
+      "color": "Black",
+      "length_mm": 193
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "EVGA GeForce RTX 3070 FTW3 Ultra",
+    "category": "GPU",
+    "brand": "EVGA",
+    "model": "RTX 3070 FTW3 Ultra",
+    "price": 469.99,
+    "specs": {
+      "chipset": "GeForce RTX 3070",
+      "memory_gb": 8,
+      "core_clock_mhz": 1500,
+      "boost_clock_mhz": 1815,
+      "color": "Black",
+      "length_mm": 300
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "ASRock Challenger D RX 6600",
+    "category": "GPU",
+    "brand": "ASRock",
+    "model": "Challenger D RX 6600",
+    "price": 189.99,
+    "specs": {
+      "chipset": "Radeon RX 6600",
+      "memory_gb": 8,
+      "core_clock_mhz": 1626,
+      "boost_clock_mhz": 2491,
+      "color": "Black/Yellow",
+      "length_mm": 269
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Zotac Gaming GeForce RTX 4070 AMP AIRO",
+    "category": "GPU",
+    "brand": "Zotac",
+    "model": "RTX 4070 AMP AIRO",
+    "price": 629.99,
+    "specs": {
+      "chipset": "GeForce RTX 4070",
+      "memory_gb": 12,
+      "core_clock_mhz": 1920,
+      "boost_clock_mhz": 2565,
+      "color": "Black",
+      "length_mm": 306
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Gigabyte AERO OC RTX 4080",
+    "category": "GPU",
+    "brand": "Gigabyte",
+    "model": "AERO OC RTX 4080",
+    "price": 1249.00,
+    "specs": {
+      "chipset": "GeForce RTX 4080",
+      "memory_gb": 16,
+      "core_clock_mhz": 2205,
+      "boost_clock_mhz": 2535,
+      "color": "White",
+      "length_mm": 342
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "MSI Ventus 3X OC RTX 4070 Ti",
+    "category": "GPU",
+    "brand": "MSI",
+    "model": "Ventus 3X OC",
+    "price": 819.99,
+    "specs": {
+      "chipset": "GeForce RTX 4070 Ti",
+      "memory_gb": 12,
+      "core_clock_mhz": 2310,
+      "boost_clock_mhz": 2745,
+      "color": "Black/Silver",
+      "length_mm": 308
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "XFX Speedster SWFT 319 RX 6800",
+    "category": "GPU",
+    "brand": "XFX",
+    "model": "SWFT 319 RX 6800",
+    "price": 459.99,
+    "specs": {
+      "chipset": "Radeon RX 6800",
+      "memory_gb": 16,
+      "core_clock_mhz": 1700,
+      "boost_clock_mhz": 2105,
+      "color": "Black",
+      "length_mm": 323
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "ASUS Dual RTX 4060 OC",
+    "category": "GPU",
+    "brand": "ASUS",
+    "model": "Dual RTX 4060 OC",
+    "price": 299.99,
+    "specs": {
+      "chipset": "GeForce RTX 4060",
+      "memory_gb": 8,
+      "core_clock_mhz": 1830,
+      "boost_clock_mhz": 2535,
+      "color": "Black",
+      "length_mm": 227
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "PowerColor Fighter RX 6700",
+    "category": "GPU",
+    "brand": "PowerColor",
+    "model": "Fighter RX 6700",
+    "price": 289.99,
+    "specs": {
+      "chipset": "Radeon RX 6700",
+      "memory_gb": 10,
+      "core_clock_mhz": 2321,
+      "boost_clock_mhz": 2495,
+      "color": "Black",
+      "length_mm": 305
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Gigabyte Eagle OC RX 7900 XT",
+    "category": "GPU",
+    "brand": "Gigabyte",
+    "model": "Eagle OC RX 7900 XT",
+    "price": 829.99,
+    "specs": {
+      "chipset": "Radeon RX 7900 XT",
+      "memory_gb": 20,
+      "core_clock_mhz": 2000,
+      "boost_clock_mhz": 2400,
+      "color": "Black/Grey",
+      "length_mm": 331
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Inno3D GeForce RTX 4070 Twin X2",
+    "category": "GPU",
+    "brand": "Inno3D",
+    "model": "RTX 4070 Twin X2",
+    "price": 579.99,
+    "specs": {
+      "chipset": "GeForce RTX 4070",
+      "memory_gb": 12,
+      "core_clock_mhz": 1920,
+      "boost_clock_mhz": 2475,
+      "color": "Black",
+      "length_mm": 250
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Sapphire Nitro+ RX 7900 GRE",
+    "category": "GPU",
+    "brand": "Sapphire",
+    "model": "Nitro+ RX 7900 GRE",
+    "price": 629.99,
+    "specs": {
+      "chipset": "Radeon RX 7900 GRE",
+      "memory_gb": 16,
+      "core_clock_mhz": 1700,
+      "boost_clock_mhz": 2360,
+      "color": "Black",
+      "length_mm": 320
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Palit GeForce RTX 3050 StormX",
+    "category": "GPU",
+    "brand": "Palit",
+    "model": "RTX 3050 StormX",
+    "price": 199.99,
+    "specs": {
+      "chipset": "GeForce RTX 3050",
+      "memory_gb": 8,
+      "core_clock_mhz": 1552,
+      "boost_clock_mhz": 1777,
+      "color": "Black",
+      "length_mm": 170
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "MSI Gaming X Trio RTX 3080",
+    "category": "GPU",
+    "brand": "MSI",
+    "model": "Gaming X Trio RTX 3080",
+    "price": 699.99,
+    "specs": {
+      "chipset": "GeForce RTX 3080",
+      "memory_gb": 10,
+      "core_clock_mhz": 1440,
+      "boost_clock_mhz": 1815,
+      "color": "Black/Grey",
+      "length_mm": 323
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "XFX Speedster MERC 310 RX 7900 XT",
+    "category": "GPU",
+    "brand": "XFX",
+    "model": "MERC 310 RX 7900 XT",
+    "price": 849.99,
+    "specs": {
+      "chipset": "Radeon RX 7900 XT",
+      "memory_gb": 20,
+      "core_clock_mhz": 2000,
+      "boost_clock_mhz": 2500,
+      "color": "Black/Silver",
+      "length_mm": 340
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Zotac Gaming RTX 3070 Twin Edge OC",
+    "category": "GPU",
+    "brand": "Zotac",
+    "model": "RTX 3070 Twin Edge OC",
+    "price": 449.99,
+    "specs": {
+      "chipset": "GeForce RTX 3070",
+      "memory_gb": 8,
+      "core_clock_mhz": 1500,
+      "boost_clock_mhz": 1755,
+      "color": "Black",
+      "length_mm": 231
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "ASRock Challenger D RX 6750 XT",
+    "category": "GPU",
+    "brand": "ASRock",
+    "model": "Challenger D RX 6750 XT",
+    "price": 429.99,
+    "specs": {
+      "chipset": "Radeon RX 6750 XT",
+      "memory_gb": 12,
+      "core_clock_mhz": 2150,
+      "boost_clock_mhz": 2600,
+      "color": "Black/Yellow",
+      "length_mm": 303
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "PNY GeForce RTX 4060 Ti Dual Fan",
+    "category": "GPU",
+    "brand": "PNY",
+    "model": "RTX 4060 Ti Dual Fan",
+    "price": 379.99,
+    "specs": {
+      "chipset": "GeForce RTX 4060 Ti",
+      "memory_gb": 8,
+      "core_clock_mhz": 2310,
+      "boost_clock_mhz": 2535,
+      "color": "Black",
+      "length_mm": 247
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Sapphire Pulse RX 6500 XT",
+    "category": "GPU",
+    "brand": "Sapphire",
+    "model": "Pulse RX 6500 XT",
+    "price": 169.99,
+    "specs": {
+      "chipset": "Radeon RX 6500 XT",
+      "memory_gb": 4,
+      "core_clock_mhz": 2310,
+      "boost_clock_mhz": 2815,
+      "color": "Black",
+      "length_mm": 180
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Gigabyte Eagle RTX 4060",
+    "category": "GPU",
+    "brand": "Gigabyte",
+    "model": "Eagle RTX 4060",
+    "price": 299.00,
+    "specs": {
+      "chipset": "GeForce RTX 4060",
+      "memory_gb": 8,
+      "core_clock_mhz": 1830,
+      "boost_clock_mhz": 2460,
+      "color": "Black",
+      "length_mm": 272
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  }
   ]

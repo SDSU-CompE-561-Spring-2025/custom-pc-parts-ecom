@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import Footer from "@/components/Footers"; 
+import Footer from "@/components/Footers";
 import { api } from "@/lib/auth";
 
 interface Component {
@@ -17,6 +17,7 @@ interface Component {
 interface Build {
   id: number;
   name?: string;
+  description?: string; 
   components: Component[];
 }
 
@@ -56,6 +57,7 @@ export default function BuildDetailsPage({ params }: { params: { id: string } })
         setBuild({
           id: buildRes.data.id,
           name: buildRes.data.name,
+          description: buildRes.data.description,
           components: detailedComponents,
         });
       } catch (err) {
@@ -102,9 +104,14 @@ export default function BuildDetailsPage({ params }: { params: { id: string } })
   return (
     <>
       <div className="max-w-5xl mx-auto py-12 px-4">
-        <h1 className="text-3xl font-bold mb-6">
+        <h1 className="text-3xl font-bold mb-2">
           {build.name ? `Build: ${build.name}` : `Build #${build.id}`}
         </h1>
+
+        {/* ✅ Conditionally show description */}
+        {build.description && (
+          <p className="text-gray-600 mb-6 whitespace-pre-wrap">{build.description}</p>
+        )}
 
         <table className="w-full text-left border">
           <thead>

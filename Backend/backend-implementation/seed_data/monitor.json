@@ -100,5 +100,430 @@
       },
       "image_url": "https://media.croma.com/image/upload/v1738249428/Croma%20Assets/Computers%20Peripherals/Monitor/Images/303712_0_jvg8tv.png",
       "in_stock": true
+    },
+    {
+      "name": "Dell S2721DGF",
+      "category": "Monitor",
+      "brand": "Dell",
+      "model": "S2721DGF",
+      "price": 329.99,
+      "specs": {
+        "screen_size": "27\"",
+        "resolution": "2560x1440",
+        "refresh_rate": 165,
+        "response_time": 1,
+        "panel_type": "IPS",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://i.dell.com/sites/imagecontent/products/PublishingImages/dell/s2721dgf/gallery/monitor-s2721dgf-cfp-00000ff090-bk.psd?fmt=png-alpha&wid=800&hei=800",
+      "in_stock": true
+    },
+    {
+      "name": "Gigabyte M28U",
+      "category": "Monitor",
+      "brand": "Gigabyte",
+      "model": "M28U",
+      "price": 529.99,
+      "specs": {
+        "screen_size": "28\"",
+        "resolution": "3840x2160",
+        "refresh_rate": 144,
+        "response_time": 1,
+        "panel_type": "IPS",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://static.gigabyte.com/StaticFile/Image/Global/75b30ef36684a768d23b01e62d9d7dc1/Product/25610/Png",
+      "in_stock": true
+    },
+    {
+      "name": "BenQ EX3501R",
+      "category": "Monitor",
+      "brand": "BenQ",
+      "model": "EX3501R",
+      "price": 449.99,
+      "specs": {
+        "screen_size": "35\"",
+        "resolution": "3440x1440",
+        "refresh_rate": 100,
+        "response_time": 4,
+        "panel_type": "VA",
+        "aspect_ratio": "21:9"
+      },
+      "image_url": "https://www.benq.com/content/dam/b2c/en/monitor/ex3501r/gallery/benq-ex3501r-hero-image.png",
+      "in_stock": true
+    },
+    {
+      "name": "ASRock PG34WQ15R2B",
+      "category": "Monitor",
+      "brand": "ASRock",
+      "model": "PG34WQ15R2B",
+      "price": 399.99,
+      "specs": {
+        "screen_size": "34\"",
+        "resolution": "3440x1440",
+        "refresh_rate": 165,
+        "response_time": 1,
+        "panel_type": "VA",
+        "aspect_ratio": "21:9"
+      },
+      "image_url": "https://pg.asrock.com/Monitor/PG34WQ15R2B/images/PG34WQ15R2B-Main.jpg",
+      "in_stock": true
+    },
+    {
+      "name": "HP OMEN 27q",
+      "category": "Monitor",
+      "brand": "HP",
+      "model": "OMEN 27q",
+      "price": 249.99,
+      "specs": {
+        "screen_size": "27\"",
+        "resolution": "2560x1440",
+        "refresh_rate": 165,
+        "response_time": 1,
+        "panel_type": "IPS",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08358075.png",
+      "in_stock": true
+    },
+    {
+      "name": "Alienware AW3423DW",
+      "category": "Monitor",
+      "brand": "Alienware",
+      "model": "AW3423DW",
+      "price": 1299.99,
+      "specs": {
+        "screen_size": "34\"",
+        "resolution": "3440x1440",
+        "refresh_rate": 175,
+        "response_time": 0.1,
+        "panel_type": "QD-OLED",
+        "aspect_ratio": "21:9"
+      },
+      "image_url": "https://i.dell.com/sites/imagecontent/products/PublishingImages/dell/monitor/aw3423dw/gallery/monitor-aw3423dw-hero-504x350.png",
+      "in_stock": true
+    },
+    {
+      "name": "ViewSonic XG2431",
+      "category": "Monitor",
+      "brand": "ViewSonic",
+      "model": "XG2431",
+      "price": 229.99,
+      "specs": {
+        "screen_size": "24\"",
+        "resolution": "1920x1080",
+        "refresh_rate": 240,
+        "response_time": 1,
+        "panel_type": "IPS",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://www.viewsonic.com/vsAssetFile/NA/EN/Product/XG2431_gallery_1.png",
+      "in_stock": true
+    },
+    {
+      "name": "Philips Momentum 559M1RYV",
+      "category": "Monitor",
+      "brand": "Philips",
+      "model": "Momentum 559M1RYV",
+      "price": 1099.99,
+      "specs": {
+        "screen_size": "55\"",
+        "resolution": "3840x2160",
+        "refresh_rate": 144,
+        "response_time": 4,
+        "panel_type": "VA",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://www.philips.co.uk/c-dam/b2c/category-pages/monitors/momentum/Momentum-559M1RYV-F7P.png",
+      "in_stock": true
+    },
+    {
+      "name": "Samsung Smart Monitor M8",
+      "category": "Monitor",
+      "brand": "Samsung",
+      "model": "Smart Monitor M8",
+      "price": 699.99,
+      "specs": {
+        "screen_size": "32\"",
+        "resolution": "3840x2160",
+        "refresh_rate": 60,
+        "response_time": 4,
+        "panel_type": "VA",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://images.samsung.com/is/image/samsung/p6pim/levant/ls32bm80bmxue/gallery/levant-smart-monitor-m8-m80b-429664-ls32bm80bmxue-530616651?$720_576_PNG$",
+      "in_stock": true
+    },
+    {
+      "name": "LG UltraGear 32GQ950-B",
+      "category": "Monitor",
+      "brand": "LG",
+      "model": "32GQ950-B",
+      "price": 999.99,
+      "specs": {
+        "screen_size": "32\"",
+        "resolution": "3840x2160",
+        "refresh_rate": 144,
+        "response_time": 1,
+        "panel_type": "Nano IPS",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://www.lg.com/us/images/monitors/md07505985/gallery/desktop-01.jpg",
+      "in_stock": true
+    },
+    {
+      "name": "Acer Nitro XV272U",
+      "category": "Monitor",
+      "brand": "Acer",
+      "model": "XV272U",
+      "price": 299.99,
+      "specs": {
+        "screen_size": "27\"",
+        "resolution": "2560x1440",
+        "refresh_rate": 170,
+        "response_time": 1,
+        "panel_type": "IPS",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://static.acer.com/up/Resource/Acer/Monitors/Nitro_XV2/XV272U/Images/20210811/Acer_Nitro_XV272U_gallery_01.png",
+      "in_stock": true
+    },
+    {
+      "name": "LG 34WP65C-B",
+      "category": "Monitor",
+      "brand": "LG",
+      "model": "34WP65C-B",
+      "price": 399.99,
+      "specs": {
+        "screen_size": "34\"",
+        "resolution": "3440x1440",
+        "refresh_rate": 160,
+        "response_time": 5,
+        "panel_type": "VA",
+        "aspect_ratio": "21:9"
+      },
+      "image_url": "https://www.lg.com/us/images/monitors/md07506108/gallery/desktop-01.jpg",
+      "in_stock": true
+    },
+    {
+      "name": "ASUS ROG Swift PG32UQX",
+      "category": "Monitor",
+      "brand": "ASUS",
+      "model": "PG32UQX",
+      "price": 2999.99,
+      "specs": {
+        "screen_size": "32\"",
+        "resolution": "3840x2160",
+        "refresh_rate": 144,
+        "response_time": 4,
+        "panel_type": "IPS",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://dlcdnwebimgs.asus.com/gain/eef7494c-646b-4269-90fc-14f43c8b6c5a/",
+      "in_stock": true
+    },
+    {
+      "name": "Samsung Smart Monitor M7",
+      "category": "Monitor",
+      "brand": "Samsung",
+      "model": "Smart Monitor M7",
+      "price": 249.99,
+      "specs": {
+        "screen_size": "32\"",
+        "resolution": "3840x2160",
+        "refresh_rate": 60,
+        "response_time": 4,
+        "panel_type": "VA",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://images.samsung.com/is/image/samsung/p6pim/levant/ls32bm700umxue/gallery/levant-smart-monitor-m7-m70b-429663-ls32bm700umxue-530616636?$720_576_PNG$",
+      "in_stock": true
+    },
+    {
+      "name": "ViewSonic VX3276-MHD",
+      "category": "Monitor",
+      "brand": "ViewSonic",
+      "model": "VX3276-MHD",
+      "price": 179.99,
+      "specs": {
+        "screen_size": "32\"",
+        "resolution": "1920x1080",
+        "refresh_rate": 60,
+        "response_time": 4,
+        "panel_type": "IPS",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://www.viewsonic.com/vsAssetFile/NA/EN/Product/VX3276-MHD_gallery_1.png",
+      "in_stock": true
+    },
+    {
+      "name": "MSI Optix MAG301RF",
+      "category": "Monitor",
+      "brand": "MSI",
+      "model": "Optix MAG301RF",
+      "price": 329.99,
+      "specs": {
+        "screen_size": "30\"",
+        "resolution": "2560x1080",
+        "refresh_rate": 200,
+        "response_time": 1,
+        "panel_type": "IPS",
+        "aspect_ratio": "21:9"
+      },
+      "image_url": "https://asset.msi.com/resize/image/global/product/product_1610968573727b34dcce5fcd5058a38fc4c36505e1.png62405b38c58fe0f07fcef2367d8a9ba1/600.png",
+      "in_stock": true
+    },
+    {
+      "name": "HP X24ih",
+      "category": "Monitor",
+      "brand": "HP",
+      "model": "X24ih",
+      "price": 189.99,
+      "specs": {
+        "screen_size": "23.8\"",
+        "resolution": "1920x1080",
+        "refresh_rate": 144,
+        "response_time": 1,
+        "panel_type": "IPS",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c06583562.png",
+      "in_stock": true
+    },
+    {
+      "name": "Acer Predator X34 GS",
+      "category": "Monitor",
+      "brand": "Acer",
+      "model": "Predator X34 GS",
+      "price": 1099.99,
+      "specs": {
+        "screen_size": "34\"",
+        "resolution": "3440x1440",
+        "refresh_rate": 180,
+        "response_time": 1,
+        "panel_type": "IPS",
+        "aspect_ratio": "21:9"
+      },
+      "image_url": "https://static.acer.com/up/Resource/Acer/Monitors/Predator_X34_GS/Images/20201211/Predator_X34_GS_gallery_01.png",
+      "in_stock": true
+    },
+    {
+      "name": "ASUS ProArt Display PA278QV",
+      "category": "Monitor",
+      "brand": "ASUS",
+      "model": "PA278QV",
+      "price": 299.99,
+      "specs": {
+        "screen_size": "27\"",
+        "resolution": "2560x1440",
+        "refresh_rate": 75,
+        "response_time": 5,
+        "panel_type": "IPS",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://dlcdnwebimgs.asus.com/gain/c72d4b2f-8a2a-4e9a-8fbc-77099d4b8f88/",
+      "in_stock": true
+    },
+    {
+      "name": "LG UltraGear 25GR75FG-B",
+      "category": "Monitor",
+      "brand": "LG",
+      "model": "25GR75FG-B",
+      "price": 329.99,
+      "specs": {
+        "screen_size": "24.5\"",
+        "resolution": "1920x1080",
+        "refresh_rate": 360,
+        "response_time": 1,
+        "panel_type": "IPS",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://www.lg.com/us/images/monitors/md07512804/gallery/desktop-01.jpg",
+      "in_stock": true
+    },
+    {
+      "name": "BenQ MOBIUZ EX3210U",
+      "category": "Monitor",
+      "brand": "BenQ",
+      "model": "EX3210U",
+      "price": 899.99,
+      "specs": {
+        "screen_size": "32\"",
+        "resolution": "3840x2160",
+        "refresh_rate": 144,
+        "response_time": 1,
+        "panel_type": "IPS",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://www.benq.com/content/dam/b2c/en/monitor/ex3210u/gallery/benq-mobiuz-ex3210u-gaming-monitor-front.png",
+      "in_stock": true
+    },
+    {
+      "name": "Gigabyte G34WQC A",
+      "category": "Monitor",
+      "brand": "Gigabyte",
+      "model": "G34WQC A",
+      "price": 379.99,
+      "specs": {
+        "screen_size": "34\"",
+        "resolution": "3440x1440",
+        "refresh_rate": 144,
+        "response_time": 1,
+        "panel_type": "VA",
+        "aspect_ratio": "21:9"
+      },
+      "image_url": "https://static.gigabyte.com/StaticFile/Image/Global/91f77051a6c3a4fa71e9c5d2978dfb91/Product/26021/Png",
+      "in_stock": true
+    },
+    {
+      "name": "Dell UltraSharp U2723QE",
+      "category": "Monitor",
+      "brand": "Dell",
+      "model": "U2723QE",
+      "price": 579.99,
+      "specs": {
+        "screen_size": "27\"",
+        "resolution": "3840x2160",
+        "refresh_rate": 60,
+        "response_time": 5,
+        "panel_type": "IPS",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://i.dell.com/sites/imagecontent/products/PublishingImages/dell/u2723qe/gallery/u2723qe-monitor-front.png",
+      "in_stock": true
+    },
+    {
+      "name": "Lenovo G34w-10",
+      "category": "Monitor",
+      "brand": "Lenovo",
+      "model": "G34w-10",
+      "price": 389.99,
+      "specs": {
+        "screen_size": "34\"",
+        "resolution": "3440x1440",
+        "refresh_rate": 144,
+        "response_time": 4,
+        "panel_type": "VA",
+        "aspect_ratio": "21:9"
+      },
+      "image_url": "https://www.lenovo.com/medias/G34w-10-Monitor-Gallery-1.png?context=bWFzdGVyfHJvb3R8MzUwNzN8aW1hZ2UvcG5nfGgwOS9oZDkvMTA0NzEyNjk1MzA2ODYucG5nfDY1ZWEyM2IzNzY3MjU4ZDlmZWM2YjFiNmRmOTg0MDk0MjY4YjE3ZjE4ODUyMDA0NzlkMzI4NmI3NzMxZTJkMTk",
+      "in_stock": true
+    },
+    {
+      "name": "Cooler Master Tempest GP27Q",
+      "category": "Monitor",
+      "brand": "Cooler Master",
+      "model": "Tempest GP27Q",
+      "price": 449.99,
+      "specs": {
+        "screen_size": "27\"",
+        "resolution": "2560x1440",
+        "refresh_rate": 165,
+        "response_time": 1,
+        "panel_type": "IPS",
+        "aspect_ratio": "16:9"
+      },
+      "image_url": "https://images.coolermaster.com/product/2022/monitor/tempest-gp27q/tempest-gp27q-01.png",
+      "in_stock": true
     }
   ]

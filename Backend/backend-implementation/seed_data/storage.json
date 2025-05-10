@@ -1,66 +1,512 @@
 [
-    {
-      "name": "Samsung 970 EVO Plus 1TB",
-      "category": "Storage",
-      "brand": "Samsung",
-      "model": "970 EVO Plus",
-      "price": 89.99,
-      "specs": {
-        "type": "NVMe SSD",
-        "interface": "PCIe Gen3 x4",
-        "capacity_gb": 1000,
-        "read_speed_mbps": 3500,
-        "write_speed_mbps": 3300,
-        "form_factor": "M.2 2280"
-      },
-      "in_stock": true
+  {
+    "name": "Samsung 980 Pro 2TB",
+    "category": "Storage",
+    "brand": "Samsung",
+    "model": "980 Pro",
+    "price": 169.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen4 x4",
+      "capacity_gb": 2000,
+      "read_speed_mbps": 7000,
+      "write_speed_mbps": 5100,
+      "form_factor": "M.2 2280"
     },
-    {
-      "name": "Crucial MX500 2TB",
-      "category": "Storage",
-      "brand": "Crucial",
-      "model": "MX500",
-      "price": 104.99,
-      "specs": {
-        "type": "SATA SSD",
-        "interface": "SATA III",
-        "capacity_gb": 2000,
-        "read_speed_mbps": 560,
-        "write_speed_mbps": 510,
-        "form_factor": "2.5 inch"
-      },
-      "in_stock": true
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Kingston A2000 1TB",
+    "category": "Storage",
+    "brand": "Kingston",
+    "model": "A2000",
+    "price": 74.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen3 x4",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 2200,
+      "write_speed_mbps": 2000,
+      "form_factor": "M.2 2280"
     },
-    {
-      "name": "WD Blue 4TB",
-      "category": "Storage",
-      "brand": "Western Digital",
-      "model": "Blue 5400 RPM",
-      "price": 79.99,
-      "specs": {
-        "type": "HDD",
-        "interface": "SATA III",
-        "capacity_gb": 4000,
-        "rpm": 5400,
-        "cache_mb": 64,
-        "form_factor": "3.5 inch"
-      },
-      "in_stock": true
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Crucial P3 Plus 1TB",
+    "category": "Storage",
+    "brand": "Crucial",
+    "model": "P3 Plus",
+    "price": 59.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen4 x4",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 5000,
+      "write_speed_mbps": 4200,
+      "form_factor": "M.2 2280"
     },
-    {
-      "name": "Seagate Barracuda 2TB",
-      "category": "Storage",
-      "brand": "Seagate",
-      "model": "Barracuda",
-      "price": 49.99,
-      "specs": {
-        "type": "HDD",
-        "interface": "SATA III",
-        "capacity_gb": 2000,
-        "rpm": 7200,
-        "cache_mb": 256,
-        "form_factor": "3.5 inch"
-      },
-      "in_stock": true
-    }
-  ]
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Western Digital Black SN850X 2TB",
+    "category": "Storage",
+    "brand": "Western Digital",
+    "model": "Black SN850X",
+    "price": 159.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen4 x4",
+      "capacity_gb": 2000,
+      "read_speed_mbps": 7300,
+      "write_speed_mbps": 6600,
+      "form_factor": "M.2 2280"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Samsung 870 QVO 4TB",
+    "category": "Storage",
+    "brand": "Samsung",
+    "model": "870 QVO",
+    "price": 209.99,
+    "specs": {
+      "type": "SATA SSD",
+      "interface": "SATA III",
+      "capacity_gb": 4000,
+      "read_speed_mbps": 560,
+      "write_speed_mbps": 530,
+      "form_factor": "2.5 inch"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "TeamGroup MP33 1TB",
+    "category": "Storage",
+    "brand": "TeamGroup",
+    "model": "MP33",
+    "price": 47.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen3 x4",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 1700,
+      "write_speed_mbps": 1400,
+      "form_factor": "M.2 2280"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "ADATA SU800 512GB",
+    "category": "Storage",
+    "brand": "ADATA",
+    "model": "SU800",
+    "price": 38.99,
+    "specs": {
+      "type": "SATA SSD",
+      "interface": "SATA III",
+      "capacity_gb": 512,
+      "read_speed_mbps": 560,
+      "write_speed_mbps": 520,
+      "form_factor": "2.5 inch"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "WD Red Plus 6TB",
+    "category": "Storage",
+    "brand": "Western Digital",
+    "model": "Red Plus",
+    "price": 119.99,
+    "specs": {
+      "type": "HDD",
+      "interface": "SATA III",
+      "capacity_gb": 6000,
+      "rpm": 5400,
+      "cache_mb": 128,
+      "form_factor": "3.5 inch"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Seagate IronWolf 8TB",
+    "category": "Storage",
+    "brand": "Seagate",
+    "model": "IronWolf",
+    "price": 169.99,
+    "specs": {
+      "type": "HDD",
+      "interface": "SATA III",
+      "capacity_gb": 8000,
+      "rpm": 7200,
+      "cache_mb": 256,
+      "form_factor": "3.5 inch"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Samsung T7 Shield 1TB Portable SSD",
+    "category": "Storage",
+    "brand": "Samsung",
+    "model": "T7 Shield",
+    "price": 89.99,
+    "specs": {
+      "type": "External SSD",
+      "interface": "USB 3.2 Gen 2",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 1050,
+      "write_speed_mbps": 1000,
+      "form_factor": "Portable"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Intel 670p 1TB",
+    "category": "Storage",
+    "brand": "Intel",
+    "model": "670p",
+    "price": 64.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen3 x4",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 3500,
+      "write_speed_mbps": 2700,
+      "form_factor": "M.2 2280"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Patriot P300 1TB",
+    "category": "Storage",
+    "brand": "Patriot",
+    "model": "P300",
+    "price": 54.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen3 x4",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 2100,
+      "write_speed_mbps": 1650,
+      "form_factor": "M.2 2280"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "PNY CS900 1TB",
+    "category": "Storage",
+    "brand": "PNY",
+    "model": "CS900",
+    "price": 42.99,
+    "specs": {
+      "type": "SATA SSD",
+      "interface": "SATA III",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 535,
+      "write_speed_mbps": 500,
+      "form_factor": "2.5 inch"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Toshiba N300 6TB",
+    "category": "Storage",
+    "brand": "Toshiba",
+    "model": "N300",
+    "price": 124.99,
+    "specs": {
+      "type": "HDD",
+      "interface": "SATA III",
+      "capacity_gb": 6000,
+      "rpm": 7200,
+      "cache_mb": 128,
+      "form_factor": "3.5 inch"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "WD My Passport 5TB",
+    "category": "Storage",
+    "brand": "Western Digital",
+    "model": "My Passport",
+    "price": 109.99,
+    "specs": {
+      "type": "External HDD",
+      "interface": "USB 3.0",
+      "capacity_gb": 5000,
+      "rpm": 5400,
+      "cache_mb": 64,
+      "form_factor": "Portable"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "ADATA XPG GAMMIX S70 Blade 2TB",
+    "category": "Storage",
+    "brand": "ADATA",
+    "model": "XPG GAMMIX S70 Blade",
+    "price": 129.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen4 x4",
+      "capacity_gb": 2000,
+      "read_speed_mbps": 7400,
+      "write_speed_mbps": 6800,
+      "form_factor": "M.2 2280"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Lexar NM620 1TB",
+    "category": "Storage",
+    "brand": "Lexar",
+    "model": "NM620",
+    "price": 59.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen3 x4",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 3300,
+      "write_speed_mbps": 3000,
+      "form_factor": "M.2 2280"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "TeamGroup T-Force Cardea Zero Z440 1TB",
+    "category": "Storage",
+    "brand": "TeamGroup",
+    "model": "Z440",
+    "price": 99.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen4 x4",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 5000,
+      "write_speed_mbps": 4400,
+      "form_factor": "M.2 2280"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Samsung T5 1TB",
+    "category": "Storage",
+    "brand": "Samsung",
+    "model": "T5 Portable SSD",
+    "price": 89.99,
+    "specs": {
+      "type": "External SSD",
+      "interface": "USB 3.1 Gen 2",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 540,
+      "write_speed_mbps": 515,
+      "form_factor": "Portable"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Seagate One Touch SSD 1TB",
+    "category": "Storage",
+    "brand": "Seagate",
+    "model": "One Touch",
+    "price": 94.99,
+    "specs": {
+      "type": "External SSD",
+      "interface": "USB 3.0",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 1030,
+      "write_speed_mbps": 1000,
+      "form_factor": "Portable"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "WD Blue SN570 1TB",
+    "category": "Storage",
+    "brand": "Western Digital",
+    "model": "Blue SN570",
+    "price": 54.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen3 x4",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 3500,
+      "write_speed_mbps": 3000,
+      "form_factor": "M.2 2280"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "SK hynix Gold P31 1TB",
+    "category": "Storage",
+    "brand": "SK hynix",
+    "model": "Gold P31",
+    "price": 79.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen3 x4",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 3500,
+      "write_speed_mbps": 3200,
+      "form_factor": "M.2 2280"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Silicon Power A55 512GB",
+    "category": "Storage",
+    "brand": "Silicon Power",
+    "model": "A55",
+    "price": 27.99,
+    "specs": {
+      "type": "SATA SSD",
+      "interface": "SATA III",
+      "capacity_gb": 512,
+      "read_speed_mbps": 550,
+      "write_speed_mbps": 500,
+      "form_factor": "2.5 inch"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "ADATA Legend 800 1TB",
+    "category": "Storage",
+    "brand": "ADATA",
+    "model": "Legend 800",
+    "price": 62.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen4 x4",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 5000,
+      "write_speed_mbps": 4500,
+      "form_factor": "M.2 2280"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Transcend ESD240C 960GB",
+    "category": "Storage",
+    "brand": "Transcend",
+    "model": "ESD240C",
+    "price": 89.99,
+    "specs": {
+      "type": "External SSD",
+      "interface": "USB 3.1 Gen 2",
+      "capacity_gb": 960,
+      "read_speed_mbps": 520,
+      "write_speed_mbps": 460,
+      "form_factor": "Portable"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Crucial X6 2TB Portable SSD",
+    "category": "Storage",
+    "brand": "Crucial",
+    "model": "X6",
+    "price": 109.99,
+    "specs": {
+      "type": "External SSD",
+      "interface": "USB 3.2 Gen 2",
+      "capacity_gb": 2000,
+      "read_speed_mbps": 800,
+      "write_speed_mbps": 800,
+      "form_factor": "Portable"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "Gigabyte UD850GM M.2 1TB",
+    "category": "Storage",
+    "brand": "Gigabyte",
+    "model": "UD850GM",
+    "price": 69.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen4 x4",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 5000,
+      "write_speed_mbps": 4500,
+      "form_factor": "M.2 2280"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "WD Elements Desktop 8TB",
+    "category": "Storage",
+    "brand": "Western Digital",
+    "model": "Elements Desktop",
+    "price": 159.99,
+    "specs": {
+      "type": "External HDD",
+      "interface": "USB 3.0",
+      "capacity_gb": 8000,
+      "rpm": 5400,
+      "cache_mb": 256,
+      "form_factor": "Desktop"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "LaCie Rugged Mini 2TB",
+    "category": "Storage",
+    "brand": "LaCie",
+    "model": "Rugged Mini",
+    "price": 104.99,
+    "specs": {
+      "type": "External HDD",
+      "interface": "USB 3.0",
+      "capacity_gb": 2000,
+      "rpm": 5400,
+      "cache_mb": 64,
+      "form_factor": "Portable"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  },
+  {
+    "name": "OWC Aura Pro X2 1TB",
+    "category": "Storage",
+    "brand": "OWC",
+    "model": "Aura Pro X2",
+    "price": 159.99,
+    "specs": {
+      "type": "NVMe SSD",
+      "interface": "PCIe Gen3 x4",
+      "capacity_gb": 1000,
+      "read_speed_mbps": 3200,
+      "write_speed_mbps": 2400,
+      "form_factor": "M.2 2280"
+    },
+    "image_url": "https://via.placeholder.com/200",
+    "in_stock": true
+  }
+]

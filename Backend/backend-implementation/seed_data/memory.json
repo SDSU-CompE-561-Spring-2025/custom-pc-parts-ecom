@@ -100,5 +100,430 @@
       },
       "image_url": null,
       "in_stock": true
+    },
+    {
+      "name": "Team T-Force Delta RGB 32 GB",
+      "category": "RAM",
+      "brand": "Team",
+      "model": "T-Force Delta RGB 32 GB",
+      "price": 89.99,
+      "specs": {
+        "speed": "DDR4-3600",
+        "modules": "2x16GB",
+        "price_per_gb": 2.812,
+        "color": "White",
+        "first_word_latency": 10,
+        "cas_latency": 18
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Kingston Fury Beast 16 GB",
+      "category": "RAM",
+      "brand": "Kingston",
+      "model": "Fury Beast 16 GB",
+      "price": 42.99,
+      "specs": {
+        "speed": "DDR4-3200",
+        "modules": "2x8GB",
+        "price_per_gb": 2.687,
+        "color": "Black",
+        "first_word_latency": 10,
+        "cas_latency": 16
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "ADATA XPG Lancer RGB 32 GB",
+      "category": "RAM",
+      "brand": "ADATA",
+      "model": "XPG Lancer RGB 32 GB",
+      "price": 119.99,
+      "specs": {
+        "speed": "DDR5-6000",
+        "modules": "2x16GB",
+        "price_per_gb": 3.75,
+        "color": "White",
+        "first_word_latency": 12,
+        "cas_latency": 36
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Patriot Viper Steel 16 GB",
+      "category": "RAM",
+      "brand": "Patriot",
+      "model": "Viper Steel 16 GB",
+      "price": 34.99,
+      "specs": {
+        "speed": "DDR4-3200",
+        "modules": "2x8GB",
+        "price_per_gb": 2.187,
+        "color": "Gray",
+        "first_word_latency": 10,
+        "cas_latency": 16
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "G.Skill Ripjaws V 32 GB",
+      "category": "RAM",
+      "brand": "G.Skill",
+      "model": "Ripjaws V 32 GB",
+      "price": 82.99,
+      "specs": {
+        "speed": "DDR4-3600",
+        "modules": "2x16GB",
+        "price_per_gb": 2.593,
+        "color": "Red",
+        "first_word_latency": 10,
+        "cas_latency": 18
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Corsair Dominator Platinum RGB 32 GB",
+      "category": "RAM",
+      "brand": "Corsair",
+      "model": "Dominator Platinum RGB 32 GB",
+      "price": 154.99,
+      "specs": {
+        "speed": "DDR5-6000",
+        "modules": "2x16GB",
+        "price_per_gb": 4.843,
+        "color": "White",
+        "first_word_latency": 10,
+        "cas_latency": 36
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Kingston Fury Renegade 32 GB",
+      "category": "RAM",
+      "brand": "Kingston",
+      "model": "Fury Renegade 32 GB",
+      "price": 97.99,
+      "specs": {
+        "speed": "DDR4-4000",
+        "modules": "2x16GB",
+        "price_per_gb": 3.062,
+        "color": "Black / Silver",
+        "first_word_latency": 9,
+        "cas_latency": 19
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Team T-Force Vulcan Z 16 GB",
+      "category": "RAM",
+      "brand": "Team",
+      "model": "T-Force Vulcan Z 16 GB",
+      "price": 36.99,
+      "specs": {
+        "speed": "DDR4-3200",
+        "modules": "2x8GB",
+        "price_per_gb": 2.312,
+        "color": "Gray",
+        "first_word_latency": 10,
+        "cas_latency": 16
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "G.Skill Ripjaws S5 32 GB",
+      "category": "RAM",
+      "brand": "G.Skill",
+      "model": "Ripjaws S5 32 GB",
+      "price": 104.99,
+      "specs": {
+        "speed": "DDR5-5600",
+        "modules": "2x16GB",
+        "price_per_gb": 3.281,
+        "color": "Black",
+        "first_word_latency": 10,
+        "cas_latency": 36
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Silicon Power Zenith DDR5 32 GB",
+      "category": "RAM",
+      "brand": "Silicon Power",
+      "model": "Zenith DDR5 32 GB",
+      "price": 92.99,
+      "specs": {
+        "speed": "DDR5-5200",
+        "modules": "2x16GB",
+        "price_per_gb": 2.906,
+        "color": "Black",
+        "first_word_latency": 14,
+        "cas_latency": 40
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Crucial Ballistix 16 GB",
+      "category": "RAM",
+      "brand": "Crucial",
+      "model": "Ballistix 16 GB",
+      "price": 39.99,
+      "specs": {
+        "speed": "DDR4-3200",
+        "modules": "2x8GB",
+        "price_per_gb": 2.5,
+        "color": "Black",
+        "first_word_latency": 10,
+        "cas_latency": 16
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Corsair Vengeance LPX 8 GB",
+      "category": "RAM",
+      "brand": "Corsair",
+      "model": "Vengeance LPX 8 GB",
+      "price": 22.99,
+      "specs": {
+        "speed": "DDR4-3200",
+        "modules": "1x8GB",
+        "price_per_gb": 2.87,
+        "color": "Black",
+        "first_word_latency": 10,
+        "cas_latency": 16
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "ADATA XPG Gammix D30 16 GB",
+      "category": "RAM",
+      "brand": "ADATA",
+      "model": "XPG Gammix D30 16 GB",
+      "price": 36.99,
+      "specs": {
+        "speed": "DDR4-3200",
+        "modules": "2x8GB",
+        "price_per_gb": 2.31,
+        "color": "Gray",
+        "first_word_latency": 10,
+        "cas_latency": 16
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "G.Skill Aegis 16 GB",
+      "category": "RAM",
+      "brand": "G.Skill",
+      "model": "Aegis 16 GB",
+      "price": 37.99,
+      "specs": {
+        "speed": "DDR4-3000",
+        "modules": "2x8GB",
+        "price_per_gb": 2.37,
+        "color": "Black / Red",
+        "first_word_latency": 11,
+        "cas_latency": 16
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Patriot Signature Premium 16 GB",
+      "category": "RAM",
+      "brand": "Patriot",
+      "model": "Signature Premium 16 GB",
+      "price": 31.99,
+      "specs": {
+        "speed": "DDR4-2666",
+        "modules": "2x8GB",
+        "price_per_gb": 2.0,
+        "color": "Black",
+        "first_word_latency": 11.25,
+        "cas_latency": 19
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Silicon Power Gaming 32 GB",
+      "category": "RAM",
+      "brand": "Silicon Power",
+      "model": "Gaming 32 GB",
+      "price": 64.99,
+      "specs": {
+        "speed": "DDR4-3200",
+        "modules": "2x16GB",
+        "price_per_gb": 2.03,
+        "color": "Black",
+        "first_word_latency": 10,
+        "cas_latency": 16
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Team T-Force Delta RGB DDR5 32 GB",
+      "category": "RAM",
+      "brand": "Team",
+      "model": "T-Force Delta RGB DDR5 32 GB",
+      "price": 109.99,
+      "specs": {
+        "speed": "DDR5-6000",
+        "modules": "2x16GB",
+        "price_per_gb": 3.44,
+        "color": "White",
+        "first_word_latency": 12,
+        "cas_latency": 36
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Kingston Fury Impact 16 GB",
+      "category": "RAM",
+      "brand": "Kingston",
+      "model": "Fury Impact 16 GB",
+      "price": 59.99,
+      "specs": {
+        "speed": "DDR4-3200",
+        "modules": "2x8GB",
+        "price_per_gb": 3.75,
+        "color": "Black",
+        "first_word_latency": 10,
+        "cas_latency": 20
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "PNY XLR8 Gaming EPIC-X RGB 32 GB",
+      "category": "RAM",
+      "brand": "PNY",
+      "model": "XLR8 Gaming EPIC-X RGB 32 GB",
+      "price": 94.99,
+      "specs": {
+        "speed": "DDR4-3200",
+        "modules": "2x16GB",
+        "price_per_gb": 2.97,
+        "color": "Black",
+        "first_word_latency": 10,
+        "cas_latency": 16
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Crucial Pro DDR5 32 GB",
+      "category": "RAM",
+      "brand": "Crucial",
+      "model": "Pro DDR5 32 GB",
+      "price": 89.99,
+      "specs": {
+        "speed": "DDR5-5600",
+        "modules": "2x16GB",
+        "price_per_gb": 2.81,
+        "color": "Black",
+        "first_word_latency": 13,
+        "cas_latency": 46
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "TEAMGROUP T-Create Classic 16 GB",
+      "category": "RAM",
+      "brand": "TEAMGROUP",
+      "model": "T-Create Classic 16 GB",
+      "price": 35.99,
+      "specs": {
+        "speed": "DDR4-3200",
+        "modules": "2x8GB",
+        "price_per_gb": 2.25,
+        "color": "Silver",
+        "first_word_latency": 10,
+        "cas_latency": 16
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Corsair Vengeance RGB DDR5 64 GB",
+      "category": "RAM",
+      "brand": "Corsair",
+      "model": "Vengeance RGB DDR5 64 GB",
+      "price": 229.99,
+      "specs": {
+        "speed": "DDR5-6400",
+        "modules": "2x32GB",
+        "price_per_gb": 3.59,
+        "color": "Black",
+        "first_word_latency": 10,
+        "cas_latency": 32
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "Kingston ValueRAM 8 GB",
+      "category": "RAM",
+      "brand": "Kingston",
+      "model": "ValueRAM 8 GB",
+      "price": 19.99,
+      "specs": {
+        "speed": "DDR4-2666",
+        "modules": "1x8GB",
+        "price_per_gb": 2.50,
+        "color": "Green",
+        "first_word_latency": 13,
+        "cas_latency": 19
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "G.Skill Trident Z Royal 32 GB",
+      "category": "RAM",
+      "brand": "G.Skill",
+      "model": "Trident Z Royal 32 GB",
+      "price": 124.99,
+      "specs": {
+        "speed": "DDR4-3600",
+        "modules": "2x16GB",
+        "price_per_gb": 3.91,
+        "color": "Silver",
+        "first_word_latency": 10,
+        "cas_latency": 18
+      },
+      "image_url": null,
+      "in_stock": true
+    },
+    {
+      "name": "ADATA Premier 4 GB",
+      "category": "RAM",
+      "brand": "ADATA",
+      "model": "Premier 4 GB",
+      "price": 14.99,
+      "specs": {
+        "speed": "DDR4-2400",
+        "modules": "1x4GB",
+        "price_per_gb": 3.75,
+        "color": "Green",
+        "first_word_latency": 14.17,
+        "cas_latency": 17
+      },
+      "image_url": null,
+      "in_stock": true
     }
-  ]
+]

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import Footer from "@/components/Footers"; // ✅ Add this
+import Footer from "@/components/Footers";
 import { api, isAuthenticated } from "@/lib/auth";
 
 interface Component {
@@ -30,10 +30,14 @@ const categories = [
 export default function CreateBuildPage() {
   const router = useRouter();
   const [buildName, setBuildName] = useState("");
+  const [description, setDescription] = useState(""); 
   const [selectedComponents, setSelectedComponents] = useState<{ [category: string]: Component | null }>({});
   const [submitting, setSubmitting] = useState(false);
 
-  const subtotal = Object.values(selectedComponents).reduce((sum, item) => item ? sum + item.price : sum, 0);
+  const subtotal = Object.values(selectedComponents).reduce(
+    (sum, item) => (item ? sum + item.price : sum),
+    0
+  );
 
   const handleSaveBuild = async () => {
     if (!isAuthenticated()) {
@@ -48,7 +52,7 @@ export default function CreateBuildPage() {
 
     const payload = {
       name: buildName,
-      description: "",
+      description: description.trim(),
       is_public: false,
       components: [],
     };
@@ -79,7 +83,15 @@ export default function CreateBuildPage() {
           placeholder="Enter build name"
           value={buildName}
           onChange={(e) => setBuildName(e.target.value)}
-          className="w-full px-4 py-3 border border-gray-300 rounded-md mb-6"
+          className="w-full px-4 py-3 border border-gray-300 rounded-md mb-4"
+        />
+
+        <textarea
+          placeholder="Enter a description (optional)"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          className="w-full px-4 py-3 border border-gray-300 rounded-md mb-6 resize-none"
+          rows={4}
         />
 
         <table className="w-full text-left border mb-6">
@@ -119,14 +131,15 @@ export default function CreateBuildPage() {
         </table>
 
         <div className="flex justify-between items-center">
-          <Button variant="outline" onClick={() => router.push("/")}>Cancel</Button>
+          <Button variant="outline" onClick={() => router.push("/")}>
+            Cancel
+          </Button>
           <Button onClick={handleSaveBuild} disabled={submitting || !buildName}>
             Save Build
           </Button>
         </div>
       </div>
 
-      {/* Footer */}
       <div className="mt-12 border-t pt-8">
         <Footer />
       </div>

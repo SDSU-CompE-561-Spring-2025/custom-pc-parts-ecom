@@ -1,53 +1,614 @@
 [
-    {
-      "name": "Corsair 4000D Airflow",
-      "category": "Case",
-      "brand": "Corsair",
-      "model": "4000D Airflow",
-      "price": 104.99,
-      "specs": {
-        "type": "ATX Mid Tower",
-        "color": "Black",
-        "psu": null,
-        "side_panel": "Tinted Tempered Glass",
-        "external_volume_liters": 48.6,
-        "internal_35_bays": 2
-      },
-      "image_url": "https://assets.corsair.com/image/upload/c_pad,q_auto,h_1024,w_1024,f_auto/products/Cases/base-4000d-airflow-config/Gallery/4000D_AF_BLACK_01.webp",
-      "in_stock": true
+  {
+    "name": "Corsair 4000D Airflow",
+    "category": "Case",
+    "brand": "Corsair",
+    "model": "4000D Airflow",
+    "price": 104.99,
+    "specs": {
+      "type": "ATX Mid Tower",
+      "color": "Black",
+      "psu": null,
+      "side_panel": "Tinted Tempered Glass",
+      "external_volume_liters": 48.6,
+      "internal_35_bays": 2
     },
-    {
-      "name": "NZXT H5 Flow",
-      "category": "Case",
-      "brand": "NZXT",
-      "model": "H5 Flow",
-      "price": 94.99,
-      "specs": {
-        "type": "ATX Mid Tower",
-        "color": "Black",
-        "psu": null,
-        "side_panel": "Tempered Glass",
-        "external_volume_liters": 47.0,
-        "internal_35_bays": 1
-      },
-      "image_url":"https://www.datocms-assets.com/34299/1666138830-h5-flow-hero-white.png",
-      "in_stock": true
+    "image_url": "https://assets.corsair.com/image/upload/c_pad,q_auto,h_1024,w_1024,f_auto/products/Cases/base-4000d-airflow-config/Gallery/4000D_AF_BLACK_01.webp",
+    "in_stock": true
+  },
+  {
+    "name": "NZXT H5 Flow",
+    "category": "Case",
+    "brand": "NZXT",
+    "model": "H5 Flow",
+    "price": 94.99,
+    "specs": {
+      "type": "ATX Mid Tower",
+      "color": "Black",
+      "psu": null,
+      "side_panel": "Tempered Glass",
+      "external_volume_liters": 47.0,
+      "internal_35_bays": 1
     },
-    {
-      "name": "NZXT H9 Flow",
-      "category": "Case",
-      "brand": "NZXT",
-      "model": "H9 Flow",
-      "price": 159.99,
-      "specs": {
-        "type": "ATX Mid Tower",
-        "color": "White",
-        "psu": null,
-        "side_panel": "Tempered Glass",
-        "external_volume_liters": 66.9,
-        "internal_35_bays": 2
-      },
-      "image_url": "https://c1.neweggimages.com/productimage/nb640/11-146-347-10.png",
-      "in_stock": true
-    }
-  ]
+    "image_url": "https://www.datocms-assets.com/34299/1666138830-h5-flow-hero-white.png",
+    "in_stock": true
+  },
+  {
+    "name": "NZXT H9 Flow",
+    "category": "Case",
+    "brand": "NZXT",
+    "model": "H9 Flow",
+    "price": 159.99,
+    "specs": {
+      "type": "ATX Mid Tower",
+      "color": "White",
+      "psu": null,
+      "side_panel": "Tempered Glass",
+      "external_volume_liters": 66.9,
+      "internal_35_bays": 2
+    },
+    "image_url": "https://c1.neweggimages.com/productimage/nb640/11-146-347-10.png",
+    "in_stock": true
+  },
+  {
+    "name": "Cooler Master Model 104",
+    "category": "Case",
+    "brand": "Cooler Master",
+    "model": "Model 104",
+    "price": 65.0,
+    "specs": {
+      "type": "Mini ITX Tower",
+      "color": "Gray",
+      "psu": null,
+      "side_panel": "Acrylic",
+      "external_volume_liters": 84.8,
+      "internal_35_bays": 2
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Fractal Design Model 105",
+    "category": "Case",
+    "brand": "Fractal Design",
+    "model": "Model 105",
+    "price": 68.75,
+    "specs": {
+      "type": "ATX Full Tower",
+      "color": "Red",
+      "psu": null,
+      "side_panel": "Mesh",
+      "external_volume_liters": 86.0,
+      "internal_35_bays": 3
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Lian Li Model 106",
+    "category": "Case",
+    "brand": "Lian Li",
+    "model": "Model 106",
+    "price": 72.5,
+    "specs": {
+      "type": "ATX Mid Tower",
+      "color": "Blue",
+      "psu": null,
+      "side_panel": "Tempered Glass",
+      "external_volume_liters": 87.2,
+      "internal_35_bays": 1
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Corsair Model 107",
+    "category": "Case",
+    "brand": "Corsair",
+    "model": "Model 107",
+    "price": 76.25,
+    "specs": {
+      "type": "MicroATX Mini Tower",
+      "color": "Black",
+      "psu": null,
+      "side_panel": "Tinted Tempered Glass",
+      "external_volume_liters": 88.4,
+      "internal_35_bays": 2
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "NZXT Model 108",
+    "category": "Case",
+    "brand": "NZXT",
+    "model": "Model 108",
+    "price": 80.0,
+    "specs": {
+      "type": "Mini ITX Tower",
+      "color": "White",
+      "psu": null,
+      "side_panel": "Acrylic",
+      "external_volume_liters": 89.6,
+      "internal_35_bays": 3
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Cooler Master Model 109",
+    "category": "Case",
+    "brand": "Cooler Master",
+    "model": "Model 109",
+    "price": 83.75,
+    "specs": {
+      "type": "ATX Full Tower",
+      "color": "Gray",
+      "psu": null,
+      "side_panel": "Mesh",
+      "external_volume_liters": 90.8,
+      "internal_35_bays": 1
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Fractal Design Model 110",
+    "category": "Case",
+    "brand": "Fractal Design",
+    "model": "Model 110",
+    "price": 87.5,
+    "specs": {
+      "type": "ATX Mid Tower",
+      "color": "Red",
+      "psu": null,
+      "side_panel": "Tempered Glass",
+      "external_volume_liters": 92.0,
+      "internal_35_bays": 2
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Lian Li Model 111",
+    "category": "Case",
+    "brand": "Lian Li",
+    "model": "Model 111",
+    "price": 91.25,
+    "specs": {
+      "type": "MicroATX Mini Tower",
+      "color": "Blue",
+      "psu": null,
+      "side_panel": "Tinted Tempered Glass",
+      "external_volume_liters": 93.2,
+      "internal_35_bays": 3
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Corsair Model 112",
+    "category": "Case",
+    "brand": "Corsair",
+    "model": "Model 112",
+    "price": 95.0,
+    "specs": {
+      "type": "Mini ITX Tower",
+      "color": "Black",
+      "psu": null,
+      "side_panel": "Acrylic",
+      "external_volume_liters": 94.4,
+      "internal_35_bays": 1
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "NZXT Model 113",
+    "category": "Case",
+    "brand": "NZXT",
+    "model": "Model 113",
+    "price": 98.75,
+    "specs": {
+      "type": "ATX Full Tower",
+      "color": "White",
+      "psu": null,
+      "side_panel": "Mesh",
+      "external_volume_liters": 95.6,
+      "internal_35_bays": 2
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Cooler Master Model 114",
+    "category": "Case",
+    "brand": "Cooler Master",
+    "model": "Model 114",
+    "price": 102.5,
+    "specs": {
+      "type": "ATX Mid Tower",
+      "color": "Gray",
+      "psu": null,
+      "side_panel": "Tempered Glass",
+      "external_volume_liters": 96.8,
+      "internal_35_bays": 3
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Fractal Design Model 115",
+    "category": "Case",
+    "brand": "Fractal Design",
+    "model": "Model 115",
+    "price": 106.25,
+    "specs": {
+      "type": "MicroATX Mini Tower",
+      "color": "Red",
+      "psu": null,
+      "side_panel": "Tinted Tempered Glass",
+      "external_volume_liters": 98.0,
+      "internal_35_bays": 1
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Lian Li Model 116",
+    "category": "Case",
+    "brand": "Lian Li",
+    "model": "Model 116",
+    "price": 110.0,
+    "specs": {
+      "type": "Mini ITX Tower",
+      "color": "Blue",
+      "psu": null,
+      "side_panel": "Acrylic",
+      "external_volume_liters": 99.2,
+      "internal_35_bays": 2
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Corsair Model 117",
+    "category": "Case",
+    "brand": "Corsair",
+    "model": "Model 117",
+    "price": 113.75,
+    "specs": {
+      "type": "ATX Full Tower",
+      "color": "Black",
+      "psu": null,
+      "side_panel": "Mesh",
+      "external_volume_liters": 100.4,
+      "internal_35_bays": 3
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "NZXT Model 118",
+    "category": "Case",
+    "brand": "NZXT",
+    "model": "Model 118",
+    "price": 117.5,
+    "specs": {
+      "type": "ATX Mid Tower",
+      "color": "White",
+      "psu": null,
+      "side_panel": "Tempered Glass",
+      "external_volume_liters": 101.6,
+      "internal_35_bays": 1
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Cooler Master Model 119",
+    "category": "Case",
+    "brand": "Cooler Master",
+    "model": "Model 119",
+    "price": 121.25,
+    "specs": {
+      "type": "MicroATX Mini Tower",
+      "color": "Gray",
+      "psu": null,
+      "side_panel": "Tinted Tempered Glass",
+      "external_volume_liters": 102.8,
+      "internal_35_bays": 2
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Fractal Design Model 120",
+    "category": "Case",
+    "brand": "Fractal Design",
+    "model": "Model 120",
+    "price": 125.0,
+    "specs": {
+      "type": "Mini ITX Tower",
+      "color": "Red",
+      "psu": null,
+      "side_panel": "Acrylic",
+      "external_volume_liters": 104.0,
+      "internal_35_bays": 3
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Lian Li Model 121",
+    "category": "Case",
+    "brand": "Lian Li",
+    "model": "Model 121",
+    "price": 128.75,
+    "specs": {
+      "type": "ATX Full Tower",
+      "color": "Blue",
+      "psu": null,
+      "side_panel": "Mesh",
+      "external_volume_liters": 105.2,
+      "internal_35_bays": 1
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Corsair Model 122",
+    "category": "Case",
+    "brand": "Corsair",
+    "model": "Model 122",
+    "price": 132.5,
+    "specs": {
+      "type": "ATX Mid Tower",
+      "color": "Black",
+      "psu": null,
+      "side_panel": "Tempered Glass",
+      "external_volume_liters": 106.4,
+      "internal_35_bays": 2
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "NZXT Model 123",
+    "category": "Case",
+    "brand": "NZXT",
+    "model": "Model 123",
+    "price": 136.25,
+    "specs": {
+      "type": "MicroATX Mini Tower",
+      "color": "White",
+      "psu": null,
+      "side_panel": "Tinted Tempered Glass",
+      "external_volume_liters": 107.6,
+      "internal_35_bays": 3
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Cooler Master Model 124",
+    "category": "Case",
+    "brand": "Cooler Master",
+    "model": "Model 124",
+    "price": 140.0,
+    "specs": {
+      "type": "Mini ITX Tower",
+      "color": "Gray",
+      "psu": null,
+      "side_panel": "Acrylic",
+      "external_volume_liters": 108.8,
+      "internal_35_bays": 2
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Fractal Design Model 125",
+    "category": "Case",
+    "brand": "Fractal Design",
+    "model": "Model 125",
+    "price": 143.75,
+    "specs": {
+      "type": "ATX Full Tower",
+      "color": "Red",
+      "psu": null,
+      "side_panel": "Mesh",
+      "external_volume_liters": 110.0,
+      "internal_35_bays": 1
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Lian Li Model 126",
+    "category": "Case",
+    "brand": "Lian Li",
+    "model": "Model 126",
+    "price": 147.5,
+    "specs": {
+      "type": "ATX Mid Tower",
+      "color": "Blue",
+      "psu": null,
+      "side_panel": "Tempered Glass",
+      "external_volume_liters": 111.2,
+      "internal_35_bays": 3
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Corsair Model 127",
+    "category": "Case",
+    "brand": "Corsair",
+    "model": "Model 127",
+    "price": 150.0,
+    "specs": {
+      "type": "MicroATX Mini Tower",
+      "color": "Black",
+      "psu": null,
+      "side_panel": "Mesh",
+      "external_volume_liters": 112.4,
+      "internal_35_bays": 1
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "NZXT Model 128",
+    "category": "Case",
+    "brand": "NZXT",
+    "model": "Model 128",
+    "price": 153.75,
+    "specs": {
+      "type": "Mini ITX Tower",
+      "color": "White",
+      "psu": null,
+      "side_panel": "Tempered Glass",
+      "external_volume_liters": 113.6,
+      "internal_35_bays": 2
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Cooler Master Model 129",
+    "category": "Case",
+    "brand": "Cooler Master",
+    "model": "Model 129",
+    "price": 157.5,
+    "specs": {
+      "type": "ATX Full Tower",
+      "color": "Gray",
+      "psu": null,
+      "side_panel": "Tinted Tempered Glass",
+      "external_volume_liters": 114.8,
+      "internal_35_bays": 3
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Fractal Design Model 130",
+    "category": "Case",
+    "brand": "Fractal Design",
+    "model": "Model 130",
+    "price": 161.25,
+    "specs": {
+      "type": "ATX Mid Tower",
+      "color": "Red",
+      "psu": null,
+      "side_panel": "Acrylic",
+      "external_volume_liters": 116.0,
+      "internal_35_bays": 2
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Lian Li Model 131",
+    "category": "Case",
+    "brand": "Lian Li",
+    "model": "Model 131",
+    "price": 165.0,
+    "specs": {
+      "type": "MicroATX Mini Tower",
+      "color": "Blue",
+      "psu": null,
+      "side_panel": "Tempered Glass",
+      "external_volume_liters": 117.2,
+      "internal_35_bays": 1
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Corsair Model 132",
+    "category": "Case",
+    "brand": "Corsair",
+    "model": "Model 132",
+    "price": 168.75,
+    "specs": {
+      "type": "Mini ITX Tower",
+      "color": "Black",
+      "psu": null,
+      "side_panel": "Mesh",
+      "external_volume_liters": 118.4,
+      "internal_35_bays": 3
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "NZXT Model 133",
+    "category": "Case",
+    "brand": "NZXT",
+    "model": "Model 133",
+    "price": 172.5,
+    "specs": {
+      "type": "ATX Full Tower",
+      "color": "White",
+      "psu": null,
+      "side_panel": "Acrylic",
+      "external_volume_liters": 119.6,
+      "internal_35_bays": 2
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Cooler Master Model 134",
+    "category": "Case",
+    "brand": "Cooler Master",
+    "model": "Model 134",
+    "price": 176.25,
+    "specs": {
+      "type": "ATX Mid Tower",
+      "color": "Gray",
+      "psu": null,
+      "side_panel": "Tempered Glass",
+      "external_volume_liters": 120.8,
+      "internal_35_bays": 1
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Fractal Design Model 135",
+    "category": "Case",
+    "brand": "Fractal Design",
+    "model": "Model 135",
+    "price": 180.0,
+    "specs": {
+      "type": "MicroATX Mini Tower",
+      "color": "Red",
+      "psu": null,
+      "side_panel": "Tinted Tempered Glass",
+      "external_volume_liters": 122.0,
+      "internal_35_bays": 3
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Lian Li Model 136",
+    "category": "Case",
+    "brand": "Lian Li",
+    "model": "Model 136",
+    "price": 183.75,
+    "specs": {
+      "type": "Mini ITX Tower",
+      "color": "Blue",
+      "psu": null,
+      "side_panel": "Mesh",
+      "external_volume_liters": 123.2,
+      "internal_35_bays": 2
+    },
+    "image_url": "https://example.com/case_image.jpg",
+    "in_stock": true
+  }
+]

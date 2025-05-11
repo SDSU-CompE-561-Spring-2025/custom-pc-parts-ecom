@@ -7,20 +7,37 @@ import Image from "next/image"
 import Footer from "@/components/Footers"
 import { api } from "@/lib/auth" 
 
-// Sample mock reviews
-const mockReviews = [
-  { id: "1", author: "Samantha D.", rating: 4.5, verified: true, content: "This was one of the best ones I've used." },
-  { id: "2", author: "Alex M.", rating: 4, verified: true, content: "Exceeded my expectations" },
-  { id: "3", author: "Ethan R.", rating: 3.5, verified: true, content: "Perfect for gamers! But the delivery was late." },
-  { id: "4", author: "Olivia P.", rating: 5, verified: true, content: "Really functional" },
-  { id: "5", author: "Liam K.", rating: 4, verified: true, content: "Amazing" },
-  { id: "6", author: "Ava H.", rating: 4.5, verified: true, content: "One of the best I've used" }
-]
+type Review = {
+  id: number
+  user_id: number
+  component_id: number | null
+  rating: number
+  title?: string
+  content?: string
+  verified: boolean
+  status: string
+  created_at?: string
+  updated_at?: string
+  // Include user data if you have it in the API response
+  user?: {
+    username: string
+  }}
 
 export default function ProductDetailPage() {
   const { id } = useParams()
   const [product, setProduct] = useState<any>(null)
+  const [reviews, setReviews] = useState<Review[]>([])
   const [loading, setLoading] = useState(true)
+  const [displayCount, setDisplayCount] = useState(6) // Set initial display count to 6
+  
+  const shuffleArray = (array: any) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
 
   useEffect(() => {
     async function fetchComponent() {
@@ -33,11 +50,38 @@ export default function ProductDetailPage() {
         setLoading(false)
       }
     }
-    if (id) fetchComponent()
+    async function fetchReviews() {
+      try {
+        // Add trailing slash to match the FastAPI route definition
+        const reviewsRes = await api.get('/api/v1/reviews');
+        console.log('Reviews fetched successfully:', reviewsRes.data);
+        
+        // Shuffle the reviews array using Fisher-Yates algorithm
+        const shuffledReviews = shuffleArray(reviewsRes.data || []);
+        setReviews(shuffledReviews);
+      } catch (error) {
+        console.error('Failed to fetch reviews:', error);
+        setReviews([]); // Set empty array on error
+      }
+    }
+    // Keep the original fetchComponent call
+    if (id) {
+      fetchComponent()
+      fetchReviews() // Add this line to fetch reviews
+    }
   }, [id])
+  
+  // Function to display more reviews
+  const handleLoadMore = () => {
+    setDisplayCount(prevCount => prevCount + 6);
+  }
 
   if (loading) return <div className="container mx-auto px-4 py-8">Loading...</div>
   if (!product) return <div className="container mx-auto px-4 py-8">Product not found</div>
+
+  // Get only the first 6 (or displayCount) reviews for display
+  const displayedReviews = reviews.slice(0, displayCount);
+  const hasMoreReviews = reviews.length > displayCount;
 
   return (
     <>
@@ -74,9 +118,12 @@ export default function ProductDetailPage() {
             </p>
 
             <div className="mt-6 flex justify-start">
+            <a href="/builder" className="inline-block">
               <button className="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition">
-                Add to Build
+                Create A Build
               </button>
+            </a>
+
             </div>
 
             {/* Specifications */}
@@ -106,13 +153,45 @@ export default function ProductDetailPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {mockReviews.map((review) => (
-              <div key={review.id} className="bg-white border rounded-lg p-6 shadow-sm hover:shadow-md transition">
-                <div className="mb-2 font-semibold">{review.author}</div>
-                <div className="text-gray-700">{review.content}</div>
+            {displayedReviews.length > 0 ? (
+              displayedReviews.map((review) => (
+                <div key={review.id} className="bg-white border rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="font-semibold">
+                      {review.user?.username || `User ${review.user_id}`}
+                    </div>
+                    <div className="flex items-center">
+                      <span className="text-amber-500 mr-1">★</span>
+                      <span>{review.rating}</span>
+                      {review.verified && (
+                        <span className="ml-2 text-xs text-green-600 bg-green-100 px-2 py-0.5 rounded-full">Verified</span>
+                      )}
+                    </div>
+                  </div>
+                  {review.title && (
+                    <div className="font-medium mb-1">{review.title}</div>
+                  )}
+                  <div className="text-gray-700">{review.content}</div>
+                </div>
+              ))
+            ) : (
+              <div className="col-span-2 text-center py-8 text-gray-500">
+                No reviews available for this product.
               </div>
-            ))}
+            )}
           </div>
+          
+          {/* Show "Load More" button if there are more reviews */}
+          {hasMoreReviews && (
+            <div className="text-center mt-8">
+              <button 
+                onClick={handleLoadMore}
+                className="bg-gray-200 text-gray-800 px-6 py-2 rounded-md hover:bg-gray-300 transition"
+              >
+                Load More Reviews
+              </button>
+            </div>
+          )}
         </div>
       </div>
 

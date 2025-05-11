@@ -115,7 +115,7 @@ class Review(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    component_id = Column(Integer, ForeignKey("components.id"), nullable=False)
+    component_id = Column(Integer, ForeignKey("components.id"), nullable=True)  # Changed to nullable=True
     rating = Column(Integer, nullable=False)
     title = Column(String, nullable=True)
     content = Column(Text, nullable=True)

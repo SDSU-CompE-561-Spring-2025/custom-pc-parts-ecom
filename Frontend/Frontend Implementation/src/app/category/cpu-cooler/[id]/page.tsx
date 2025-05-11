@@ -5,8 +5,9 @@ import { useParams } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import Footer from "@/components/Footers"
-import { cpuCoolerProducts } from "@/data/sample-products"
 import { StarRating } from "@/components/star-rating"
+import { api } from "@/lib/auth" 
+
 
 // Mock reviews data
 const mockReviews = [
@@ -55,31 +56,27 @@ const mockReviews = [
 ]
 
 export default function ProductDetailPage() {
-  const params = useParams()
-  const productId = params.id as string
-  
+  const { id } = useParams()
   const [product, setProduct] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   
   useEffect(() => {
-    // Find the product by ID from the caseProducts array
-    const foundProduct = cpuCoolerProducts.find(p => p.id.toString() === productId)
-    
-    if (foundProduct) {
-      setProduct(foundProduct)
-    }
-    
-    setLoading(false)
-  }, [productId])
+      async function fetchComponent() {
+        try {
+          const res = await api.get(`/components/${id}`)
+          setProduct(res.data)
+        } catch (error) {
+          console.error("Failed to fetch component", error)
+        } finally {
+          setLoading(false)
+        }
+      }
+      if (id) {
+        fetchComponent()      }
+    }, [id])
   
-  
-  if (loading) {
-    return <div className="container mx-auto px-4 py-8">Loading...</div>
-  }
-  
-  if (!product) {
-    return <div className="container mx-auto px-4 py-8">Product not found</div>
-  }
+    if (loading) return <div className="container mx-auto px-4 py-8">Loading...</div>
+    if (!product) return <div className="container mx-auto px-4 py-8">Product not found</div>
 
   // Function to render stars
   const renderStars = (rating: number) => {

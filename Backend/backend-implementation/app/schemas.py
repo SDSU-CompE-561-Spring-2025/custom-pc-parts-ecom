@@ -159,7 +159,7 @@ class PriceHistoryResponse(BaseModel):
 
 # Review
 class ReviewBase(BaseModel):
-    component_id: int
+    component_id: Optional[int] = None  # Changed from required to optional
     rating: int
     title: Optional[str] = None
     content: Optional[str] = None

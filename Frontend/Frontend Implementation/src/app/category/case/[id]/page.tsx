@@ -5,8 +5,9 @@ import { useParams } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import Footer from "@/components/Footers"
-import { caseProducts } from "@/data/sample-products"
 import { StarRating } from "@/components/star-rating"
+import { api } from "@/lib/auth" 
+
 
 // Mock reviews data
 const mockReviews = [
@@ -55,31 +56,28 @@ const mockReviews = [
 ]
 
 export default function ProductDetailPage() {
-  const params = useParams()
-  const productId = params.id as string
-  
+  const { id } = useParams()
   const [product, setProduct] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   
   useEffect(() => {
-    // Find the product by ID from the caseProducts array
-    const foundProduct = caseProducts.find(p => p.id.toString() === productId)
-    
-    if (foundProduct) {
-      setProduct(foundProduct)
+    async function fetchComponent() {
+      try {
+        const res = await api.get(`/components/${id}`)
+        setProduct(res.data)
+      } catch (error) {
+        console.error("Failed to fetch component", error)
+      } finally {
+        setLoading(false)
+      }
     }
-    
-    setLoading(false)
-  }, [productId])
-  
-  
-  if (loading) {
-    return <div className="container mx-auto px-4 py-8">Loading...</div>
-  }
-  
-  if (!product) {
-    return <div className="container mx-auto px-4 py-8">Product not found</div>
-  }
+    if (id) {
+      fetchComponent()
+    }
+  }, [id])
+
+  if (loading) return <div className="container mx-auto px-4 py-8">Loading...</div>
+  if (!product) return <div className="container mx-auto px-4 py-8">Product not found</div>
 
   // Function to render stars
   const renderStars = (rating: number) => {
@@ -186,9 +184,11 @@ export default function ProductDetailPage() {
             <div className="flex items-center space-x-4 mb-6">
 
               
-              <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md">
-                Add to Build
+            <a href="/builder" className="inline-block">
+              <button className="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition">
+                Create A Build
               </button>
+            </a>
             </div>
             
             

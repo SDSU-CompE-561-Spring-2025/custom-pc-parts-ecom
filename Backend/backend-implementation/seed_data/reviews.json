@@ -1,58 +1,272 @@
 [
-    {
-      "user_id": 1,
-      "component_id": 1,
-      "rating": 4,
-      "title": "Not what I expected",
-      "content": "This component exceeded my expectations in every way.",
-      "verified": true,
-      "status": "rejected",
-      "created_at": "2025-04-12T20:32:30.973447",
-      "updated_at": "2025-04-12T20:32:30.973460"
-    },
-    {
-      "user_id": 1,
-      "component_id": 3,
-      "rating": 4,
-      "title": "Decent for the price",
-      "content": "Fan gets a bit noisy under load.",
-      "verified": false,
-      "status": "approved",
-      "created_at": "2025-04-12T20:32:30.973473",
-      "updated_at": "2025-04-12T20:32:30.973476"
-    },
-    {
-      "user_id": 2,
-      "component_id": 5,
-      "rating": 1,
-      "title": "Highly recommend",
-      "content": "Fan gets a bit noisy under load.",
-      "verified": true,
-      "status": "pending",
-      "created_at": "2025-04-12T20:32:30.973487",
-      "updated_at": "2025-04-12T20:32:30.973490"
-    },
-    {
-      "user_id": 2,
-      "component_id": 9,
-      "rating": 5,
-      "title": "Decent for the price",
-      "content": "Everything works smoothly, setup was a breeze.",
-      "verified": true,
-      "status": "approved",
-      "created_at": "2025-04-12T20:32:30.973504",
-      "updated_at": "2025-04-12T20:32:30.973507"
-    },
-    {
-      "user_id": 4,
-      "component_id": 6,
-      "rating": 3,
-      "title": "Great performance!",
-      "content": "Solid build quality and good value.",
-      "verified": false,
-      "status": "pending",
-      "created_at": "2025-04-12T20:32:30.973519",
-      "updated_at": "2025-04-12T20:32:30.973521"
-    }
-   
-  ]
+  {
+    "user_id": 1,
+    "component_id": null,
+    "rating": 4.5,
+    "title": "Great component",
+    "content": "This was one of the best components I've used.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 2,
+    "component_id": 2,
+    "rating": 4,
+    "title": "Excellent quality",
+    "content": "Exceeded my expectations, great build quality.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 3,
+    "component_id": 3,
+    "rating": 3.5,
+    "title": "Good but with issues",
+    "content": "Perfect for my PC build! But the delivery was late.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 1,
+    "component_id": null,
+    "rating": 5,
+    "title": "Easy to install",
+    "content": "Really functional and easy to install.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 2,
+    "component_id": 5,
+    "rating": 4,
+    "title": "Great quality",
+    "content": "Amazing quality, works flawlessly.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 3,
+    "component_id": 6,
+    "rating": 4.5,
+    "title": "Top tier",
+    "content": "One of the best components I've added to my setup.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 1,
+    "component_id": null,
+    "rating": 5,
+    "title": "Gaming perfection",
+    "content": "Top-tier performance for my gaming setup.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 2,
+    "component_id": 8,
+    "rating": 4,
+    "title": "Works well with others",
+    "content": "Great product, integrates well with my other components.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 3,
+    "component_id": 9,
+    "rating": 3,
+    "title": "Runs hot",
+    "content": "Works well but gets warmer than I expected.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 1,
+    "component_id": null,
+    "rating": 4.5,
+    "title": "Great value",
+    "content": "Excellent price-to-performance ratio.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 2,
+    "component_id": 1,
+    "rating": 5,
+    "title": "Perfect upgrade",
+    "content": "Perfect upgrade for my system, noticeably better.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 3,
+    "component_id": 2,
+    "rating": 4,
+    "title": "Good value",
+    "content": "Good value, easy installation process.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 1,
+    "component_id": null,
+    "rating": 3.5,
+    "title": "Noisy but good",
+    "content": "Solid performance but a bit noisy under load.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 2,
+    "component_id": 4,
+    "rating": 5,
+    "title": "Handles everything",
+    "content": "Handles my workload without any issues.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 3,
+    "component_id": 5,
+    "rating": 4,
+    "title": "Strong performer",
+    "content": "Strong performance for the price point.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 1,
+    "component_id": null,
+    "rating": 4.5,
+    "title": "Versatile",
+    "content": "Excellent for both gaming and productivity tasks.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 2,
+    "component_id": 7,
+    "rating": 3,
+    "title": "Average",
+    "content": "Works as expected, nothing extraordinary.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 3,
+    "component_id": 8,
+    "rating": 5,
+    "title": "Worth every penny",
+    "content": "Incredibly efficient, worth every penny.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 1,
+    "component_id": null,
+    "rating": 4,
+    "title": "Perfect fit",
+    "content": "Great component, fits perfectly in my setup.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 2,
+    "component_id": 10,
+    "rating": 3.5,
+    "title": "Power hungry",
+    "content": "Decent performance but could be more power efficient.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 3,
+    "component_id": 1,
+    "rating": 5,
+    "title": "Huge improvement",
+    "content": "Incredible improvement over my previous hardware.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 1,
+    "component_id": null,
+    "rating": 4,
+    "title": "Very satisfied",
+    "content": "Very satisfied with the quality and performance.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 2,
+    "component_id": 3,
+    "rating": 4.5,
+    "title": "Handles everything",
+    "content": "Handles demanding tasks with ease.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 3,
+    "component_id": 4,
+    "rating": 3,
+    "title": "Average value",
+    "content": "Average performance for the price.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 1,
+    "component_id": null,
+    "rating": 5,
+    "title": "Best component ever",
+    "content": "Best component I've added to my build, extremely reliable.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 2,
+    "component_id": 6,
+    "rating": 4,
+    "title": "No issues",
+    "content": "Good quality product, no issues so far.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 3,
+    "component_id": 7,
+    "rating": 3.5,
+    "title": "Check compatibility",
+    "content": "Works well but check compatibility with your system first.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 1,
+    "component_id": null,
+    "rating": 4.5,
+    "title": "Smooth performance",
+    "content": "Excellent product, smooth performance in all my applications.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 2,
+    "component_id": 9,
+    "rating": 4,
+    "title": "Well documented",
+    "content": "Reliable and well-built, good documentation included.",
+    "verified": true,
+    "status": "approved"
+  },
+  {
+    "user_id": 3,
+    "component_id": 10,
+    "rating": 5,
+    "title": "Exceptional value",
+    "content": "Exceptional value, extremely happy with this purchase.",
+    "verified": true,
+    "status": "approved"
+  }
+]

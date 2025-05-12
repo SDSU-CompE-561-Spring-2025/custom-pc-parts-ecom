@@ -7,7 +7,6 @@ import { cpuCoolerFilters } from "@/data/filter-configs"
 import Footer from "@/components/Footers"
 import { api } from "@/lib/auth"
 
-
 export default function CPUCoolerPage() {
   const [currentPage, setCurrentPage] = useState(1)
   const [paginatedProducts, setPaginatedProducts] = useState<Product[]>([])
@@ -21,12 +20,12 @@ export default function CPUCoolerPage() {
   useEffect(() => {
     const fetchComponents = async () => {
       try {
-        const response = await api.get("/components?category=CPU")
+        const response = await api.get("/components?category=Cooler")
         // Convert API response to Product format
         const formattedProducts: Product[] = response.data.items.map((Cooler: any) => ({
           id: Cooler.id,
           title: Cooler.name,
-          image: Cooler.image_url || "https://placehold.co/200x200?text=CPU",
+          image: Cooler.image_url || "https://placehold.co/200x200?text=Cooler",
           price: Cooler.price,
           rating: Cooler.rating || 4.5,
           reviews: Cooler.reviews || 10,
@@ -77,7 +76,7 @@ export default function CPUCoolerPage() {
       <div className="flex flex-col min-h-screen">
         <div className="flex-grow">
           <CategoryPage
-            title="CPUs"
+            title="CPU Coolers"
             products={paginatedProducts}
             filters={cpuCoolerFilters}
             announcement={{

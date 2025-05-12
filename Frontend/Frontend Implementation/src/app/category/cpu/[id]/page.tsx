@@ -116,14 +116,13 @@ export default function ProductDetailPage() {
             <p className="text-gray-500 italic mb-4">
               {product.description || "No description available."}
             </p>
-
-            <div className="mt-6 flex justify-start">
+            {/* Quantity and Add to Build */}
+            <div className="flex items-center space-x-4 mb-6">
             <a href="/builder" className="inline-block">
               <button className="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition">
                 Create A Build
               </button>
             </a>
-
             </div>
 
             {/* Specifications */}
@@ -147,9 +146,6 @@ export default function ProductDetailPage() {
         <div className="mt-16">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold">All Reviews</h2>
-            <button className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">
-              Write a Review
-            </button>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">

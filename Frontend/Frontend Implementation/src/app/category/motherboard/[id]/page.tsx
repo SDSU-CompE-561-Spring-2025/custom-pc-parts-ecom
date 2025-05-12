@@ -5,136 +5,83 @@ import { useParams } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import Footer from "@/components/Footers"
-import { motherboardProducts } from "@/data/sample-products"
-import { StarRating } from "@/components/star-rating"
+import { api } from "@/lib/auth" 
 
-// Mock reviews data
-const mockReviews = [
-  {
-    id: "1",
-    author: "Samantha D.",
-    rating: 4.5,
-    verified: true,
-    content: "This was one of the best ones I've used.",
-  },
-  {
-    id: "2",
-    author: "Alex M.",
-    rating: 4,
-    verified: true,
-    content: "Exceeded my expectations",
-  },
-  {
-    id: "3",
-    author: "Ethan R.",
-    rating: 3.5,
-    verified: true,
-    content: "Perfect for gamers! But the delivery was late.",
-  },
-  {
-    id: "4",
-    author: "Olivia P.",
-    rating: 5,
-    verified: true,
-    content: "Really functional",
-  },
-  {
-    id: "5",
-    author: "Liam K.",
-    rating: 4,
-    verified: true,
-    content: "Amazing",
-  },
-  {
-    id: "6",
-    author: "Ava H.",
-    rating: 4.5,
-    verified: true,
-    content: "One of the best I've used",
-  }
-]
+type Review = {
+  id: number
+  user_id: number
+  component_id: number | null
+  rating: number
+  title?: string
+  content?: string
+  verified: boolean
+  status: string
+  created_at?: string
+  updated_at?: string
+  // Include user data if you have it in the API response
+  user?: {
+    username: string
+  }}
 
 export default function ProductDetailPage() {
-  const params = useParams()
-  const productId = params.id as string
-  
+  const { id } = useParams()
   const [product, setProduct] = useState<any>(null)
+  const [reviews, setReviews] = useState<Review[]>([])
   const [loading, setLoading] = useState(true)
+  const [displayCount, setDisplayCount] = useState(6) // Set initial display count to 6
   
-  useEffect(() => {
-    // Find the product by ID from the motherboardProducts array
-    const foundProduct = motherboardProducts.find(p => p.id.toString() === productId)
-    
-    if (foundProduct) {
-      setProduct(foundProduct)
+  const shuffleArray = (array: any) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-    
-    setLoading(false)
-  }, [productId])
-  
-  
-  if (loading) {
-    return <div className="container mx-auto px-4 py-8">Loading...</div>
-  }
-  
-  if (!product) {
-    return <div className="container mx-auto px-4 py-8">Product not found</div>
-  }
+    return shuffled;
+  };
 
-  // Function to render stars
-  const renderStars = (rating: number) => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      if (i <= rating) {
-        stars.push(
-          <svg
-            key={`full-${i}`}
-            className="w-6 h-6 text-yellow-400 fill-yellow-400"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-          </svg>
-        );
-      } else if (i - 0.5 <= rating) {
-        // Half star
-        stars.push(
-          <svg
-            key={`half-${i}`}
-            className="w-6 h-6 text-yellow-400"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            <path d="M12 2v15.77" stroke="none" fill="currentColor" />
-            <path d="M12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="none" fill="currentColor" />
-          </svg>
-        );
-      } else {
-        stars.push(
-          <svg
-            key={`empty-${i}`}
-            className="w-6 h-6 text-yellow-400"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-          </svg>
-        );
+  useEffect(() => {
+    async function fetchComponent() {
+      try {
+        const res = await api.get(`/components/${id}`)
+        setProduct(res.data)
+      } catch (error) {
+        console.error("Failed to fetch component", error)
+      } finally {
+        setLoading(false)
       }
     }
-    return stars;
-  };
+    async function fetchReviews() {
+      try {
+        // Add trailing slash to match the FastAPI route definition
+        const reviewsRes = await api.get('/api/v1/reviews');
+        console.log('Reviews fetched successfully:', reviewsRes.data);
+        
+        // Shuffle the reviews array using Fisher-Yates algorithm
+        const shuffledReviews = shuffleArray(reviewsRes.data || []);
+        setReviews(shuffledReviews);
+      } catch (error) {
+        console.error('Failed to fetch reviews:', error);
+        setReviews([]); // Set empty array on error
+      }
+    }
+    // Keep the original fetchComponent call
+    if (id) {
+      fetchComponent()
+      fetchReviews() // Add this line to fetch reviews
+    }
+  }, [id])
+  
+  // Function to display more reviews
+  const handleLoadMore = () => {
+    setDisplayCount(prevCount => prevCount + 6);
+  }
+
+  if (loading) return <div className="container mx-auto px-4 py-8">Loading...</div>
+  if (!product) return <div className="container mx-auto px-4 py-8">Product not found</div>
+
+  // Get only the first 6 (or displayCount) reviews for display
+  const displayedReviews = reviews.slice(0, displayCount);
+  const hasMoreReviews = reviews.length > displayCount;
 
   return (
     <>
@@ -173,116 +120,86 @@ export default function ProductDetailPage() {
           {/* Product Details */}
           <div>
             <h1 className="text-2xl font-bold mb-2">{product.title}</h1>
-            
-            <div className="mb-4">
-              <StarRating rating={product.rating} reviews={product.reviews} />
-            </div>
-            
+
             <div className="text-2xl font-bold text-gray-900 mb-6">${product.price.toFixed(2)}</div>
             
             <p className="text-gray-700 mb-6">{product.description || "A high-quality Motherboard designed for optimal airflow and component compatibility."}</p>
             
             {/* Quantity and Add to Build */}
             <div className="flex items-center space-x-4 mb-6">
-
-              
-              <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md">
-                Add to Build
+            <a href="/builder" className="inline-block">
+              <button className="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition">
+                Create A Build
               </button>
+            </a>
             </div>
-            
-            
-            {/* Generate specs from product data */}
-            <h3 className="text-xl font-semibold mt-6 mb-2">Specifications</h3>
-            <div className="grid grid-cols-2 gap-2">
-              <div className="flex justify-between p-2 border-b">
-                <span className="font-medium">Brand:</span>
-                <span>{product.category === "motherboard" ? product.title.split(" ")[0] : "Generic"}</span>
-              </div>
-              <div className="flex justify-between p-2 border-b">
-                <span className="font-medium">Category:</span>
-                <span>Mother</span>
-              </div>
-              <div className="flex justify-between p-2 border-b">
-                <span className="font-medium">Rating:</span>
-                <span>{product.rating} out of 5</span>
-              </div>
-              <div className="flex justify-between p-2 border-b">
-                <span className="font-medium">Reviews:</span>
-                <span>{product.reviews}</span>
+
+            {/* Specifications */}
+            <div className="mt-8">
+              <h2 className="text-xl font-semibold mb-4">Specifications</h2>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between border-b pb-2">
+                  <span className="text-gray-600 font-medium">Brand:</span>
+                  <span>{product.brand || "N/A"}</span>
+                </div>
+                <div className="flex justify-between border-b pb-2">
+                  <span className="text-gray-600 font-medium">Category:</span>
+                  <span>{product.category || "N/A"}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        
-        {/* Reviews Section - Styled like the image */}
+
+        {/* Reviews */}
         <div className="mt-16">
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center gap-2">
-              <h2 className="text-2xl font-bold">All Reviews</h2>
-              <span className="text-gray-500">({product.reviews || 451})</span>
-            </div>
-            
-            <div className="flex items-center gap-4">
-              <button className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="21" y1="10" x2="3" y2="10"></line>
-                  <line x1="21" y1="6" x2="3" y2="6"></line>
-                  <line x1="21" y1="14" x2="3" y2="14"></line>
-                  <line x1="21" y1="18" x2="3" y2="18"></line>
-                </svg>
-              </button>
-              
-              <div className="relative">
-                <button className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md">
-                  <span>Latest</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </button>
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold">All Reviews</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {displayedReviews.length > 0 ? (
+              displayedReviews.map((review) => (
+                <div key={review.id} className="bg-white border rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="font-semibold">
+                      {review.user?.username || `User ${review.user_id}`}
+                    </div>
+                    <div className="flex items-center">
+                      <span className="text-amber-500 mr-1">★</span>
+                      <span>{review.rating}</span>
+                      {review.verified && (
+                        <span className="ml-2 text-xs text-green-600 bg-green-100 px-2 py-0.5 rounded-full">Verified</span>
+                      )}
+                    </div>
+                  </div>
+                  {review.title && (
+                    <div className="font-medium mb-1">{review.title}</div>
+                  )}
+                  <div className="text-gray-700">{review.content}</div>
+                </div>
+              ))
+            ) : (
+              <div className="col-span-2 text-center py-8 text-gray-500">
+                No reviews available for this product.
               </div>
-              
-              <button className="bg-black text-white hover:bg-gray-800 px-4 py-2 rounded-full">
-                Write a Review
-              </button>
-            </div>
+            )}
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {mockReviews.map((review) => (
-              <div key={review.id} className="border rounded-lg p-6 relative">
-                <div className="flex flex-col">
-                  <div className="flex items-center mb-2">
-                    {renderStars(review.rating)}
-                  </div>
-                  
-                  <div className="flex items-center mb-3">
-                    <h3 className="text-lg font-medium">{review.author}</h3>
-                    {review.verified && (
-                      <div className="ml-2 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </div>
-                    )}
-                  </div>
-                  
-                  <p className="text-gray-700">{review.content}</p>
-                </div>
-                
-                <button className="absolute top-4 right-4 text-gray-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="1"></circle>
-                    <circle cx="19" cy="12" r="1"></circle>
-                    <circle cx="5" cy="12" r="1"></circle>
-                  </svg>
-                </button>
-              </div>
-            ))}
-          </div>
+          {/* Show "Load More" button if there are more reviews */}
+          {hasMoreReviews && (
+            <div className="text-center mt-8">
+              <button 
+                onClick={handleLoadMore}
+                className="bg-gray-200 text-gray-800 px-6 py-2 rounded-md hover:bg-gray-300 transition"
+              >
+                Load More Reviews
+              </button>
+            </div>
+          )}
         </div>
       </div>
-      
+
       <Footer />
     </>
   )

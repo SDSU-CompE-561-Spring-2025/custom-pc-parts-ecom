@@ -6,6 +6,7 @@ import { cpuProducts } from "@/data/sample-products"
 import { cpuFilters } from "@/data/filter-configs"
 import Footer from "@/components/Footers"
 import { api } from "@/lib/auth"
+import { getOrCreateUuid } from "@/lib/uuid-utils"
 
 export default function CpuCategoryPage() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -34,7 +35,7 @@ export default function CpuCategoryPage() {
         setApiProducts(formattedProducts);
       } catch (error) {
         console.error("Failed to fetch components:", error)
-        // Fall back to sample data if API fails
+        // Fall back to sample data if UIDs fails
         setApiProducts(cpuProducts);
       } finally {
         setLoading(false)

@@ -7,7 +7,7 @@ import {monitorFilters } from "@/data/filter-configs"
 import Footer from "@/components/Footers"
 import { api } from "@/lib/auth"
 
-export default function CpuCategoryPage() {
+export default function MoPage() {
   const [currentPage, setCurrentPage] = useState(1)
   const [paginatedProducts, setPaginatedProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)

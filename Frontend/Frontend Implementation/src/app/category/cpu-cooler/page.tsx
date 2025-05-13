@@ -6,6 +6,7 @@ import { cpuCoolerProducts } from "@/data/sample-products"
 import { cpuCoolerFilters } from "@/data/filter-configs"
 import Footer from "@/components/Footers"
 import { api } from "@/lib/auth"
+import { getOrCreateUuid } from "@/lib/uuid-utils"
 
 export default function CPUCoolerPage() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -25,7 +26,7 @@ export default function CPUCoolerPage() {
         const formattedProducts: Product[] = response.data.items.map((Cooler: any) => ({
           id: Cooler.id,
           title: Cooler.name,
-          image: Cooler.image_url || "https://placehold.co/200x200?text=Cooler",
+          image: Cooler.image_url || "https://placehold.co/200x200?text=CPU Cooler",
           price: Cooler.price,
           rating: Cooler.rating || 4.5,
           reviews: Cooler.reviews || 10,
@@ -40,7 +41,6 @@ export default function CPUCoolerPage() {
         setLoading(false)
       }
     }
-
     fetchComponents()
   }, [])
   

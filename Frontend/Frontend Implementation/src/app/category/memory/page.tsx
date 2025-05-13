@@ -6,8 +6,9 @@ import { memoryProducts } from "@/data/sample-products"
 import { memoryFilters } from "@/data/filter-configs"
 import Footer from "@/components/Footers"
 import { api } from "@/lib/auth"
+import { getOrCreateUuid } from "@/lib/uuid-utils"
 
-export default function CpuCategoryPage() {
+export default function MemoryPage() {
   const [currentPage, setCurrentPage] = useState(1)
   const [paginatedProducts, setPaginatedProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)

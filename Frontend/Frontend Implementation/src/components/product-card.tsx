@@ -1,6 +1,9 @@
+"use client"
+
 import type { FC } from "react"
 import { StarRating } from "@/components/star-rating"
 import Link from "next/link"
+import { UuidProvider } from "@/components/UuidProvider"
 
 interface ProductCardProps {
   title: string
@@ -13,21 +16,35 @@ interface ProductCardProps {
   categorySlug?: string // Added this prop
 }
 
-export const ProductCard: FC<ProductCardProps> = ({
+// Regular ProductCard that handles the case where we already have a UID
+export const ProductCard: FC<ProductCardProps> = (props) => {
+  return (
+    <UuidProvider id={props.id}>
+      {(uid) => <ProductCardInner {...props} uid={uid} />}
+    </UuidProvider>
+  )
+}
+
+// Inner component that receives the generated UUID
+interface ProductCardInnerProps extends ProductCardProps {
+  uid: string
+}
+const ProductCardInner: FC<ProductCardInnerProps> = ({
   title,
   image,
   price,
   rating,
   reviews,
   id,
+  uid, // This comes from UuidProvider
   category,
-  categorySlug // Added this parameter
+  categorySlug
 }) => {
   // Create the dynamic path based on whether we have a categorySlug
   const categoryPath = categorySlug || (category?.toLowerCase().replace(/\s+/g, '-') || 'product');
-  const productPath = `/category/${categoryPath}/${id}`;
+  const productPath = `/category/${categoryPath}/${uid}`;
   
-  console.log('ProductCard props:', { categorySlug, category, id, productPath });
+  console.log('ProductCard props:', { categorySlug, category, id, uid, productPath });
 
   return (
     <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">

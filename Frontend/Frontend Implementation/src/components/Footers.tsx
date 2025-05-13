@@ -35,23 +35,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/signup" className="hover:text-green-500">
-                  Sign Up
-                </Link>
-              </li>
-              <li>
-                <Link href="/login" className="hover:text-green-500">
-                  Log In
-                </Link>
-              </li>
-              <li>
                 <Link href="/user-builds" className="hover:text-green-500">
                   Your Builds
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-green-500">
-                  Log Out
                 </Link>
               </li>
             </ul>

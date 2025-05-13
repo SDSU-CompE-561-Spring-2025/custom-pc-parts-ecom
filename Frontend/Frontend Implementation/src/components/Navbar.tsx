@@ -447,8 +447,6 @@ const Navbar = () => {
             ) : (
               <Link href="/login" className="p-2"><User className="h-6 w-6" /></Link>
             )}
-
-            <Button variant="ghost" size="icon"><ShoppingCart size={20} /></Button>
           </div>
         </div>
       </div>

@@ -64,7 +64,7 @@ cd backend-implementation
   uv venv --python 3.11
   ```
 
-  > **Note:** After running this command, copy and run the green activation command shown in your terminal (it should look like -> source venv/bin/activate) to activate the virtual environment.
+  > **Note:** After running this command, copy and run the green activation command shown in your terminal (it should look like -> source .venv/bin/activate) to activate the virtual environment.
 
 * Install dependencies:
 

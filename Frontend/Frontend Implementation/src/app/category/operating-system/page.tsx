@@ -6,6 +6,7 @@ import { osProducts } from "@/data/sample-products"
 import { osFilters } from "@/data/filter-configs"
 import Footer from "@/components/Footers"
 import { api } from "@/lib/auth"
+import { getOrCreateUuid } from "@/lib/uuid-utils"
 
 export default function OperatingSystemPage() {
   const [currentPage, setCurrentPage] = useState(1)

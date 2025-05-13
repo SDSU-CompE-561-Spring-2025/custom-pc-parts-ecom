@@ -11,64 +11,75 @@ import CaseImage from '@/components/images/Case.jpg'
 import PowerSupplyImage from '@/components/images/PowerSupply.jpg'
 import OperatingSystemImage from '@/components/images/OperatingSystem.jpg'
 import MonitorImage from '@/components/images/Monitor.jpg'
+import { v4 as uuidv4 } from 'uuid'
 
 const components = [
   {
     id: "cpu",
+    uid: "cpu",
     title: "CPU",
     image: CPUImage,
     browseText: "Browse for CPUs",
   },
   {
     id: "cpu-cooler",
+    uid: "cpu-cooler",
     title: "CPU Cooler",
     image: CPUCoolerImage,
     browseText: "Browse for CPU Coolers",
   },
   {
     id: "motherboard",
+    uid: "motherboard",
     title: "Motherboards",
     image: MotherBoardImage,
     browseText: "Browse for Motherboards",
   },
   {
     id: "memory",
+    uid: "memory",
     title: "Memory",
     image: MemoryImage,
     browseText: "Browse for Memory",
   },
   {
     id: "storage",
+    uid: "storage",
     title: "Storage",
     image: StorageImage,
     browseText: "Browse for Storage",
   },
   {
     id: "video-card",
+    uid: "video-card",
     title: "Video Card",
     image: VideoCardImage,
     browseText: "Browse for Video Cards",
   },
   {
     id: "case",
+    uid: "case",
     title: "Case",
     image: CaseImage,
     browseText: "Browse for Cases",
   },
   {
     id: "power-supply",
+    uid: "power-supply",
     title: "Power Supply",
     image: PowerSupplyImage,
     browseText: "Browse for Power Supply",
   },
   {
     id: "operating-system",
+    uid: "operating-system",
     title: "Operating System",
     image: OperatingSystemImage,
     browseText: "Browse for Operating System",
   },
   {
     id: "monitor",
+    uid: "monitor",
     title: "Monitor",
     image: MonitorImage,
     browseText: "Browse for Monitors",
@@ -90,7 +101,7 @@ export default function ComponentGrid() {
             />
           </div>
           <Link
-            href={`/category/${component.id}`}
+            href={`/category/${component.uid}`}
             className="bg-black text-white w-full py-2 px-4 flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors"
           >
             <Search className="h-4 w-4" />

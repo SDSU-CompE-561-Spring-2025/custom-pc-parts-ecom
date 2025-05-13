@@ -18,6 +18,7 @@ export function ProductGrid({ products, columns = 3, categorySlug }: ProductGrid
   return (
     <div className={`grid ${columnClasses[columns as keyof typeof columnClasses]} gap-6`}>
       {products.map((product) => (
+        // Use the product's uid as the key for better performance
         <ProductCard
           key={product.id}
           id={product.id}

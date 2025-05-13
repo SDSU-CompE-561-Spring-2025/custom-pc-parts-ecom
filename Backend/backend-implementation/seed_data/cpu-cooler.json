@@ -1,437 +1,527 @@
 [
-    {
-      "name": "Thermalright Peerless Assassin 120 SE",
-      "category": "Cooler",
-      "brand": "Thermalright",
-      "model": "Peerless Assassin 120 SE",
-      "price": 33.9,
-      "specs": {
-        "rpm": 1550,
-        "noise_level": 25.6,
-        "color": "Black",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
-      "in_stock": true
+  {
+    "name": "Thermalright Peerless Assassin 120 SE",
+    "category": "Cooler",
+    "brand": "Thermalright",
+    "model": "Peerless Assassin 120 SE",
+    "price": 33.9,
+    "specs": {
+      "rpm": 1550,
+      "noise_level": 25.6,
+      "color": "Black",
+      "size": null
     },
-    {
-      "name": "NZXT Kraken Elite 360 RGB",
-      "category": "Cooler",
-      "brand": "NZXT",
-      "model": "Kraken Elite 360 RGB",
-      "price": 273.99,
-      "specs": {
-        "rpm": [500, 1800],
-        "noise_level": [17.9, 30.6],
-        "color": "White",
-        "size": 360
-      },
-      "image_url": "https://m.media-amazon.com/images/I/41bszvNaXPL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "NZXT Kraken Elite 360 RGB",
+    "category": "Cooler",
+    "brand": "NZXT",
+    "model": "Kraken Elite 360 RGB",
+    "price": 273.99,
+    "specs": {
+      "rpm": [
+        500,
+        1800
+      ],
+      "noise_level": [
+        17.9,
+        30.6
+      ],
+      "color": "White",
+      "size": 360
     },
-    {
-      "name": "Deepcool GAMMAXX AG400 ARGB",
-      "category": "Cooler",
-      "brand": "Deepcool",
-      "model": "GAMMAXX AG400 ARGB",
-      "price": 29.99,
-      "specs": {
-        "rpm": [500, 2000],
-        "noise_level": 31.6,
-        "color": "Black",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/71H8RbUBYaL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Deepcool GAMMAXX AG400 ARGB",
+    "category": "Cooler",
+    "brand": "Deepcool",
+    "model": "GAMMAXX AG400 ARGB",
+    "price": 29.99,
+    "specs": {
+      "rpm": [
+        500,
+        2000
+      ],
+      "noise_level": 31.6,
+      "color": "Black",
+      "size": null
     },
-    {
-      "name": "Corsair iCUE H150i ELITE CAPELLIX XT",
-      "category": "Cooler",
-      "brand": "Corsair",
-      "model": "iCUE H150i ELITE CAPELLIX XT",
-      "price": 189.99,
-      "specs": {
-        "rpm": [550, 2100],
-        "noise_level": [5, 34.1],
-        "color": "Black",
-        "size": 360
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Corsair iCUE H150i ELITE CAPELLIX XT",
+    "category": "Cooler",
+    "brand": "Corsair",
+    "model": "iCUE H150i ELITE CAPELLIX XT",
+    "price": 189.99,
+    "specs": {
+      "rpm": [
+        550,
+        2100
+      ],
+      "noise_level": [
+        5,
+        34.1
+      ],
+      "color": "Black",
+      "size": 360
     },
-    {
-      "name": "Noctua NH-D15",
-      "category": "Cooler",
-      "brand": "Noctua",
-      "model": "NH-D15",
-      "price": 99.95,
-      "specs": {
-        "rpm": [300, 1500],
-        "noise_level": 24.6,
-        "color": "Brown",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Noctua NH-D15",
+    "category": "Cooler",
+    "brand": "Noctua",
+    "model": "NH-D15",
+    "price": 99.95,
+    "specs": {
+      "rpm": [
+        300,
+        1500
+      ],
+      "noise_level": 24.6,
+      "color": "Brown",
+      "size": null
     },
-    {
-      "name": "ARCTIC Freezer 34 eSports DUO",
-      "category": "Cooler",
-      "brand": "ARCTIC",
-      "model": "Freezer 34 eSports DUO",
-      "price": 49.99,
-      "specs": {
-        "rpm": [200, 2100],
-        "noise_level": 28.0,
-        "color": "Black/Red",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "ARCTIC Freezer 34 eSports DUO",
+    "category": "Cooler",
+    "brand": "ARCTIC",
+    "model": "Freezer 34 eSports DUO",
+    "price": 49.99,
+    "specs": {
+      "rpm": [
+        200,
+        2100
+      ],
+      "noise_level": 28,
+      "color": "Black/Red",
+      "size": null
     },
-    {
-      "name": "be quiet! Dark Rock Pro 4",
-      "category": "Cooler",
-      "brand": "be quiet!",
-      "model": "Dark Rock Pro 4",
-      "price": 89.90,
-      "specs": {
-        "rpm": 1500,
-        "noise_level": 24.3,
-        "color": "Black",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "be quiet! Dark Rock Pro 4",
+    "category": "Cooler",
+    "brand": "be quiet!",
+    "model": "Dark Rock Pro 4",
+    "price": 89.9,
+    "specs": {
+      "rpm": 1500,
+      "noise_level": 24.3,
+      "color": "Black",
+      "size": null
     },
-    {
-      "name": "Cooler Master Hyper 212 Black Edition",
-      "category": "Cooler",
-      "brand": "Cooler Master",
-      "model": "Hyper 212 Black Edition",
-      "price": 44.99,
-      "specs": {
-        "rpm": [650, 2000],
-        "noise_level": 26.0,
-        "color": "Black",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Cooler Master Hyper 212 Black Edition",
+    "category": "Cooler",
+    "brand": "Cooler Master",
+    "model": "Hyper 212 Black Edition",
+    "price": 44.99,
+    "specs": {
+      "rpm": [
+        650,
+        2000
+      ],
+      "noise_level": 26,
+      "color": "Black",
+      "size": null
     },
-    {
-      "name": "Lian Li Galahad II Trinity 360",
-      "category": "Cooler",
-      "brand": "Lian Li",
-      "model": "Galahad II Trinity 360",
-      "price": 139.99,
-      "specs": {
-        "rpm": [200, 2450],
-        "noise_level": [20.6, 39.9],
-        "color": "White",
-        "size": 360
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Lian Li Galahad II Trinity 360",
+    "category": "Cooler",
+    "brand": "Lian Li",
+    "model": "Galahad II Trinity 360",
+    "price": 139.99,
+    "specs": {
+      "rpm": [
+        200,
+        2450
+      ],
+      "noise_level": [
+        20.6,
+        39.9
+      ],
+      "color": "White",
+      "size": 360
     },
-    {
-      "name": "DeepCool LT720",
-      "category": "Cooler",
-      "brand": "DeepCool",
-      "model": "LT720",
-      "price": 129.99,
-      "specs": {
-        "rpm": [500, 2250],
-        "noise_level": 32.9,
-        "color": "Black",
-        "size": 360
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "DeepCool LT720",
+    "category": "Cooler",
+    "brand": "DeepCool",
+    "model": "LT720",
+    "price": 129.99,
+    "specs": {
+      "rpm": [
+        500,
+        2250
+      ],
+      "noise_level": 32.9,
+      "color": "Black",
+      "size": 360
     },
-    {
-      "name": "Thermaltake TH360 ARGB Sync",
-      "category": "Cooler",
-      "brand": "Thermaltake",
-      "model": "TH360 ARGB Sync",
-      "price": 119.99,
-      "specs": {
-        "rpm": [500, 1500],
-        "noise_level": 28.2,
-        "color": "Black",
-        "size": 360
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Thermaltake TH360 ARGB Sync",
+    "category": "Cooler",
+    "brand": "Thermaltake",
+    "model": "TH360 ARGB Sync",
+    "price": 119.99,
+    "specs": {
+      "rpm": [
+        500,
+        1500
+      ],
+      "noise_level": 28.2,
+      "color": "Black",
+      "size": 360
     },
-    {
-      "name": "EK Nucleus AIO CR360 Lux D-RGB",
-      "category": "Cooler",
-      "brand": "EK",
-      "model": "Nucleus AIO CR360 Lux D-RGB",
-      "price": 184.99,
-      "specs": {
-        "rpm": [550, 2300],
-        "noise_level": 36.4,
-        "color": "Black",
-        "size": 360
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "EK Nucleus AIO CR360 Lux D-RGB",
+    "category": "Cooler",
+    "brand": "EK",
+    "model": "Nucleus AIO CR360 Lux D-RGB",
+    "price": 184.99,
+    "specs": {
+      "rpm": [
+        550,
+        2300
+      ],
+      "noise_level": 36.4,
+      "color": "Black",
+      "size": 360
     },
-    {
-      "name": "MSI MAG CoreLiquid 240R V2",
-      "category": "Cooler",
-      "brand": "MSI",
-      "model": "MAG CoreLiquid 240R V2",
-      "price": 99.99,
-      "specs": {
-        "rpm": [500, 2000],
-        "noise_level": 34.3,
-        "color": "Black",
-        "size": 240
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "MSI MAG CoreLiquid 240R V2",
+    "category": "Cooler",
+    "brand": "MSI",
+    "model": "MAG CoreLiquid 240R V2",
+    "price": 99.99,
+    "specs": {
+      "rpm": [
+        500,
+        2000
+      ],
+      "noise_level": 34.3,
+      "color": "Black",
+      "size": 240
     },
-    {
-      "name": "ID-COOLING SE-224-XT ARGB",
-      "category": "Cooler",
-      "brand": "ID-COOLING",
-      "model": "SE-224-XT ARGB",
-      "price": 32.99,
-      "specs": {
-        "rpm": [500, 1800],
-        "noise_level": 26.4,
-        "color": "Black",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "ID-COOLING SE-224-XT ARGB",
+    "category": "Cooler",
+    "brand": "ID-COOLING",
+    "model": "SE-224-XT ARGB",
+    "price": 32.99,
+    "specs": {
+      "rpm": [
+        500,
+        1800
+      ],
+      "noise_level": 26.4,
+      "color": "Black",
+      "size": null
     },
-    {
-      "name": "Zalman CNPS10X Performa Black",
-      "category": "Cooler",
-      "brand": "Zalman",
-      "model": "CNPS10X Performa Black",
-      "price": 37.99,
-      "specs": {
-        "rpm": [800, 1500],
-        "noise_level": 27.0,
-        "color": "Black",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Zalman CNPS10X Performa Black",
+    "category": "Cooler",
+    "brand": "Zalman",
+    "model": "CNPS10X Performa Black",
+    "price": 37.99,
+    "specs": {
+      "rpm": [
+        800,
+        1500
+      ],
+      "noise_level": 27,
+      "color": "Black",
+      "size": null
     },
-    {
-      "name": "SilverStone PF360 ARGB",
-      "category": "Cooler",
-      "brand": "SilverStone",
-      "model": "PF360 ARGB",
-      "price": 129.99,
-      "specs": {
-        "rpm": [600, 2200],
-        "noise_level": 36.0,
-        "color": "White",
-        "size": 360
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "SilverStone PF360 ARGB",
+    "category": "Cooler",
+    "brand": "SilverStone",
+    "model": "PF360 ARGB",
+    "price": 129.99,
+    "specs": {
+      "rpm": [
+        600,
+        2200
+      ],
+      "noise_level": 36,
+      "color": "White",
+      "size": 360
     },
-    {
-      "name": "Noctua NH-U12S Redux",
-      "category": "Cooler",
-      "brand": "Noctua",
-      "model": "NH-U12S Redux",
-      "price": 49.95,
-      "specs": {
-        "rpm": [300, 1500],
-        "noise_level": 25.1,
-        "color": "Gray",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Noctua NH-U12S Redux",
+    "category": "Cooler",
+    "brand": "Noctua",
+    "model": "NH-U12S Redux",
+    "price": 49.95,
+    "specs": {
+      "rpm": [
+        300,
+        1500
+      ],
+      "noise_level": 25.1,
+      "color": "Gray",
+      "size": null
     },
-    {
-      "name": "Scythe Mugen 5 Rev.B",
-      "category": "Cooler",
-      "brand": "Scythe",
-      "model": "Mugen 5 Rev.B",
-      "price": 59.99,
-      "specs": {
-        "rpm": [300, 1200],
-        "noise_level": 24.9,
-        "color": "Black",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Scythe Mugen 5 Rev.B",
+    "category": "Cooler",
+    "brand": "Scythe",
+    "model": "Mugen 5 Rev.B",
+    "price": 59.99,
+    "specs": {
+      "rpm": [
+        300,
+        1200
+      ],
+      "noise_level": 24.9,
+      "color": "Black",
+      "size": null
     },
-    {
-      "name": "Enermax Aquafusion ADV 240",
-      "category": "Cooler",
-      "brand": "Enermax",
-      "model": "Aquafusion ADV 240",
-      "price": 109.99,
-      "specs": {
-        "rpm": [500, 2000],
-        "noise_level": 32.6,
-        "color": "Black",
-        "size": 240
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Enermax Aquafusion ADV 240",
+    "category": "Cooler",
+    "brand": "Enermax",
+    "model": "Aquafusion ADV 240",
+    "price": 109.99,
+    "specs": {
+      "rpm": [
+        500,
+        2000
+      ],
+      "noise_level": 32.6,
+      "color": "Black",
+      "size": 240
     },
-    {
-      "name": "ARCTIC Liquid Freezer II 360",
-      "category": "Cooler",
-      "brand": "ARCTIC",
-      "model": "Liquid Freezer II 360",
-      "price": 114.99,
-      "specs": {
-        "rpm": [200, 1800],
-        "noise_level": 22.5,
-        "color": "Black",
-        "size": 360
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "ARCTIC Liquid Freezer II 360",
+    "category": "Cooler",
+    "brand": "ARCTIC",
+    "model": "Liquid Freezer II 360",
+    "price": 114.99,
+    "specs": {
+      "rpm": [
+        200,
+        1800
+      ],
+      "noise_level": 22.5,
+      "color": "Black",
+      "size": 360
     },
-    {
-      "name": "Thermaltake TOUGHLIQUID Ultra 240",
-      "category": "Cooler",
-      "brand": "Thermaltake",
-      "model": "TOUGHLIQUID Ultra 240",
-      "price": 159.99,
-      "specs": {
-        "rpm": [500, 2000],
-        "noise_level": 30.0,
-        "color": "Black",
-        "size": 240
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Thermaltake TOUGHLIQUID Ultra 240",
+    "category": "Cooler",
+    "brand": "Thermaltake",
+    "model": "TOUGHLIQUID Ultra 240",
+    "price": 159.99,
+    "specs": {
+      "rpm": [
+        500,
+        2000
+      ],
+      "noise_level": 30,
+      "color": "Black",
+      "size": 240
     },
-    {
-      "name": "ID-COOLING FROSTFLOW X 240",
-      "category": "Cooler",
-      "brand": "ID-COOLING",
-      "model": "FROSTFLOW X 240",
-      "price": 69.99,
-      "specs": {
-        "rpm": [700, 1800],
-        "noise_level": 26.4,
-        "color": "Black",
-        "size": 240
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "ID-COOLING FROSTFLOW X 240",
+    "category": "Cooler",
+    "brand": "ID-COOLING",
+    "model": "FROSTFLOW X 240",
+    "price": 69.99,
+    "specs": {
+      "rpm": [
+        700,
+        1800
+      ],
+      "noise_level": 26.4,
+      "color": "Black",
+      "size": 240
     },
-    {
-      "name": "be quiet! Pure Rock 2 FX",
-      "category": "Cooler",
-      "brand": "be quiet!",
-      "model": "Pure Rock 2 FX",
-      "price": 47.90,
-      "specs": {
-        "rpm": [300, 1800],
-        "noise_level": 26.8,
-        "color": "Black",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "be quiet! Pure Rock 2 FX",
+    "category": "Cooler",
+    "brand": "be quiet!",
+    "model": "Pure Rock 2 FX",
+    "price": 47.9,
+    "specs": {
+      "rpm": [
+        300,
+        1800
+      ],
+      "noise_level": 26.8,
+      "color": "Black",
+      "size": null
     },
-    {
-      "name": "MSI MEG CoreLiquid S360",
-      "category": "Cooler",
-      "brand": "MSI",
-      "model": "MEG CoreLiquid S360",
-      "price": 229.99,
-      "specs": {
-        "rpm": [500, 2000],
-        "noise_level": 39.9,
-        "color": "Black",
-        "size": 360
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "MSI MEG CoreLiquid S360",
+    "category": "Cooler",
+    "brand": "MSI",
+    "model": "MEG CoreLiquid S360",
+    "price": 229.99,
+    "specs": {
+      "rpm": [
+        500,
+        2000
+      ],
+      "noise_level": 39.9,
+      "color": "Black",
+      "size": 360
     },
-    {
-      "name": "Vetroo V5 White",
-      "category": "Cooler",
-      "brand": "Vetroo",
-      "model": "V5 White",
-      "price": 24.99,
-      "specs": {
-        "rpm": [800, 1700],
-        "noise_level": 30.8,
-        "color": "White",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Vetroo V5 White",
+    "category": "Cooler",
+    "brand": "Vetroo",
+    "model": "V5 White",
+    "price": 24.99,
+    "specs": {
+      "rpm": [
+        800,
+        1700
+      ],
+      "noise_level": 30.8,
+      "color": "White",
+      "size": null
     },
-    {
-      "name": "Enermax ETS-F40-FS ARGB",
-      "category": "Cooler",
-      "brand": "Enermax",
-      "model": "ETS-F40-FS ARGB",
-      "price": 44.99,
-      "specs": {
-        "rpm": [300, 1200],
-        "noise_level": 23.6,
-        "color": "Black",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Enermax ETS-F40-FS ARGB",
+    "category": "Cooler",
+    "brand": "Enermax",
+    "model": "ETS-F40-FS ARGB",
+    "price": 44.99,
+    "specs": {
+      "rpm": [
+        300,
+        1200
+      ],
+      "noise_level": 23.6,
+      "color": "Black",
+      "size": null
     },
-    {
-      "name": "Cougar Aqua ARGB 240",
-      "category": "Cooler",
-      "brand": "Cougar",
-      "model": "Aqua ARGB 240",
-      "price": 84.99,
-      "specs": {
-        "rpm": [600, 2000],
-        "noise_level": 34.5,
-        "color": "Black",
-        "size": 240
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Cougar Aqua ARGB 240",
+    "category": "Cooler",
+    "brand": "Cougar",
+    "model": "Aqua ARGB 240",
+    "price": 84.99,
+    "specs": {
+      "rpm": [
+        600,
+        2000
+      ],
+      "noise_level": 34.5,
+      "color": "Black",
+      "size": 240
     },
-    {
-      "name": "Montech AIR Cooler 210",
-      "category": "Cooler",
-      "brand": "Montech",
-      "model": "AIR Cooler 210",
-      "price": 34.99,
-      "specs": {
-        "rpm": [600, 1800],
-        "noise_level": 29.5,
-        "color": "Black",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Montech AIR Cooler 210",
+    "category": "Cooler",
+    "brand": "Montech",
+    "model": "AIR Cooler 210",
+    "price": 34.99,
+    "specs": {
+      "rpm": [
+        600,
+        1800
+      ],
+      "noise_level": 29.5,
+      "color": "Black",
+      "size": null
     },
-    {
-      "name": "Jonsbo CR-1400 RGB",
-      "category": "Cooler",
-      "brand": "Jonsbo",
-      "model": "CR-1400 RGB",
-      "price": 26.99,
-      "specs": {
-        "rpm": [800, 1600],
-        "noise_level": 28.1,
-        "color": "Black",
-        "size": null
-      },
-      "image_url": "https://m.media-amazon.com/images/I/61YRHOGBhaL.jpg",
-      "in_stock": true
-    }
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  },
+  {
+    "name": "Jonsbo CR-1400 RGB",
+    "category": "Cooler",
+    "brand": "Jonsbo",
+    "model": "CR-1400 RGB",
+    "price": 26.99,
+    "specs": {
+      "rpm": [
+        800,
+        1600
+      ],
+      "noise_level": 28.1,
+      "color": "Black",
+      "size": null
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71j6VKsz-fL.jpg",
+    "in_stock": true
+  }
 ]

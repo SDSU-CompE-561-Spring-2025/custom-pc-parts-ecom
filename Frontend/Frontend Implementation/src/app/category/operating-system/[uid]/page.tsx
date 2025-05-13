@@ -6,6 +6,7 @@ import Link from "next/link"
 import Image from "next/image"
 import Footer from "@/components/Footers"
 import { api } from "@/lib/auth" 
+import { useIdFromUuid } from "@/components/UuidProvider"
 
 type Review = {
   id: number
@@ -24,7 +25,9 @@ type Review = {
   }}
 
 export default function ProductDetailPage() {
-  const { id } = useParams()
+  const params = useParams()
+  const uid = params.uid as string
+  const id = useIdFromUuid(uid) // Get ID from UUID using the hook
   const [product, setProduct] = useState<any>(null)
   const [reviews, setReviews] = useState<Review[]>([])
   const [loading, setLoading] = useState(true)
@@ -41,11 +44,24 @@ export default function ProductDetailPage() {
 
   useEffect(() => {
     async function fetchComponent() {
+      if (!id && uid) {
+        const timer = setTimeout(() => setLoading(true), 500)
+        return () => clearTimeout(timer)
+      }
       try {
+        console.log("Looking up product with UUID:", uid)
+        console.log("Converted to ID:", id)
+        
+        if (!id) {
+          console.error("Could not find ID for UUID:", uid)
+          setLoading(false)
+          return
+        }
+        
         const res = await api.get(`/components/${id}`)
         setProduct(res.data)
       } catch (error) {
-        console.error("Failed to fetch component", error)
+        console.error("Failed to fetch component:", error)
       } finally {
         setLoading(false)
       }
@@ -69,7 +85,7 @@ export default function ProductDetailPage() {
       fetchComponent()
       fetchReviews() // Add this line to fetch reviews
     }
-  }, [id])
+  }, [id, uid])
   
   // Function to display more reviews
   const handleLoadMore = () => {
